@@ -1,0 +1,11 @@
+﻿10 5
+0 7 c a e e c a a
+0 5 c d b a c
+0 5 c b b b e
+0 10 b c d b b c e a e d
+0 7 a d d a d a a
+0 8 c b c e a a d d
+0 9 b a e b d d a a b
+0 8 c e b e b d b a
+0 7 e e d a b d b
+0 8 e c c a d e a e

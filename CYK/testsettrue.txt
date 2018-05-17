@@ -1,0 +1,6 @@
+﻿5 5
+1 10 a b c a b d c a b e
+1 4 c c a b
+1 7 a b d c a b e
+1 13 a b c a b c a b d c a b e
+1 16 a b c a b c a b c a b d c a b e
