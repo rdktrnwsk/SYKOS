@@ -193,32 +193,89 @@ private:
 
 class CYKData {
 public:
-	CYKData(float** instance) {
+	CYKData(int** cykArray, int inputStringLength, int** d_rulesNonTermsArray, int nonTerminalsCount ) {
 
-		instanceMatrix = instance;
+		createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
+		
+		rulesNonTermsArray = d_rulesNonTermsArray;
+
+		nonTermsCount = nonTerminalsCount;
+		inputCount = inputStringLength;
+
+		h_result = (int*)malloc(sizeof(int));
+		*h_result = 420;
+		cudaMalloc((void**)&result, sizeof(int));
+		cudaMemcpy(result, h_result, sizeof(int), cudaMemcpyHostToDevice);
 	};
 	~CYKData() {
+
+		//TODO CHANGE
+		for (int i = 0; i < this->inputCount; i++) {
+			cudaFree(this->cykArray[i]);
+			free(this->h_cykArray[i]);
+		}
+		free(this->h_cykArray);
+		cudaFree(this->cykArray);
+
+		free(h_result);
+		cudaFree(result);
 	};
 
-	float** getInstanceMatrix() { return instanceMatrix; };
-	void setInstaneMatrix(float** ptr) { instanceMatrix = ptr; };
+	int** getCYKArray() { return cykArray; };
+	void setCYKArray(int** ptr) { cykArray = ptr; };
+
+	int** getRulesNonTermsArray() { return rulesNonTermsArray; };
+	void setRulesNonTermsArray(int** ptr) { rulesNonTermsArray = ptr; };
+
+	int getNonTermsCount() { return nonTermsCount; };
+	void setNonTermsCount(int num) { nonTermsCount = num; };
+
+	int getInputCount() { return inputCount; };
+	void setInputCount(int num) { inputCount = num; };
+
+	int* getResult() { return result; };
+	int  getResultValue() {
+		cudaMemcpy(h_result, result, sizeof(int), cudaMemcpyDeviceToHost);
+		return *h_result;
+	};
 
 private:
 
-	float** instanceMatrix;
+	int** h_cykArray;
+	int** cykArray;
+
+	int** rulesNonTermsArray;
+	int nonTermsCount;
+	int inputCount;
+
+	int* h_result; // exchanging result point
+	int* result;
 
 };
 
 class DeviceCYKData {
 public:
 	__host__ DeviceCYKData(CYKData& device) :
-		instanceMatrix(device.getInstanceMatrix())
+		cykArray(device.getCYKArray()),
+		rulesNonTermsArray(device.getRulesNonTermsArray()),
+		nonTermsCount(device.getNonTermsCount()),
+		inputCount(device.getInputCount()),
+		result(device.getResult())
 	{}
 
-	__forceinline__ __device__ float** getInstanceMatrix() { return instanceMatrix; }
+	__forceinline__ __device__ int** getCYKArray() { return cykArray; }
+	__forceinline__ __device__ int** getRulesNonTermsArray() { return rulesNonTermsArray; }
+	__forceinline__ __device__ int getInputCount() { return inputCount; }
+	__forceinline__ __device__ int getNonTermsCount() { return nonTermsCount; }
+	__forceinline__ __device__ int* getResult() { return result; }
 	
 private:
-	float** instanceMatrix;
+
+	int** cykArray;
+	int** rulesNonTermsArray;
+	int nonTermsCount;
+	int inputCount;
+	int* result;
 	
 };
 

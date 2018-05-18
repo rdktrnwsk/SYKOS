@@ -6,16 +6,16 @@
 #define CYK_CUH
 
 template<int action>
-__global__ void cykAlgorithm(curandState* randGlobal);
+__global__ void cykAlgorithm(DeviceCYKData data, curandState* randGlobal);
 
 template
-__global__ void cykAlgorithm<0>(curandState* randGlobal);
+__global__ void cykAlgorithm<0>(DeviceCYKData data, curandState* randGlobal);
 
 template
-__global__ void cykAlgorithm<1>(curandState* randGlobal);
+__global__ void cykAlgorithm<1>(DeviceCYKData data, curandState* randGlobal);
 
 template
-__global__ void cykAlgorithm<2>(curandState* randGlobal);
+__global__ void cykAlgorithm<2>(DeviceCYKData data, curandState* randGlobal);
 
 //__global__ void cykAlgorithm(DeviceCYKData data, DeviceCultural cultural, curandState* randGlobal, int* solution, int** cykArray);
 

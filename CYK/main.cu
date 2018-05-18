@@ -197,6 +197,22 @@ int main(int argc, char** argv)
 
 
 	/******************************************************************CUDA PART*********************************************************************/
+	
+	cudaSetDevice(1);
+
+	/*char* termsArray;
+	int termsCount;
+	char* nonTermsArray;
+	int nonTermsCount;
+	int* rulesTermsArray;
+	int rulesTermsCount;
+	int** rulesNonTermsArray;
+	int rulesNonTermsCount;*/
+
+	// GPU Array Copy
+	int** h_rulesNonTermsArray; //redundant
+	int** d_rulesNonTermsArray;
+	createCuda2DArrayInt(h_rulesNonTermsArray, d_rulesNonTermsArray, rulesNonTermsArray, nonTermsCount, nonTermsCount);
 
 	// initial
 	int threadsNumber = 8;
@@ -210,13 +226,46 @@ int main(int argc, char** argv)
 
 
 	CulturalData culturalData(instanceSize + 2, threadsNumber);
-	float** d_instanceMatrix;
-	//CYKData cykData(d_instanceMatrix);
+	// make array clear
+	for (int i = 2; i < inputStringLength; i++) {
+		for (int j = 0; j < inputStringLength; j++) {
+			cykArray[i][j] = 0;
+		}
+	}
+	CYKData cykData(cykArray, inputStringLength, d_rulesNonTermsArray, nonTermsCount);
 
 
-	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(randState);
+	// time measure
+	cudaEvent_t cudaStartTime, cudaStopTime;
+	cudaEventCreate(&cudaStartTime);
+	cudaEventCreate(&cudaStopTime);
+
+	//default stream (time)
+	cudaStream_t defStream;
+	cudaStreamCreate(&defStream);
+
+	cudaEventRecord(cudaStartTime, defStream); //start counting time
+	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
 	
+	cudaError_t cudaState;
+	cudaState = cudaDeviceSynchronize();
+
+	if (cudaState != cudaSuccess) {
+		fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+		cudaGetLastError();
+	}
+	else {
+		float hTimeValue = -1.0;
+		cudaEventRecord(cudaStopTime, defStream); //stop counting time
+		cudaEventSynchronize(cudaStopTime);
+		cudaEventElapsedTime(&hTimeValue, cudaStartTime, cudaStopTime);
+		printf("CUDA time: %f\n", hTimeValue / 1000.0f);
+		printf("Result: %d\n", cykData.getResultValue());
+		
+	}
+
 	//cuda memory
+	cudaStreamDestroy(defStream);
 	cudaFree(randState);
 
 	getchar();
