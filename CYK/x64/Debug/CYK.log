@@ -1,11 +1,77 @@
-﻿  Compiling CUDA source file main.cu...
+﻿  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\Cultural.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Cultural.cu" -clean 
+  Cultural.cu
   
-  C:\Users\Prc\documents\visual studio 2015\Projects\CYK\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\main.cu.obj "C:\Users\Prc\documents\visual studio 2015\Projects\CYK\CYK\main.cu" 
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\CYK.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\CYK.cu" -clean 
+  CYK.cu
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\functions.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\functions.cu" -clean 
+  functions.cu
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\kernel.cu" -clean 
+  kernel.cu
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\main.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\main.cu" -clean 
   main.cu
-C:/Users/Prc/documents/visual studio 2015/Projects/CYK/CYK/main.cu(43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  CYK.vcxproj -> C:\Users\Prc\documents\visual studio 2015\Projects\CYK\x64\Debug\CYK.exe
-  CYK.vcxproj -> C:\Users\Prc\documents\visual studio 2015\Projects\CYK\x64\Debug\CYK.pdb (Full PDB)
-  copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart*.dll" "C:\Users\Prc\documents\visual studio 2015\Projects\CYK\x64\Debug\"
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile   -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\Ogolne.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Ogolne.cu" -clean 
+  Ogolne.cu
+  Compiling CUDA source file Cultural.cu...
+  Compiling CUDA source file functions.cu...
+  Compiling CUDA source file kernel.cu...
+  Compiling CUDA source file CYK.cu...
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\Cultural.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Cultural.cu" 
+  
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\kernel.cu" 
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\functions.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\functions.cu" 
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\CYK.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\CYK.cu" 
+  kernel.cu
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(7): warning : variable "maxInt" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(105): warning : statement is unreachable
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(162): warning : missing return statement at end of non-void function "testRouteArray"
+  Compiling CUDA source file main.cu...
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\main.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\main.cu" 
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(25): warning : variable "name" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(213): warning : variable "d_instanceMatrix" was declared but never referenced
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(7): warning : variable "maxInt" was declared but never referenced
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(18): warning : function "cykAlgorithm<action>(curandState *) [with action=2]" cannot be instantiated -- no template definition was supplied
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(105): warning : statement is unreachable
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(162): warning : missing return statement at end of non-void function "testRouteArray"
+  functions.cu
+  Cultural.cu
+  CYK.cu
+c:\users\prc\desktop\cyk\sykos\cyk\functions.cu(162): warning C4715: 'testRouteArray': not all control paths return a value
+  Compiling CUDA source file Ogolne.cu...
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -o x64\Debug\Ogolne.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Ogolne.cu" 
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(25): warning : variable "name" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(213): warning : variable "d_instanceMatrix" was declared but never referenced
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(18): warning : function "cykAlgorithm<action>(curandState *) [with action=2]" cannot be instantiated -- no template definition was supplied
+  main.cu
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(53): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(207): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(213): warning C4101: 'd_instanceMatrix': unreferenced local variable
+  Ogolne.cu
+  Utility.cpp
+  Ogolne.cpp
+c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(56): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(99): warning C4473: 'sscanf_s' : not enough arguments passed for format string
+  c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(99): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+  c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(99): note: the missing variadic argument 2 is required by format string '%s'
+  c:\users\prc\desktop\cyk\sykos\cyk\ogolne.cpp(99): note: this argument is used as a buffer size
+  Generating Code...
+  CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.exe
+  CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.pdb (Full PDB)
+  copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart*.dll" "C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\"
   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart32_91.dll
   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart64_91.dll
           2 file(s) copied.

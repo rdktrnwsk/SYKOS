@@ -85,15 +85,29 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CudaCompile Include="Cultural.cu" />
+    <CudaCompile Include="CYK.cu" />
+    <CudaCompile Include="functions.cu" />
     <CudaCompile Include="kernel.cu" />
     <CudaCompile Include="main.cu" />
+    <CudaCompile Include="Ogolne.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="Cultural.cuh" />
+    <ClInclude Include="CYK.cuh" />
+    <ClInclude Include="functions.cuh" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Ogolne.cuh" />
+    <ClInclude Include="Ogolne.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Ogolne.cpp" />
     <ClCompile Include="Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

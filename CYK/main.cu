@@ -1,8 +1,17 @@
 #include "Utility.h"
+#include "Ogolne.cuh"
+#include "Ogolne.h"
+#include "functions.cuh"
+#include "Cultural.cuh"
+#include "CYK.cuh"
 
-int main()
+
+int main(int argc, char** argv)
 {
 	printf("working\n\n\n");
+
+	printf("Grammar: %s\n", argv[1]);
+	printf("Input: %s\n", argv[2]);
 
 	char* termsArray;
 	int termsCount;
@@ -15,7 +24,7 @@ int main()
 
 	char name[50] = "grammar.txt";
 
-	readGrammar(name, termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount);
+	readGrammar(argv[1], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount);
 
 	//for (int i = 0; i < terms; i++) {
 	//	for (int j = 0; j < rules; j++) {
@@ -39,7 +48,8 @@ int main()
 	// 1. First part
 
 	// create CYK array of input string length
-	string inputString = "abcabdcabe"; //example input string
+	//string inputString = "abcabdcabe"; //example input string
+	string inputString = argv[2];
 	int inputStringLength = inputString.length();
 	int** cykArray = new int*[inputStringLength];
 	for (int i = 0; i < inputStringLength; i++) {
@@ -139,10 +149,7 @@ int main()
 				//decode nonterminals (find out if bits are on a given positions)
 				int base = 1;
 				for (int l = 0; l < nonTermsCount; l++) {
-
 					int bitMaskFirst = base << l;
-
-
 					//all possibilities connected with rules
 					for (int m = 0; m < nonTermsCount; m++) {
 						int bitMaskSecond = base << m;
@@ -156,8 +163,6 @@ int main()
 								int shiftValue = rulesNonTermsArray[l][m];
 								int bitValue = base << shiftValue;
 
-								cout << rulesNonTermsArray[l][m] << endl;
-
 								cykArray[i][j] |= bitValue;
 							}
 
@@ -165,7 +170,7 @@ int main()
 
 
 					}
-					//	cout << endl;
+
 				}
 
 				//cout << first << " | " << second << endl;
@@ -182,27 +187,37 @@ int main()
 
 	}
 
-	for (int i = 0; i < nonTermsCount; i++) {
-
-		cout << nonTermsArray[i] << " | ";
-	}
-
-	cout << endl;
-
-	for (int j = 1; j < inputStringLength; j++){
-		for (int i = 0; i < inputStringLength  -j; i++) {
+	for (int j = 1; j < inputStringLength; j++) {
+		for (int i = 0; i < inputStringLength - j; i++) {
 
 			cout << cykArray[j][i] << " | ";
 		}
 		cout << endl;
 	}
+
+
+	/******************************************************************CUDA PART*********************************************************************/
+
+	// initial
+	int threadsNumber = 8;
+
+	//
+	curandState * randState;
+	cudaMalloc(&randState, threadsNumber * sizeof(curandState)); //warning! look size
+	randInit <<<1, threadsNumber >>> (randState, time(NULL)); //ustawienie ziaren
+
+	int instanceSize = 5;
+
+
+	CulturalData culturalData(instanceSize + 2, threadsNumber);
+	float** d_instanceMatrix;
+	//CYKData cykData(d_instanceMatrix);
+
+
+	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(randState);
 	
-
-
-
-	
-
-	
+	//cuda memory
+	cudaFree(randState);
 
 	getchar();
 	return 0;

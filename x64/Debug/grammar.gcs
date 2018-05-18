@@ -1,9 +1,10 @@
-﻿a
+﻿hehe
+a
 b
 c
 d
 e
-$
+S
 A
 B
 E
@@ -15,8 +16,8 @@ H
 I
 A->CD
 B->FA
-$->FB
-$->AE
+S->FB
+S->AE
 E->BE
 C->a
 D->b
