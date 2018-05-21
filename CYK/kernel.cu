@@ -176,7 +176,7 @@
 //		{
 //			cout << "String can be generated\n";
 //			getchar();
-//			return 0;
+//			
 //		}
 //	cout << "String cannot be generated\n";
 //	getchar();

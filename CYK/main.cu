@@ -1,9 +1,10 @@
-#include "Utility.h"
+﻿#include "Utility.h"
 #include "Ogolne.cuh"
 #include "Ogolne.h"
 #include "functions.cuh"
 #include "Cultural.cuh"
 #include "CYK.cuh"
+#include <cooperative_groups.h>
 
 
 int main(int argc, char** argv)
@@ -91,7 +92,7 @@ int main(int argc, char** argv)
 	}
 
 	// printing arrays and first row result
-	/*for (int i = 0; i < termsCount; i++) {
+	for (int i = 0; i < termsCount; i++) {
 
 		cout << termsArray[i] << " | ";
 	}
@@ -112,7 +113,7 @@ int main(int argc, char** argv)
 	for (int i = 0; i < inputStringLength; i++) {
 
 		cout << cykArray[0][i] << " | ";
-	}*/
+	}
 
 	// 2. Second part
 
@@ -138,7 +139,7 @@ int main(int argc, char** argv)
 
 	for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
-		for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+		for (int j = 0; j < inputStringLength - i; j++) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
 
 			for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
@@ -215,7 +216,7 @@ int main(int argc, char** argv)
 	createCuda2DArrayInt(h_rulesNonTermsArray, d_rulesNonTermsArray, rulesNonTermsArray, nonTermsCount, nonTermsCount);
 
 	// initial
-	int threadsNumber = 8;
+	int threadsNumber = nonTermsCount; //TODO zmieniaj to odpowiednio - teraz jest to liczba nieterminali
 
 	//
 	curandState * randState;
@@ -232,6 +233,7 @@ int main(int argc, char** argv)
 			cykArray[i][j] = 0;
 		}
 	}
+	
 	CYKData cykData(cykArray, inputStringLength, d_rulesNonTermsArray, nonTermsCount);
 
 
@@ -245,16 +247,39 @@ int main(int argc, char** argv)
 	cudaStreamCreate(&defStream);
 
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
-	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
+																			// TODO pamiętaj o wejściowej liczbie wątków
+	//cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
+
+	dim3 dimBlock(threadsNumber, threadsNumber, 1);
+	//cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+
+	/*void* params1[2];
+	params1[0] = (void*)&cykData;
+	params1[1] = (void*)&randState;*/
+
+	//cudaLaunchCooperativeKernel((void*)cykAlgorithmCooperative<0>, 1, dimBlock, params1, 0, culturalData.getStream());
+	//cudaStreamSynchronize(culturalData.getStream());
+
+	//TODO Linux
+	/*cudaError_t cudaState2;
+	cudaState2 = cudaLaunchCooperativeKernel((void*)cykTest, 1, dimBlock, 0, 0, culturalData.getStream());
 	
+	cout << cudaGetErrorString(cudaState2);*/
+
+	/*int* array_in = (int*)malloc(sizeof(int) * 10);
+	*h_result = 420;
+	cudaMalloc((void**)&result, sizeof(int));
+	cudaMemcpy(result, h_result, sizeof(int), cudaMemcpyHostToDevice);*/
+
+	cykAlgorithmCooperative<0> <<<inputStringLength, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+
 	cudaError_t cudaState;
 	cudaState = cudaDeviceSynchronize();
 
 	if (cudaState != cudaSuccess) {
 		fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
 		cudaGetLastError();
-	}
-	else {
+	} else {
 		float hTimeValue = -1.0;
 		cudaEventRecord(cudaStopTime, defStream); //stop counting time
 		cudaEventSynchronize(cudaStopTime);

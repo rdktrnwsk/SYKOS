@@ -90,6 +90,7 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 				
 				if (row.length() == 5) {
 					if (row[0] == nontermsArray[j]) {
+						cout << nontermsArray[j] << endl;
 						nontermIndex = j;
 					}
 					if (row[3] == nontermsArray[j]) {
