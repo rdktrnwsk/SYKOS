@@ -92,7 +92,7 @@ int main(int argc, char** argv)
 	}
 
 	// printing arrays and first row result
-	for (int i = 0; i < termsCount; i++) {
+	/*for (int i = 0; i < termsCount; i++) {
 
 		cout << termsArray[i] << " | ";
 	}
@@ -113,7 +113,7 @@ int main(int argc, char** argv)
 	for (int i = 0; i < inputStringLength; i++) {
 
 		cout << cykArray[0][i] << " | ";
-	}
+	}*/
 
 	// 2. Second part
 
@@ -135,6 +135,10 @@ int main(int argc, char** argv)
 	//	cout << inputNumber[i] << " | ";
 	//}
 	//cout << endl;
+
+	std::clock_t c_start = std::clock();
+	// your_algorithm
+	
 
 
 	for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
@@ -188,13 +192,18 @@ int main(int argc, char** argv)
 
 	}
 
-	for (int j = 1; j < inputStringLength; j++) {
+	std::clock_t c_end = std::clock();
+
+	double time_elapsed_ms = 1000.0 * (c_end - c_start) / CLOCKS_PER_SEC;
+	std::cout << "CPU time used: " << time_elapsed_ms / 1000.0 << " ms\n";
+
+	/*for (int j = 1; j < inputStringLength; j++) {
 		for (int i = 0; i < inputStringLength - j; i++) {
 
 			cout << cykArray[j][i] << " | ";
 		}
 		cout << endl;
-	}
+	}*/
 
 
 	/******************************************************************CUDA PART*********************************************************************/
@@ -248,10 +257,13 @@ int main(int argc, char** argv)
 
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
 																			// TODO pamiętaj o wejściowej liczbie wątków
-	//cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
+	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
 
 	dim3 dimBlock(threadsNumber, threadsNumber, 1);
 	//cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+	
+	dim3 dimBlock2(32, 32, 1);
+	//cykAlgorithm<5> <<<1, dimBlock2, 0, culturalData.getStream() >>>(cykData, randState);
 
 	/*void* params1[2];
 	params1[0] = (void*)&cykData;
@@ -266,12 +278,24 @@ int main(int argc, char** argv)
 	
 	cout << cudaGetErrorString(cudaState2);*/
 
-	/*int* array_in = (int*)malloc(sizeof(int) * 10);
-	*h_result = 420;
-	cudaMalloc((void**)&result, sizeof(int));
-	cudaMemcpy(result, h_result, sizeof(int), cudaMemcpyHostToDevice);*/
+	
 
-	cykAlgorithmCooperative<0> <<<inputStringLength, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+	int blockNumber = 16;
+	int* h_array_in = (int*)malloc(sizeof(int) * blockNumber);
+	for (int i = 0; i < blockNumber; i++) { h_array_in[i] = 0; }
+	int* array_in;
+	cudaMalloc((void**)&array_in, sizeof(int) * blockNumber);
+	cudaMemcpy(array_in, h_array_in, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
+
+	int* h_array_out = (int*)malloc(sizeof(int) * blockNumber);
+	for (int i = 0; i < blockNumber; i++) { h_array_out[i] = 0; }
+	int* array_out;
+	cudaMalloc((void**)&array_out, sizeof(int) * blockNumber);
+	cudaMemcpy(array_out, h_array_out, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
+
+	//cykAlgorithmCooperative<0> <<<32, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	//cykAlgorithmCooperative<1> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
 
 	cudaError_t cudaState;
 	cudaState = cudaDeviceSynchronize();
@@ -292,6 +316,10 @@ int main(int argc, char** argv)
 	//cuda memory
 	cudaStreamDestroy(defStream);
 	cudaFree(randState);
+	cudaFree(array_out);
+	cudaFree(array_in);
+	free(h_array_in);
+	free(h_array_out);
 
 	getchar();
 	return 0;

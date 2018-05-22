@@ -20,14 +20,23 @@ __global__ void cykAlgorithm<2>(DeviceCYKData data, curandState* randGlobal);
 template
 __global__ void cykAlgorithm<3>(DeviceCYKData data, curandState* randGlobal);
 
+template
+__global__ void cykAlgorithm<4>(DeviceCYKData data, curandState* randGlobal);
+
+template
+__global__ void cykAlgorithm<5>(DeviceCYKData data, curandState* randGlobal);
+
 //__global__ void cykAlgorithm(DeviceCYKData data, DeviceCultural cultural, curandState* randGlobal, int* solution, int** cykArray);
 
 
 template<int action>
-__global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState* randGlobal);
+__global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
 template
-__global__ void cykAlgorithmCooperative<0>(DeviceCYKData data, curandState* randGlobal);
+__global__ void cykAlgorithmCooperative<0>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
+
+template
+__global__ void cykAlgorithmCooperative<1>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
 
 #endif

@@ -12,6 +12,7 @@
 #include <iostream>
 #include <time.h>
 #include <assert.h>
+#include <ctime>
 using namespace std;
 
 #endif
