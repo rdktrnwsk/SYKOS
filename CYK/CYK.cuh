@@ -38,5 +38,10 @@ __global__ void cykAlgorithmCooperative<0>(DeviceCYKData data, curandState* rand
 template
 __global__ void cykAlgorithmCooperative<1>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
+template
+__global__ void cykAlgorithmCooperative<2>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
+
+template
+__global__ void cykAlgorithmCooperative<3>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
 #endif

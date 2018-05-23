@@ -257,7 +257,7 @@ int main(int argc, char** argv)
 
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
 																			// TODO pamiętaj o wejściowej liczbie wątków
-	cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
+	//cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
 
 	dim3 dimBlock(threadsNumber, threadsNumber, 1);
 	//cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
@@ -293,9 +293,14 @@ int main(int argc, char** argv)
 	cudaMalloc((void**)&array_out, sizeof(int) * blockNumber);
 	cudaMemcpy(array_out, h_array_out, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
 
-	//cykAlgorithmCooperative<0> <<<32, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+	dim3 dimBlock3(threadsNumber, threadsNumber, 1);
 
-	//cykAlgorithmCooperative<1> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+	//cykAlgorithmCooperative<0> <<<32, dimBlock3, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	//cykAlgorithmCooperative<1> <<<blockNumber, dimBlock3, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	dim3 dimBlock4(threadsNumber, 16, 1);
+	cykAlgorithmCooperative<3> <<<blockNumber, dimBlock4, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
 
 	cudaError_t cudaState;
 	cudaState = cudaDeviceSynchronize();

@@ -594,6 +594,200 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 		// only thread 0 is used for synchronization
 
 
+	} else if (action == 2) { //////////////////////////////////////////////////////////////// entry = block, block used are decremented, threads 2D + FAST BARIER SYNCHRONISATION
+
+		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+
+			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														  //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				//iter = 2.0f;
+
+				for (int r = 0; r < (int)iter; r++) {
+
+					int temp_bidx = bidx + (r * gridDim.x);
+
+					if (temp_bidx < inputStringLength - i) {
+						int j = temp_bidx;
+
+						int idz = threadIdx.z;
+
+						float iter2 = ceilf((float)(i) / (float)blockDim.z);
+
+						for (int s = 0; s < (int)iter2; s++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+							int temp_idz = idz + (s * blockDim.z);
+
+							if (temp_idz < i) {
+
+								int k = temp_idz;
+
+													  //TODO correct split points!
+							int first = cykArray[k][j];
+							int second = cykArray[i - k - 1][j + k + 1];
+
+							//decode nonterminals (find out if bits are on a given positions)
+							int base = 1;
+							//for (int l = 0; l < nonTermsCount; l++) {
+							int l = idx;
+							int bitMaskFirst = base << l;
+							//all possibilities connected with rules
+
+							//for (int m = 0; m < nonTermsCount; m++) {
+
+							int m = idy;
+
+							int bitMaskSecond = base << m;
+
+							// if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+							if (first & bitMaskFirst && second & bitMaskSecond) {
+								//cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+
+								//rule exists
+								if (rulesNonTermsArray[l][m] != -1) {
+									int shiftValue = rulesNonTermsArray[l][m];
+									int bitValue = base << shiftValue;
+
+									//TODO - tutaj może być problem
+									atomicOr(&cykArray[i][j], bitValue);
+
+									//cykArray[i][j] |= bitValue;
+								}
+
+							}
+
+
+							// }
+
+							//} // l loop end
+
+							//cout << first << " | " << second << endl;
+
+							//combinations of productions
+
+							// for each production (rulesNonTerminals)
+
+						} //end s loop
+					}
+
+					}
+				}
+
+				//break; //only first line
+				if (idx == 0 && idy == 0) {
+					//printf("%d | ", g_mutex);
+					atomicAdd((int *)&g_mutex, 1);
+					//only when all blocks add 1 to g_mutex
+					//will g_mutex equal to goalVal
+					while (g_mutex != (gridDim.x * i)) {
+						//Do nothing here
+					}
+
+				}
+				__syncthreads();
+
+			}
+		}
+
+	 } else if (action == 3) { //////////////////////////////////////////////////////////////// entry = block, block used are decremented, threads 2D + FAST BARIER SYNCHRONISATION
+
+		if (threadIdx.x <= nonTermsCount) {
+
+			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														  //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				//iter = 2.0f;
+
+				for (int r = 0; r < (int)iter; r++) {
+
+					int temp_bidx = bidx + (r * gridDim.x);
+
+					if (temp_bidx < inputStringLength - i) {
+						int j = temp_bidx;
+
+						int idy = threadIdx.y;
+
+						float iter2 = ceilf((float)(i) / (float)blockDim.y);
+
+						for (int s = 0; s < (int)iter2; s++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+							int temp_idy = idy + (s * blockDim.y);
+
+							if (temp_idy < i) {
+
+								int k = temp_idy;
+
+								//TODO correct split points!
+								int first = cykArray[k][j];
+								int second = cykArray[i - k - 1][j + k + 1];
+
+								//decode nonterminals (find out if bits are on a given positions)
+								int base = 1;
+								//for (int l = 0; l < nonTermsCount; l++) {
+								int l = idx;
+								int bitMaskFirst = base << l;
+								//all possibilities connected with rules
+
+								for (int m = 0; m < nonTermsCount; m++) {
+									int bitMaskSecond = base << m;
+
+									// if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+									if (first & bitMaskFirst && second & bitMaskSecond) {
+										//cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+
+										//rule exists
+										if (rulesNonTermsArray[l][m] != -1) {
+											int shiftValue = rulesNonTermsArray[l][m];
+											int bitValue = base << shiftValue;
+
+											//TODO - tutaj może być problem
+											atomicOr(&cykArray[i][j], bitValue);
+
+											//cykArray[i][j] |= bitValue;
+										}
+
+									}
+
+
+								}
+
+
+								// }
+
+								//} // l loop end
+
+								//cout << first << " | " << second << endl;
+
+								//combinations of productions
+
+								// for each production (rulesNonTerminals)
+
+							} //end s loop
+						}
+
+					}
+				}
+
+				//break; //only first line
+				if (idx == 0 && idy == 0) {
+					//printf("%d | ", g_mutex);
+					atomicAdd((int *)&g_mutex, 1);
+					//only when all blocks add 1 to g_mutex
+					//will g_mutex equal to goalVal
+					while (g_mutex != (gridDim.x * i)) {
+						//Do nothing here
+					}
+
+				}
+				__syncthreads();
+
+			}
+		}
+
 	}
 
 	
