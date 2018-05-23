@@ -788,37 +788,333 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 			}
 		}
 
-	}
+	} else if (action == 4) { //////////////////////////////////////////////////////////////// Cyk Algorithm REVERSED LOOPS
+
+		 if (threadIdx.x <= nonTermsCount) {
+
+			 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														   //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				 float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				 //iter = 2.0f;
+
+				 for (int r = 0; r < (int)iter; r++) {
+
+					 int temp_bidx = bidx + (r * gridDim.x);
+
+					 if (temp_bidx < inputStringLength - i) {
+						 int j = temp_bidx;
+
+						 int idy = threadIdx.y;
+
+						 float iter2 = ceilf((float)(i) / (float)blockDim.y);
+
+						 for (int s = 0; s < (int)iter2; s++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+							 int temp_idy = idy + (s * blockDim.y);
+
+							 if (temp_idy < i) {
+
+								 int k = temp_idy;
+
+								 //TODO correct split points!
+								 int first = cykArray[k][j];
+								 int second = cykArray[i - k - 1][j + k + 1];
+
+								 //decode nonterminals (find out if bits are on a given positions)
+								 int base = 1;
+								 //for (int l = 0; l < nonTermsCount; l++) {
+								 int l = idx;
+								 int bitMaskFirst = base << l;
+								 //all possibilities connected with rules
+
+								 for (int m = 0; m < nonTermsCount; m++) {
+									 int bitMaskSecond = base << m;
+
+									 // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+									 if (first & bitMaskFirst && second & bitMaskSecond) {
+										 //cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+
+										 //rule exists
+										 if (rulesNonTermsArray[l][m] != -1) {
+											 int shiftValue = rulesNonTermsArray[l][m];
+											 int bitValue = base << shiftValue;
+
+											 //TODO - tutaj może być problem
+											 atomicOr(&cykArray[i][j], bitValue);
+
+											 //cykArray[i][j] |= bitValue;
+										 }
+
+									 }
+
+
+								 }
+
+
+								 // }
+
+								 //} // l loop end
+
+								 //cout << first << " | " << second << endl;
+
+								 //combinations of productions
+
+								 // for each production (rulesNonTerminals)
+
+							 } //end s loop
+						 }
+
+					 }
+				 }
+
+				 //break; //only first line
+				 if (idx == 0 && idy == 0) {
+					 //printf("%d | ", g_mutex);
+					 atomicAdd((int *)&g_mutex, 1);
+					 //only when all blocks add 1 to g_mutex
+					 //will g_mutex equal to goalVal
+					 while (g_mutex != (gridDim.x * i)) {
+						 //Do nothing here
+					 }
+
+				 }
+				 __syncthreads();
+
+			 }
+		 }
+
+	 }
 
 	
 
 
 	__syncthreads();
 
-	//if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
-	//	
-	//	for (int i = 0; i < nonTermsCount; i++) {
-	//		for (int j = 0; j < nonTermsCount; j++) {
-	//			//cout << rulesNonTermsArray[i][j] << " | ";
+	if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
+		
+		for (int i = 0; i < nonTermsCount; i++) {
+			for (int j = 0; j < nonTermsCount; j++) {
+				//cout << rulesNonTermsArray[i][j] << " | ";
 
-	//			printf("%d | ", rulesNonTermsArray[i][j]);
-	//		}
-	//		//cout << endl;
+				printf("%d | ", rulesNonTermsArray[i][j]);
+			}
+			//cout << endl;
 
-	//		printf("\n");
-	//	}
+			printf("\n");
+		}
 
-	//	for (int j = 1; j < inputStringLength; j++) {
-	//		for (int i = 0; i < inputStringLength - j; i++) {
-	//			printf("%d | ", cykArray[j][i]);
-	//		}
-	//		printf("\n");
-	//	}
+		for (int j = 1; j < inputStringLength; j++) {
+			for (int i = 0; i < inputStringLength - j; i++) {
+				printf("%d | ", cykArray[j][i]);
+			}
+			printf("\n");
+		}
 
-	//	int* result = data.getResult();
-	//	printf("RESUUUULt: %d | ", result[0]);
-	//	result[0] = 1337;
-	//}
+		int* result = data.getResult();
+		printf("RESUUUULt: %d | ", result[0]);
+		result[0] = 1337;
+	}
+
+	__syncthreads();
+
+	return;
+}
+
+
+
+template<int action>
+__global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, volatile int * arrayIn, volatile int * arrayOut, int** rulesArray, int rulesCount)
+{
+	__shared__ int** cykArray;
+	__shared__ int inputStringLength;
+	__shared__ int** rulesNonTermsArray;
+	__shared__ int nonTermsCount;
+
+	int bidx = blockIdx.x;
+	int idx = threadIdx.x;
+	int idy = threadIdx.y;
+
+	if (threadIdx.x == 0 && threadIdx.y == 0) {
+		g_mutex = 0;
+		cykArray = data.getCYKArray();
+		inputStringLength = data.getInputCount();
+		rulesNonTermsArray = data.getRulesNonTermsArray();
+		nonTermsCount = data.getNonTermsCount();
+		//printf("Dim %d\n", gridDim.x);
+	}
+
+
+	__syncthreads();
+
+	if (action == 0) { //////////////////////////////////////////////////////////////// only threads
+
+		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+
+			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														  //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				//iter = 2.0f;
+
+				for (int r = 0; r < (int)iter; r++) {
+
+					int temp_bidx = bidx + (r * gridDim.x);
+
+					if (temp_bidx < inputStringLength - i) {
+						int j = temp_bidx; //J
+
+						//for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
+						if (idx < rulesCount) {
+
+							int p = idx;
+
+							for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+														  //TODO correct split points!
+								int first = cykArray[k][j];
+								int second = cykArray[i - k - 1][j + k + 1];
+
+								//decode nonterminals (find out if bits are on a given positions)
+								int base = 1;
+								int bitMaskFirst = base << rulesArray[0][p];
+								int bitMaskSecond = base << rulesArray[1][p];
+								if (first & bitMaskFirst && second & bitMaskSecond) {
+
+									int shiftValue = rulesArray[2][p];
+									int bitValue = base << shiftValue;
+									//TODO - tutaj może być problem
+									atomicOr(&cykArray[i][j], bitValue);
+								}
+
+							}
+						}
+
+					}
+				}
+
+				//break; //only first line
+				if (idx == 0 && idy == 0) {
+					//printf("%d | ", g_mutex);
+					atomicAdd((int *)&g_mutex, 1);
+					//only when all blocks add 1 to g_mutex
+					//will g_mutex equal to goalVal
+					while (g_mutex != (gridDim.x * i)) {
+						//Do nothing here
+					}
+
+				}
+				__syncthreads();
+
+			}
+		}
+
+		// only thread 0 is used for synchronization
+
+
+	} else if (action == 1) { //////////////////////////////////////////////////////////////// blocks + threads
+
+		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+
+			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														  //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				//iter = 2.0f;
+
+				for (int r = 0; r < (int)iter; r++) {
+
+					int temp_bidx = bidx + (r * gridDim.x);
+
+					if (temp_bidx < inputStringLength - i) {
+						int j = temp_bidx; //J
+
+										   //for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
+						if (idx < rulesCount) {
+
+							int p = idx;
+
+							for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+														  //TODO correct split points!
+								int first = cykArray[k][j];
+								int second = cykArray[i - k - 1][j + k + 1];
+
+								//decode nonterminals (find out if bits are on a given positions)
+								int base = 1;
+								int bitMaskFirst = base << rulesArray[0][p];
+								int bitMaskSecond = base << rulesArray[1][p];
+								if (first & bitMaskFirst && second & bitMaskSecond) {
+
+									int shiftValue = rulesArray[2][p];
+									int bitValue = base << shiftValue;
+									//TODO - tutaj może być problem
+									atomicOr(&cykArray[i][j], bitValue);
+								}
+
+							}
+						}
+
+					}
+				}
+
+				//break; //only first line
+				if (idx == 0 && idy == 0) {
+					//printf("%d | ", g_mutex);
+					atomicAdd((int *)&g_mutex, 1);
+					//only when all blocks add 1 to g_mutex
+					//will g_mutex equal to goalVal
+					while (g_mutex != (gridDim.x * i)) {
+						//Do nothing here
+					}
+
+				}
+				__syncthreads();
+
+			}
+		}
+
+		// only thread 0 is used for synchronization
+
+
+	}
+
+	__syncthreads();
+
+	if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
+
+		for (int i = 0; i < nonTermsCount; i++) {
+			for (int j = 0; j < nonTermsCount; j++) {
+				//cout << rulesNonTermsArray[i][j] << " | ";
+
+				printf("%d | ", rulesNonTermsArray[i][j]);
+			}
+			//cout << endl;
+
+			printf("\n");
+		}
+
+		for (int j = 1; j < inputStringLength; j++) {
+			for (int i = 0; i < inputStringLength - j; i++) {
+				printf("%d | ", cykArray[j][i]);
+			}
+			printf("\n");
+		}
+
+		int* result = data.getResult();
+		printf("RESUUUULt: %d | ", result[0]);
+		result[0] = 1337;
+
+		/*for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < rulesCount; j++) {
+				printf("%d | ", rulesArray[i][j]);
+			}
+			printf("\n");
+		}*/
+	}
 
 	__syncthreads();
 

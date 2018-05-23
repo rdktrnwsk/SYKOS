@@ -22,20 +22,24 @@ int main(int argc, char** argv)
 	int rulesTermsCount;
 	int** rulesNonTermsArray;
 	int rulesNonTermsCount;
+	int** onlyRulesArray = NULL;
+	int onlyRulesCount;
 
 	char name[50] = "grammar.txt";
 
-	readGrammar(argv[1], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount);
+	readGrammar(argv[1], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 
-	//for (int i = 0; i < terms; i++) {
-	//	for (int j = 0; j < rules; j++) {
+	//for (int i = 0; i < 3; i++) {
+	//	for (int j = 0; j < nonTermsCount; j++) {
 
-	//		//cout << rulesArray[i][j] << " | ";
+	//		cout << onlyRulesArray[i][j] << " | ";
 
 	//	}
-	//	cout << rulesTerms[i] << " | ";
-	//	//cout << endl;
+	//	//cout << rulesTerms[i] << " | ";
+	//	cout << endl;
 	//}
+
+	//getchar();
 
 	for (int i = 0; i < nonTermsCount; i++) {
 		for (int j = 0; j < nonTermsCount; j++) {
@@ -299,8 +303,92 @@ int main(int argc, char** argv)
 
 	//cykAlgorithmCooperative<1> <<<blockNumber, dimBlock3, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
 
-	dim3 dimBlock4(threadsNumber, 16, 1);
-	cykAlgorithmCooperative<3> <<<blockNumber, dimBlock4, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+	//dim3 dimBlock4(threadsNumber, 16, 1);
+	//cykAlgorithmCooperative<3> <<<blockNumber, dimBlock4, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	
+
+	// Reversed Loop CYK part
+
+	// create new rules array
+	
+	//createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
+
+	
+
+	//only rules with threads
+	int** h_onlyRulesArray;
+	int** d_onlyRulesArray;
+	createCuda2DArrayInt(h_onlyRulesArray, d_onlyRulesArray, onlyRulesArray, 3, onlyRulesCount);
+	blockNumber = 1;
+	//dim3 dimBlock5(onlyRulesCount, 1, 1);
+	//cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
+
+
+	//only rules blocks + threads
+	int* nonTermsWithRules = new int[nonTermsCount];
+	for (int i = 0; i < nonTermsCount; i++) {
+		nonTermsWithRules[i] = 0;
+	}
+	for (int i = 0; i < onlyRulesCount; i++) {
+		nonTermsWithRules[onlyRulesArray[2][i]]++;
+	}
+	// to create array (row) of proper size
+	int nonTermsWithRulesCount = 0;
+	for (int i = 0; i < nonTermsCount; i++) {
+		if (nonTermsWithRules[i] > 0) {
+			nonTermsWithRulesCount++;
+		}
+	}
+	
+	int** onlyRulesArraySplitted = new int*[nonTermsWithRulesCount];
+	int* nonTermsToRules = new int[nonTermsCount]; // to project indexes
+	int projectionNumber = 0;
+	for (int i = 0; i < nonTermsCount; i++) {
+		// create rows of given length (2 + 2 * productions)
+		if (nonTermsWithRules[i] > 0) {
+			
+			onlyRulesArraySplitted[projectionNumber] = new int[(nonTermsWithRules[i] * 2) + 2]; // additional 2 positions, first for the left nonterminal, second for row length
+																				 // initial setup
+			onlyRulesArraySplitted[projectionNumber][1] = 0;
+			onlyRulesArraySplitted[projectionNumber][0] = -1; //initial value - empty row
+
+			nonTermsToRules[i] = projectionNumber;
+			projectionNumber++;
+		} else {
+			nonTermsToRules[i] = -1;
+		}
+		
+	}
+
+
+	for (int i = 0; i < onlyRulesCount; i++) {
+
+		int leftSymbol = onlyRulesArray[2][i]; //left symbol numeric value
+		int leftSymbolPr = nonTermsToRules[leftSymbol]; // left symbol projection to new array row
+		int offset = onlyRulesArraySplitted[leftSymbolPr][1]++; //get current productions number and increment it!
+
+		onlyRulesArraySplitted[leftSymbolPr][2 + (offset * 2)] = onlyRulesArray[0][i];
+		onlyRulesArraySplitted[leftSymbolPr][3 + (offset * 2)] = onlyRulesArray[1][i];
+		onlyRulesArraySplitted[leftSymbolPr][0] = leftSymbol;
+	}
+
+	for (int i = 0; i < nonTermsWithRulesCount; i++) { //rows
+
+		for (int j = 0; j < onlyRulesArraySplitted[i][1] * 2 + 2; j+=2) {
+			cout << onlyRulesArraySplitted[i][j] << " - " << onlyRulesArraySplitted[i][j + 1] << " | ";
+		}
+		cout << endl;
+
+	}
+	
+
+	getchar();
+
+	blockNumber = 1;
+	dim3 dimBlock5(onlyRulesCount, 1, 1);
+	cykAlgorithmRules<1> << <blockNumber, dimBlock5, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
+
 
 	cudaError_t cudaState;
 	cudaState = cudaDeviceSynchronize();
@@ -325,6 +413,14 @@ int main(int argc, char** argv)
 	cudaFree(array_in);
 	free(h_array_in);
 	free(h_array_out);
+	/*for (int i = 0; i < blockNumber; i++) {
+		free(onlyRulesArray[i]);
+		free(h_onlyRulesArray[i]);
+		cudaFree(d_onlyRulesArray[i]);
+	}
+	cudaFree(d_onlyRulesArray);
+	free(onlyRulesArray);
+	free(h_onlyRulesArray);*/
 
 	getchar();
 	return 0;

@@ -44,4 +44,20 @@ __global__ void cykAlgorithmCooperative<2>(DeviceCYKData data, curandState* rand
 template
 __global__ void cykAlgorithmCooperative<3>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
+//template
+//__global__ void cykAlgorithmCooperative<4>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
+
+
+template<int action>
+__global__ void cykAlgorithmRules(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
+
+
+template
+__global__ void cykAlgorithmRules<0>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
+
+
+template
+__global__ void cykAlgorithmRules<1>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
+
+
 #endif

@@ -1,6 +1,6 @@
 #include "Utility.h"
 
-int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nontermsArray, int& nonterms, int*& rulesArrayTerms, int& rulesTerms, int**& rulesArray, int& rulesNonterms)
+int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nontermsArray, int& nonterms, int*& rulesArrayTerms, int& rulesTerms, int**& rulesArray, int& rulesNonterms, int**& onlyRulesArray, int& onlyRulesCount)
 {
 	fstream file;
 	file.open(fileName, ios::in);
@@ -34,6 +34,8 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 				nonterms++;
 			}
 		}
+
+		onlyRulesCount = rulesNonterms;
 
 		/*cout << rules << endl;
 		cout << terms << endl;
@@ -80,8 +82,18 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 			}
 		}
 
+
+		//create new array containing only rules
+		onlyRulesArray = new int*[3];
+		for (int i = 0; i < 3; i++) {
+			onlyRulesArray[i] = new int[rulesNonterms];
+		}
+
+
+
 		rulesArrayTerms = new int[terms];
 		// tmp solution based on only correct data (single characters)
+		int onlyRulesIndex = 0;
 		for (int i = 0; i < rulesTerms + rulesNonterms; i++) {
 			getline(file, row);
 			
@@ -115,6 +127,11 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 				cout << rowIndex << endl;
 				cout << columnIndex << endl;*/
 				rulesArray[rowIndex][columnIndex] = nontermIndex;
+
+				onlyRulesArray[0][onlyRulesIndex] = rowIndex;
+				onlyRulesArray[1][onlyRulesIndex] = columnIndex;
+				onlyRulesArray[2][onlyRulesIndex] = nontermIndex;
+				onlyRulesIndex++;
 			}
 			else if (row.length() == 4) {
 
