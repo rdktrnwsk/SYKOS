@@ -1016,7 +1016,15 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 	} else if (action == 1) { //////////////////////////////////////////////////////////////// blocks + threads
 
-		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+
+		int numberOfProductions = rulesArray[blockIdx.y][1];
+
+
+		if (true) {
+
+			if (idx == 0 && idy == 0) {
+				printf("%d\n", rulesArray[blockIdx.y][1]);
+			}
 
 			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
@@ -1033,7 +1041,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 						int j = temp_bidx; //J
 
 										   //for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
-						if (idx < rulesCount) {
+						if (idx < numberOfProductions) {
 
 							int p = idx;
 
@@ -1045,11 +1053,11 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 								//decode nonterminals (find out if bits are on a given positions)
 								int base = 1;
-								int bitMaskFirst = base << rulesArray[0][p];
-								int bitMaskSecond = base << rulesArray[1][p];
+								int bitMaskFirst = base << rulesArray[blockIdx.y][(p + 1) * 2];
+								int bitMaskSecond = base << rulesArray[blockIdx.y][(p + 1) * 2 + 1];
 								if (first & bitMaskFirst && second & bitMaskSecond) {
 
-									int shiftValue = rulesArray[2][p];
+									int shiftValue = rulesArray[blockIdx.y][0];
 									int bitValue = base << shiftValue;
 									//TODO - tutaj może być problem
 									atomicOr(&cykArray[i][j], bitValue);
@@ -1067,7 +1075,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 					atomicAdd((int *)&g_mutex, 1);
 					//only when all blocks add 1 to g_mutex
 					//will g_mutex equal to goalVal
-					while (g_mutex != (gridDim.x * i)) {
+					while (g_mutex != (gridDim.y * i)) {
 						//Do nothing here
 					}
 
@@ -1084,7 +1092,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 	__syncthreads();
 
-	if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
+	if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0) {
 
 		for (int i = 0; i < nonTermsCount; i++) {
 			for (int j = 0; j < nonTermsCount; j++) {

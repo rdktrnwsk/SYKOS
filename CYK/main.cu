@@ -373,21 +373,34 @@ int main(int argc, char** argv)
 		onlyRulesArraySplitted[leftSymbolPr][0] = leftSymbol;
 	}
 
-	for (int i = 0; i < nonTermsWithRulesCount; i++) { //rows
+	//for (int i = 0; i < nonTermsWithRulesCount; i++) { //rows
 
-		for (int j = 0; j < onlyRulesArraySplitted[i][1] * 2 + 2; j+=2) {
-			cout << onlyRulesArraySplitted[i][j] << " - " << onlyRulesArraySplitted[i][j + 1] << " | ";
-		}
-		cout << endl;
+	//	for (int j = 0; j < onlyRulesArraySplitted[i][1] * 2 + 2; j+=2) {
+	//		cout << onlyRulesArraySplitted[i][j] << " - " << onlyRulesArraySplitted[i][j + 1] << " | ";
+	//	}
+	//	cout << endl;
 
+	//}
+
+	//create device array copy
+	int** hostPtr = (int**)malloc((nonTermsWithRulesCount) * sizeof(int*));
+
+	for (int i = 0; i < nonTermsWithRulesCount; i++) {
+		int columns = (onlyRulesArraySplitted[i][1] * 2 + 2);
+		cudaMalloc((void**)&hostPtr[i], columns * sizeof(int));
+			cudaMemcpy(hostPtr[i], &onlyRulesArraySplitted[i][0], columns * sizeof(int), cudaMemcpyHostToDevice);
 	}
+	int** devicePtr;
+	cudaMalloc((void ***)&devicePtr, nonTermsWithRulesCount * sizeof(int*));
+	cudaMemcpy(devicePtr, hostPtr, nonTermsWithRulesCount * sizeof(int*), cudaMemcpyHostToDevice);
 	
 
-	getchar();
+	//getchar();
 
-	blockNumber = 1;
-	dim3 dimBlock5(onlyRulesCount, 1, 1);
-	cykAlgorithmRules<1> << <blockNumber, dimBlock5, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
+	blockNumber = nonTermsWithRulesCount;
+	dim3 dimBlock6(16, 1, 1); //TODO change number of threads
+	dim3 dimBl(1, nonTermsWithRulesCount, 1);
+	cykAlgorithmRules<1> << <dimBl, dimBlock6, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
 
 
 	cudaError_t cudaState;
