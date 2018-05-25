@@ -314,16 +314,31 @@ int main(int argc, char** argv)
 	
 	//createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
 
-	
 
 	//only rules with threads
 	int** h_onlyRulesArray;
 	int** d_onlyRulesArray;
 	createCuda2DArrayInt(h_onlyRulesArray, d_onlyRulesArray, onlyRulesArray, 3, onlyRulesCount);
-	blockNumber = 1;
-	//dim3 dimBlock5(onlyRulesCount, 1, 1);
+	blockNumber = 16;
+	dim3 dimBlock5(onlyRulesCount, 1, 1);
 	//cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
 
+	//with local synchronisation
+	for (int i = 1; i < inputStringLength; i++) {
+
+		cykAlgorithmRules<2> <<<inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, i);
+		//cudaDeviceSynchronize();
+		cudaError_t cudaState;
+		if (i < inputStringLength - 1) {
+			cudaState = cudaDeviceSynchronize();
+
+			if (cudaState != cudaSuccess) {
+				fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+				cudaGetLastError();
+			}
+		}
+		
+	}
 
 	//only rules blocks + threads
 	int* nonTermsWithRules = new int[nonTermsCount];
@@ -399,8 +414,8 @@ int main(int argc, char** argv)
 
 	blockNumber = nonTermsWithRulesCount;
 	dim3 dimBlock6(16, 1, 1); //TODO change number of threads
-	dim3 dimBl(1, nonTermsWithRulesCount, 1);
-	cykAlgorithmRules<1> << <dimBl, dimBlock6, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
+	dim3 dimBl(2, nonTermsWithRulesCount, 1);
+	//cykAlgorithmRules<1> << <dimBl, dimBlock6, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
 
 
 	cudaError_t cudaState;

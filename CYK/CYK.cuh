@@ -59,5 +59,8 @@ __global__ void cykAlgorithmRules<0>(DeviceCYKData data, curandState* randGlobal
 template
 __global__ void cykAlgorithmRules<1>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
 
+template
+__global__ void cykAlgorithmRules<2>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
+
 
 #endif
