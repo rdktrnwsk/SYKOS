@@ -51,14 +51,14 @@ template<int action>
 __global__ void cykAlgorithmRules(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
 
 
-template
+template // parallel j (block) - every rule = thread
 __global__ void cykAlgorithmRules<0>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
 
 
-template
+template // parallel j (block) - every rule = thread | i loop on host side (host synchronization)
 __global__ void cykAlgorithmRules<1>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
 
-template
+template // parallel j (block) - every rule = thread | i loop on host side (host synchronization)
 __global__ void cykAlgorithmRules<2>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount);
 
 

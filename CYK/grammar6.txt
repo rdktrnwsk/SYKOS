@@ -10,7 +10,7 @@ h
 i
 j
 k
-W
+$
 C
 D
 E
@@ -31,15 +31,15 @@ Q
 R
 S
 T
-W->AC
+$->AC
 C->DE
 D->BG
-W->GG
+$->GG
 G->CH
 E->MN
 F->EE
 I->EG
-W->GO
+$->GO
 A->d
 B->e
 H->f
@@ -55,5 +55,5 @@ C->JR
 R->FH
 C->KS
 S->IL
-W->PT
+$->PT
 T->CQ

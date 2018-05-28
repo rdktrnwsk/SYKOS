@@ -6,7 +6,7 @@ d
 e
 f
 g
-S
+$
 A
 B
 D
@@ -28,10 +28,10 @@ D->GA
 H->AD
 A->CD
 A->DK
-S->BH
-S->HF
+$->BH
+$->HF
 B->DH
-E->SJ
+E->$J
 E->EB
 E->AA
 C->a
@@ -43,7 +43,7 @@ K->g
 L->d
 A->IM
 M->AJ
-S->IN
+$->IN
 N->DC
 H->LO
 O->EF

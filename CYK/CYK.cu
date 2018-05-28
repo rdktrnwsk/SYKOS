@@ -430,21 +430,26 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 
 	if (action == 0) { //////////////////////////////////////////////////////////////// entry = block, block used are decremented, threads 2D
 
-		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+		if (threadIdx.x < nonTermsCount && threadIdx.y < nonTermsCount ) {
 		
 			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
-
+				
 				//for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
 
 				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
 				//iter = 2.0f;
+				//if (iter < 1.0f) iter = 1.0f;
+				
 
 				for (int r = 0; r < (int)iter ; r++) {
 
 					int temp_bidx = bidx + (r * gridDim.x);
 
+					
 					if (temp_bidx < inputStringLength - i) {
 						int j = temp_bidx;
+
+						
 
 						for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
@@ -481,17 +486,6 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 								}
 
 							}
-
-
-							// }
-
-							//} // l loop end
-
-							//cout << first << " | " << second << endl;
-
-							//combinations of productions
-
-							// for each production (rulesNonTerminals)
 
 						}
 
@@ -842,6 +836,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 	__shared__ int nonTermsCount;
 
 	int bidx = blockIdx.x;
+	int bidy = blockIdx.y;
 	int idx = threadIdx.x;
 	int idy = threadIdx.y;
 
@@ -949,7 +944,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 						}*/
 
 										   //for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
-						if (idx < 19) {
+						if (idx < 19) { //TODO wtf?
 
 							int p = idx;
 
@@ -1004,9 +999,9 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 		if (true) {
 
-			if (idx == 0 && idy == 0) {
-				printf("%d\n", rulesArray[blockIdx.y][1]);
-			}
+			//if (idx == 0 && idy == 0) {
+			//	printf("HEHE %d\n", rulesArray[blockIdx.y][1]);
+			//}
 			
 			for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
@@ -1057,7 +1052,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 					atomicAdd((int *)&g_mutex, 1);
 					//only when all blocks add 1 to g_mutex
 					//will g_mutex equal to goalVal
-					while (g_mutex != (gridDim.y * i)) {
+					while (g_mutex != (gridDim.y * gridDim.x * i)) {
 						//Do nothing here
 					}
 
@@ -1074,37 +1069,39 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 	__syncthreads();
 	//&& rulesCount == inputStringLength
-	//if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0 &&  rulesCount == inputStringLength -1) {
+	if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0 ) {
+		if (action != 2 || rulesCount == inputStringLength -1) {
+			for (int i = 0; i < nonTermsCount; i++) {
+				for (int j = 0; j < nonTermsCount; j++) {
+					//cout << rulesNonTermsArray[i][j] << " | ";
 
-	//	for (int i = 0; i < nonTermsCount; i++) {
-	//		for (int j = 0; j < nonTermsCount; j++) {
-	//			cout << rulesNonTermsArray[i][j] << " | ";
+					printf("%d | ", rulesNonTermsArray[i][j]);
+				}
+				//cout << endl;
 
-	//			printf("%d | ", rulesNonTermsArray[i][j]);
-	//		}
-	//		cout << endl;
+				printf("\n");
+			}
 
-	//		printf("\n");
-	//	}
+			for (int j = 1; j < inputStringLength; j++) {
+				for (int i = 0; i < inputStringLength - j; i++) {
+					printf("%d | ", cykArray[j][i]);
+				}
+				printf("\n");
+			}
 
-	//	for (int j = 1; j < inputStringLength; j++) {
-	//		for (int i = 0; i < inputStringLength - j; i++) {
-	//			printf("%d | ", cykArray[j][i]);
-	//		}
-	//		printf("\n");
-	//	}
+			int* result = data.getResult();
+			printf("RESUUUULt: %d | ", result[0]);
+			result[0] = 1337;
 
-	//	int* result = data.getResult();
-	//	printf("RESUUUULt: %d | ", result[0]);
-	//	result[0] = 1337;
-
-	//	/*for (int i = 0; i < 3; i++) {
-	//		for (int j = 0; j < rulesCount; j++) {
-	//			printf("%d | ", rulesArray[i][j]);
-	//		}
-	//		printf("\n");
-	//	}*/
-	//}
+			/*for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < rulesCount; j++) {
+			printf("%d | ", rulesArray[i][j]);
+			}
+			printf("\n");
+			}*/
+		}
+		
+	}
 
 	__syncthreads();
 

@@ -58,7 +58,7 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 		for (int i = 0; i < nonterms; i++) {
 			getline(file, row);
 
-			if (row[0] != 'S') {
+			if (row[0] != '$') {
 				if (i == 0) {
 					i++;
 				}
@@ -102,7 +102,7 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 				
 				if (row.length() == 5) {
 					if (row[0] == nontermsArray[j]) {
-						cout << nontermsArray[j] << endl;
+						//cout << nontermsArray[j] << endl;
 						nontermIndex = j;
 					}
 					if (row[3] == nontermsArray[j]) {
@@ -118,6 +118,9 @@ int readGrammar(char fileName[50], char*& termsArray, int& terms, char*& nonterm
 						nontermIndex = j;
 						break;
 					}
+				}
+				else {
+					cout << "bad row length:"  << row <<  endl;
 				}
 				
 			}
@@ -182,7 +185,7 @@ bool isStringUpper(const string& inputString)
 {
 	for (char c : inputString)
 	{
-		if (!((c >= 'A' && c <= 'Z')))
+		if (((c >= 'a' && c <= 'z')))
 		{
 			return false;
 		}
