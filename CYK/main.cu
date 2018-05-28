@@ -212,7 +212,22 @@ int main(int argc, char** argv)
 
 	/******************************************************************CUDA PART*********************************************************************/
 	
-	cudaSetDevice(1);
+	// variables
+	int deviceNumber = 1;
+
+
+	
+
+	//select device number
+	cudaSetDevice(deviceNumber);
+
+	// time measure
+	cudaEvent_t cudaStartTime, cudaStopTime;
+	cudaEventCreate(&cudaStartTime);
+	cudaEventCreate(&cudaStopTime);
+	//default stream (time)
+	cudaStream_t defStream;
+	cudaStreamCreate(&defStream);
 
 	/*char* termsArray;
 	int termsCount;
@@ -231,7 +246,7 @@ int main(int argc, char** argv)
 	// initial
 	int threadsNumber = nonTermsCount; //TODO zmieniaj to odpowiednio - teraz jest to liczba nieterminali
 
-	//
+	// TODO remove that
 	curandState * randState;
 	cudaMalloc(&randState, threadsNumber * sizeof(curandState)); //warning! look size
 	randInit <<<1, threadsNumber >>> (randState, time(NULL)); //ustawienie ziaren
@@ -250,173 +265,259 @@ int main(int argc, char** argv)
 	CYKData cykData(cykArray, inputStringLength, d_rulesNonTermsArray, nonTermsCount);
 
 
-	// time measure
-	cudaEvent_t cudaStartTime, cudaStopTime;
-	cudaEventCreate(&cudaStartTime);
-	cudaEventCreate(&cudaStopTime);
-
-	//default stream (time)
-	cudaStream_t defStream;
-	cudaStreamCreate(&defStream);
-
+	
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
-																			// TODO pamiętaj o wejściowej liczbie wątków
-	//cykAlgorithm<1><<<1, threadsNumber, 0, culturalData.getStream()>>>(cykData, randState);
-
-	dim3 dimBlock(threadsNumber, threadsNumber, 1);
-	//cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
 	
-	dim3 dimBlock2(32, 32, 1);
-	//cykAlgorithm<5> <<<1, dimBlock2, 0, culturalData.getStream() >>>(cykData, randState);
-
-	/*void* params1[2];
-	params1[0] = (void*)&cykData;
-	params1[1] = (void*)&randState;*/
-
-	//cudaLaunchCooperativeKernel((void*)cykAlgorithmCooperative<0>, 1, dimBlock, params1, 0, culturalData.getStream());
-	//cudaStreamSynchronize(culturalData.getStream());
-
-	//TODO Linux
-	/*cudaError_t cudaState2;
-	cudaState2 = cudaLaunchCooperativeKernel((void*)cykTest, 1, dimBlock, 0, 0, culturalData.getStream());
-	
-	cout << cudaGetErrorString(cudaState2);*/
-
-	
+	int algorithmChoice = 23;
 
 	int blockNumber = 16;
-	int* h_array_in = (int*)malloc(sizeof(int) * blockNumber);
-	for (int i = 0; i < blockNumber; i++) { h_array_in[i] = 0; }
+	int* h_array_in;
 	int* array_in;
-	cudaMalloc((void**)&array_in, sizeof(int) * blockNumber);
-	cudaMemcpy(array_in, h_array_in, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
-
-	int* h_array_out = (int*)malloc(sizeof(int) * blockNumber);
-	for (int i = 0; i < blockNumber; i++) { h_array_out[i] = 0; }
+	int* h_array_out;
 	int* array_out;
-	cudaMalloc((void**)&array_out, sizeof(int) * blockNumber);
-	cudaMemcpy(array_out, h_array_out, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
 
-	dim3 dimBlock3(threadsNumber, threadsNumber, 1);
+	if (algorithmChoice >= 20 && algorithmChoice <= 29) {
+		h_array_in = (int*)malloc(sizeof(int) * blockNumber);
+		for (int i = 0; i < blockNumber; i++) { h_array_in[i] = 0; }
+		cudaMalloc((void**)&array_in, sizeof(int) * blockNumber);
+		cudaMemcpy(array_in, h_array_in, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
 
-	//cykAlgorithmCooperative<0> <<<32, dimBlock3, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+		h_array_out = (int*)malloc(sizeof(int) * blockNumber);
+		for (int i = 0; i < blockNumber; i++) { h_array_out[i] = 0; }
+		cudaMalloc((void**)&array_out, sizeof(int) * blockNumber);
+		cudaMemcpy(array_out, h_array_out, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
+	}
+	else {
 
-	//cykAlgorithmCooperative<1> <<<blockNumber, dimBlock3, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+	}
 
-	//dim3 dimBlock4(threadsNumber, 16, 1);
-	//cykAlgorithmCooperative<3> <<<blockNumber, dimBlock4, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+	if (algorithmChoice == 10) {
+		// TODO pamiętaj o wejściowej liczbie wątków
+		cykAlgorithm<0> << <1, 1, 0, culturalData.getStream() >> >(cykData, randState);
+	}
+	else if (algorithmChoice == 11) {
+		cykAlgorithm<1> << <1, nonTermsCount, 0, culturalData.getStream() >> >(cykData, randState);
+	}
+	else if (algorithmChoice == 12) {
+		cykAlgorithm<2> << <1, nonTermsCount, 0, culturalData.getStream() >> >(cykData, randState);
+	}
+	else if (algorithmChoice == 13) {
+		dim3 dimBlock(nonTermsCount, nonTermsCount, 1);
+		cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+	}
+	else if (algorithmChoice == 14) {
+		// dimension equals input string length
+		dim3 dimBlock(inputStringLength, 1, 1); //j - cells
+		cykAlgorithm<4> << <1, dimBlock, 0, culturalData.getStream() >> >(cykData, randState);
+	}
+	else if (algorithmChoice == 15) {
+		// block dimensions - max 1024 -> 32x32
+		int tDimX = 32;
+		int tDimY = 32;
+		dim3 dimBlock(tDimX, tDimY, 1); //j - cells, k -> split points
+		cykAlgorithm<5> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
+	}
+	else if (algorithmChoice == 20) {
 
-	
+		// TODO values -> now word cant be larger than 32 letters!!!! (bcs m is up to 32)
+		dim3 dimBlock(32, 16, 1);
+		int blockNumber = 16;
 
-	// Reversed Loop CYK part
+		cykAlgorithmCooperative<0> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
 
-	// create new rules array
-	
-	//createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
+	}
+	else if (algorithmChoice == 21) {
+
+		//TODO to samo co wyzej
+		dim3 dimBlock(32, 16, 1);
+		int blockNumber = 16;
+
+		cykAlgorithmCooperative<1> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	}
+	else if (algorithmChoice == 22) {
+
+		//TODO to samo co wyzej
+		dim3 dimBlock(32, 16, 1);
+		int blockNumber = 16;
+
+		cykAlgorithmCooperative<2> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	}
+	else if (algorithmChoice == 23) {
+
+		//TODO to samo co wyzej
+		// x - m
+		// y - k
+		dim3 dimBlock(threadsNumber, 16, 1);
+		int blockNumber = 16;
+
+		cykAlgorithmCooperative<3> <<<blockNumber, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
+
+	}
+	else if (algorithmChoice == 30) {
+
+		//TODO to samo co wyzej
+		// x - m
+		// y - k
+		dim3 dimBlock(threadsNumber, 16, 1);
+		int blockNumber = 16;
+
+		cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+
+	}
+	else {
+		
+		/*void* params1[2];
+		params1[0] = (void*)&cykData;
+		params1[1] = (void*)&randState;*/
+
+		//cudaLaunchCooperativeKernel((void*)cykAlgorithmCooperative<0>, 1, dimBlock, params1, 0, culturalData.getStream());
+		//cudaStreamSynchronize(culturalData.getStream());
+
+		//TODO Linux
+		/*cudaError_t cudaState2;
+		cudaState2 = cudaLaunchCooperativeKernel((void*)cykTest, 1, dimBlock, 0, 0, culturalData.getStream());
+
+		cout << cudaGetErrorString(cudaState2);*/
+
+		int blockNumber = 16;
+		int* h_array_in = (int*)malloc(sizeof(int) * blockNumber);
+		for (int i = 0; i < blockNumber; i++) { h_array_in[i] = 0; }
+		int* array_in;
+		cudaMalloc((void**)&array_in, sizeof(int) * blockNumber);
+		cudaMemcpy(array_in, h_array_in, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
+
+		int* h_array_out = (int*)malloc(sizeof(int) * blockNumber);
+		for (int i = 0; i < blockNumber; i++) { h_array_out[i] = 0; }
+		int* array_out;
+		cudaMalloc((void**)&array_out, sizeof(int) * blockNumber);
+		cudaMemcpy(array_out, h_array_out, sizeof(int) * blockNumber, cudaMemcpyHostToDevice);
+
+		dim3 dimBlock3(threadsNumber, threadsNumber, 1);
+
+		//dim3 dimBlock4(threadsNumber, 16, 1);
+		//cykAlgorithmCooperative<3> <<<blockNumber, dimBlock4, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out);
 
 
-	//only rules with threads
-	int** h_onlyRulesArray;
-	int** d_onlyRulesArray;
-	createCuda2DArrayInt(h_onlyRulesArray, d_onlyRulesArray, onlyRulesArray, 3, onlyRulesCount);
-	blockNumber = 16;
-	dim3 dimBlock5(onlyRulesCount, 1, 1);
-	//cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
 
-	//with local synchronisation
-	for (int i = 1; i < inputStringLength; i++) {
+		// Reversed Loop CYK part
 
-		cykAlgorithmRules<2> <<<inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, i);
-		//cudaDeviceSynchronize();
-		cudaError_t cudaState;
-		if (i < inputStringLength - 1) {
-			cudaState = cudaDeviceSynchronize();
+		// create new rules array
 
-			if (cudaState != cudaSuccess) {
-				fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
-				cudaGetLastError();
+		//createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
+
+
+		//only rules with threads
+		int** h_onlyRulesArray;
+		int** d_onlyRulesArray;
+		createCuda2DArrayInt(h_onlyRulesArray, d_onlyRulesArray, onlyRulesArray, 3, onlyRulesCount);
+		blockNumber = 16;
+		dim3 dimBlock5(onlyRulesCount, 1, 1);
+		//cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
+
+		//with local synchronisation
+		for (int i = 1; i < inputStringLength; i++) {
+
+			cykAlgorithmRules<2> << <inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, i);
+			//cudaDeviceSynchronize();
+			cudaError_t cudaState;
+			if (i < inputStringLength - 1) {
+				cudaState = cudaDeviceSynchronize();
+
+				if (cudaState != cudaSuccess) {
+					fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+					cudaGetLastError();
+				}
+			}
+
+		}
+
+		//only rules blocks + threads
+		int* nonTermsWithRules = new int[nonTermsCount];
+		for (int i = 0; i < nonTermsCount; i++) {
+			nonTermsWithRules[i] = 0;
+		}
+		for (int i = 0; i < onlyRulesCount; i++) {
+			nonTermsWithRules[onlyRulesArray[2][i]]++;
+		}
+		// to create array (row) of proper size
+		int nonTermsWithRulesCount = 0;
+		for (int i = 0; i < nonTermsCount; i++) {
+			if (nonTermsWithRules[i] > 0) {
+				nonTermsWithRulesCount++;
 			}
 		}
-		
-	}
 
-	//only rules blocks + threads
-	int* nonTermsWithRules = new int[nonTermsCount];
-	for (int i = 0; i < nonTermsCount; i++) {
-		nonTermsWithRules[i] = 0;
-	}
-	for (int i = 0; i < onlyRulesCount; i++) {
-		nonTermsWithRules[onlyRulesArray[2][i]]++;
-	}
-	// to create array (row) of proper size
-	int nonTermsWithRulesCount = 0;
-	for (int i = 0; i < nonTermsCount; i++) {
-		if (nonTermsWithRules[i] > 0) {
-			nonTermsWithRulesCount++;
+		int** onlyRulesArraySplitted = new int*[nonTermsWithRulesCount];
+		int* nonTermsToRules = new int[nonTermsCount]; // to project indexes
+		int projectionNumber = 0;
+		for (int i = 0; i < nonTermsCount; i++) {
+			// create rows of given length (2 + 2 * productions)
+			if (nonTermsWithRules[i] > 0) {
+
+				onlyRulesArraySplitted[projectionNumber] = new int[(nonTermsWithRules[i] * 2) + 2]; // additional 2 positions, first for the left nonterminal, second for row length
+																									// initial setup
+				onlyRulesArraySplitted[projectionNumber][1] = 0;
+				onlyRulesArraySplitted[projectionNumber][0] = -1; //initial value - empty row
+
+				nonTermsToRules[i] = projectionNumber;
+				projectionNumber++;
+			}
+			else {
+				nonTermsToRules[i] = -1;
+			}
+
 		}
-	}
-	
-	int** onlyRulesArraySplitted = new int*[nonTermsWithRulesCount];
-	int* nonTermsToRules = new int[nonTermsCount]; // to project indexes
-	int projectionNumber = 0;
-	for (int i = 0; i < nonTermsCount; i++) {
-		// create rows of given length (2 + 2 * productions)
-		if (nonTermsWithRules[i] > 0) {
-			
-			onlyRulesArraySplitted[projectionNumber] = new int[(nonTermsWithRules[i] * 2) + 2]; // additional 2 positions, first for the left nonterminal, second for row length
-																				 // initial setup
-			onlyRulesArraySplitted[projectionNumber][1] = 0;
-			onlyRulesArraySplitted[projectionNumber][0] = -1; //initial value - empty row
 
-			nonTermsToRules[i] = projectionNumber;
-			projectionNumber++;
-		} else {
-			nonTermsToRules[i] = -1;
+
+		for (int i = 0; i < onlyRulesCount; i++) {
+
+			int leftSymbol = onlyRulesArray[2][i]; //left symbol numeric value
+			int leftSymbolPr = nonTermsToRules[leftSymbol]; // left symbol projection to new array row
+			int offset = onlyRulesArraySplitted[leftSymbolPr][1]++; //get current productions number and increment it!
+
+			onlyRulesArraySplitted[leftSymbolPr][2 + (offset * 2)] = onlyRulesArray[0][i];
+			onlyRulesArraySplitted[leftSymbolPr][3 + (offset * 2)] = onlyRulesArray[1][i];
+			onlyRulesArraySplitted[leftSymbolPr][0] = leftSymbol;
 		}
-		
-	}
 
+		//for (int i = 0; i < nonTermsWithRulesCount; i++) { //rows
 
-	for (int i = 0; i < onlyRulesCount; i++) {
+		//	for (int j = 0; j < onlyRulesArraySplitted[i][1] * 2 + 2; j+=2) {
+		//		cout << onlyRulesArraySplitted[i][j] << " - " << onlyRulesArraySplitted[i][j + 1] << " | ";
+		//	}
+		//	cout << endl;
 
-		int leftSymbol = onlyRulesArray[2][i]; //left symbol numeric value
-		int leftSymbolPr = nonTermsToRules[leftSymbol]; // left symbol projection to new array row
-		int offset = onlyRulesArraySplitted[leftSymbolPr][1]++; //get current productions number and increment it!
+		//}
 
-		onlyRulesArraySplitted[leftSymbolPr][2 + (offset * 2)] = onlyRulesArray[0][i];
-		onlyRulesArraySplitted[leftSymbolPr][3 + (offset * 2)] = onlyRulesArray[1][i];
-		onlyRulesArraySplitted[leftSymbolPr][0] = leftSymbol;
-	}
+		//create device array copy
+		int** hostPtr = (int**)malloc((nonTermsWithRulesCount) * sizeof(int*));
 
-	//for (int i = 0; i < nonTermsWithRulesCount; i++) { //rows
-
-	//	for (int j = 0; j < onlyRulesArraySplitted[i][1] * 2 + 2; j+=2) {
-	//		cout << onlyRulesArraySplitted[i][j] << " - " << onlyRulesArraySplitted[i][j + 1] << " | ";
-	//	}
-	//	cout << endl;
-
-	//}
-
-	//create device array copy
-	int** hostPtr = (int**)malloc((nonTermsWithRulesCount) * sizeof(int*));
-
-	for (int i = 0; i < nonTermsWithRulesCount; i++) {
-		int columns = (onlyRulesArraySplitted[i][1] * 2 + 2);
-		cudaMalloc((void**)&hostPtr[i], columns * sizeof(int));
+		for (int i = 0; i < nonTermsWithRulesCount; i++) {
+			int columns = (onlyRulesArraySplitted[i][1] * 2 + 2);
+			cudaMalloc((void**)&hostPtr[i], columns * sizeof(int));
 			cudaMemcpy(hostPtr[i], &onlyRulesArraySplitted[i][0], columns * sizeof(int), cudaMemcpyHostToDevice);
+		}
+		int** devicePtr;
+		cudaMalloc((void ***)&devicePtr, nonTermsWithRulesCount * sizeof(int*));
+		cudaMemcpy(devicePtr, hostPtr, nonTermsWithRulesCount * sizeof(int*), cudaMemcpyHostToDevice);
+
+
+		//getchar();
+
+		blockNumber = nonTermsWithRulesCount;
+		dim3 dimBlock6(16, 1, 1); //TODO change number of threads
+		dim3 dimBl(2, nonTermsWithRulesCount, 1);
+		//cykAlgorithmRules<1> << <dimBl, dimBlock6, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
+
+
+		
 	}
-	int** devicePtr;
-	cudaMalloc((void ***)&devicePtr, nonTermsWithRulesCount * sizeof(int*));
-	cudaMemcpy(devicePtr, hostPtr, nonTermsWithRulesCount * sizeof(int*), cudaMemcpyHostToDevice);
+																			
 	
 
-	//getchar();
-
-	blockNumber = nonTermsWithRulesCount;
-	dim3 dimBlock6(16, 1, 1); //TODO change number of threads
-	dim3 dimBl(2, nonTermsWithRulesCount, 1);
-	//cykAlgorithmRules<1> << <dimBl, dimBlock6, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
-
+	
 
 	cudaError_t cudaState;
 	cudaState = cudaDeviceSynchronize();
@@ -437,10 +538,14 @@ int main(int argc, char** argv)
 	//cuda memory
 	cudaStreamDestroy(defStream);
 	cudaFree(randState);
-	cudaFree(array_out);
-	cudaFree(array_in);
-	free(h_array_in);
-	free(h_array_out);
+
+	if (algorithmChoice >= 20 && algorithmChoice <= 29) {
+		cudaFree(array_out);
+		cudaFree(array_in);
+		free(h_array_in);
+		free(h_array_out);
+	}
+	
 	/*for (int i = 0; i < blockNumber; i++) {
 		free(onlyRulesArray[i]);
 		free(h_onlyRulesArray[i]);
