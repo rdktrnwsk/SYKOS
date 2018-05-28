@@ -828,7 +828,7 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 
 
 template<int action>
-__global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, volatile int * arrayIn, volatile int * arrayOut, int** rulesArray, int rulesCount)
+__global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, volatile int * arrayIn, volatile int * arrayOut, int** rulesArray, int rulesCount, int additionalVariable)
 {
 	__shared__ int** cykArray;
 	__shared__ int inputStringLength;
@@ -920,7 +920,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 	} if (action == 2) { //////////////////////////////////////////////////////////////// only threads
 
-		if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+		if (threadIdx.x < nonTermsCount && threadIdx.y < nonTermsCount) {
 
 			//for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
@@ -928,7 +928,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 			/*if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0) {
 				printf("%d\n", rulesCount);
 			}*/
-			int i = rulesCount;
+			int i = additionalVariable;
 				float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
 				//iter = 2.0f;
 
@@ -944,7 +944,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 						}*/
 
 										   //for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
-						if (idx < 19) { //TODO wtf?
+						if (idx < rulesCount) { //TODO wtf?
 
 							int p = idx;
 
@@ -1070,7 +1070,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 	__syncthreads();
 	//&& rulesCount == inputStringLength
 	if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0 ) {
-		if (action != 2 || rulesCount == inputStringLength -1) {
+		if (action != 2 || additionalVariable == inputStringLength -1) {
 			for (int i = 0; i < nonTermsCount; i++) {
 				for (int j = 0; j < nonTermsCount; j++) {
 					//cout << rulesNonTermsArray[i][j] << " | ";

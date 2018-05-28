@@ -56,6 +56,9 @@ int main(int argc, char** argv)
 	//string inputString = "abcabdcabe"; //example input string
 	string inputString = argv[2];
 	int inputStringLength = inputString.length();
+
+	int cellWidth =  ceil(((float)nonTermsCount / 32.0f));
+
 	int** cykArray = new int*[inputStringLength];
 	for (int i = 0; i < inputStringLength; i++) {
 		cykArray[i] = new int[inputStringLength];
@@ -114,10 +117,10 @@ int main(int argc, char** argv)
 	}
 	cout << endl;
 
-	for (int i = 0; i < inputStringLength; i++) {
+	/*for (int i = 0; i < inputStringLength; i++) {
 
 		cout << cykArray[0][i] << " | ";
-	}
+	}*/
 
 	// 2. Second part
 
@@ -177,7 +180,6 @@ int main(int argc, char** argv)
 
 						}
 
-
 					}
 
 				}
@@ -201,14 +203,16 @@ int main(int argc, char** argv)
 	double time_elapsed_ms = 1000.0 * (c_end - c_start) / CLOCKS_PER_SEC;
 	std::cout << "CPU time used: " << time_elapsed_ms / 1000.0 << " ms\n";
 
-	/*for (int j = 1; j < inputStringLength; j++) {
+	
+
+	for (int j = 1; j < inputStringLength; j++) {
 		for (int i = 0; i < inputStringLength - j; i++) {
 
 			cout << cykArray[j][i] << " | ";
 		}
 		cout << endl;
-	}*/
-
+	}
+	getchar();
 
 	/******************************************************************CUDA PART*********************************************************************/
 	
@@ -268,7 +272,7 @@ int main(int argc, char** argv)
 	
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
 	
-	int algorithmChoice = 23;
+	int algorithmChoice = 11;
 
 	int blockNumber = 16;
 	int* h_array_in;
@@ -370,20 +374,25 @@ int main(int argc, char** argv)
 
 	if (algorithmChoice == 10) {
 		// TODO pamiętaj o wejściowej liczbie wątków
+		// no restrictions
 		cykAlgorithm<0> << <1, 1, 0, culturalData.getStream() >> >(cykData, randState);
 	}
 	else if (algorithmChoice == 11) {
+		// noTermsCount < 1024
 		cykAlgorithm<1> << <1, nonTermsCount, 0, culturalData.getStream() >> >(cykData, randState);
 	}
 	else if (algorithmChoice == 12) {
+		// noTermsCount < 1024
 		cykAlgorithm<2> << <1, nonTermsCount, 0, culturalData.getStream() >> >(cykData, randState);
 	}
 	else if (algorithmChoice == 13) {
+		// noTermsCount < 32
 		dim3 dimBlock(nonTermsCount, nonTermsCount, 1);
 		cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
 	}
 	else if (algorithmChoice == 14) {
 		// dimension equals input string length
+		// inputStringLength < 1024
 		dim3 dimBlock(inputStringLength, 1, 1); //j - cells
 		cykAlgorithm<4> << <1, dimBlock, 0, culturalData.getStream() >> >(cykData, randState);
 	}
@@ -436,7 +445,7 @@ int main(int argc, char** argv)
 
 		blockNumber = 16;
 		dim3 dimBlock5(onlyRulesCount, 1, 1); // every rule  = thread, blocks j loop
-		cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount);
+		cykAlgorithmRules<0><<<blockNumber, dimBlock5, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount, 0);
 
 	}
 	else if (algorithmChoice == 31) {
@@ -447,7 +456,7 @@ int main(int argc, char** argv)
 		//with local synchronisation
 		for (int i = 1; i < inputStringLength; i++) {
 
-			cykAlgorithmRules<2> << <inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, i);
+			cykAlgorithmRules<2> << <inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount, i);
 			//cudaDeviceSynchronize();
 			cudaError_t cudaState;
 			if (i < inputStringLength - 1) {
@@ -464,7 +473,7 @@ int main(int argc, char** argv)
 		//blockNumber = nonTermsWithRulesCount;
 		dim3 dimBlock(32, 1, 1); //TODO change number of threads
 		dim3 dimBl(2, nonTermsWithRulesCount, 1); // y - left symbol, x - j loop
-		cykAlgorithmRules<1> <<<dimBl, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount);
+		cykAlgorithmRules<1> <<<dimBl, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, 0);
 
 	}
 	else {

@@ -12,9 +12,9 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(36): warning : function "cykAlgorithm
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(39): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=1]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(42): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=2]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(45): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=3]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(55): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=0]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=1]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(62): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=2]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(55): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(62): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=2]" cannot be instantiated -- no template definition was supplied
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(28): warning : variable "name" was declared but never referenced
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
@@ -26,12 +26,13 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(36): warning : function "cykAlgorithm
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(39): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=1]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(42): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=2]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(45): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=3]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(55): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=0]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=1]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(62): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int) [with action=2]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(55): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(62): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=2]" cannot be instantiated -- no template definition was supplied
   main.cu
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(58): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(252): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(60): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(256): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.exe
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.pdb (Full PDB)
   copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart*.dll" "C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\"
