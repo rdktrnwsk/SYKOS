@@ -44,6 +44,10 @@ __global__ void cykAlgorithmCooperative<2>(DeviceCYKData data, curandState* rand
 template // parallel j (block) k/m(threads) - atomic synchro - k (index y), m (index x)
 __global__ void cykAlgorithmCooperative<3>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
 
+template // parallel j (block) k/m(threads) - atomic synchro - k (index y), m (index x)
+__global__ void cykAlgorithmCooperative<4>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut);
+
+
 
 
 

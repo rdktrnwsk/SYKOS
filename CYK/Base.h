@@ -213,11 +213,10 @@ public:
 
 		//TODO CHANGE
 		for (int i = 0; i < this->inputCount; i++) {
-			cudaFree(this->cykArray[i]);
-			free(this->h_cykArray[i]);
+			//free(this->cykArray[i]);
+			cudaFree(this->h_cykArray[i]);
 		}
 		free(this->h_cykArray);
-		cudaFree(this->cykArray);
 
 		free(h_result);
 		cudaFree(result);

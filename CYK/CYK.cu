@@ -231,12 +231,11 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 											   //decode nonterminals (find out if bits are on a given positions)
 					 int base = 1;
 					 float iterM = ceilf((float)(nonTermsCount) / (float)blockDim.x);
-
+					 //for (int m = 0; m < nonTermsCount; m++) {
 					 for (int md = 0; md < (int)iterM; md++) {
 
 						int temp_idx = idx + (md * blockDim.x);
-					 //for (int m = 0; m < nonTermsCount; m++) {
-
+					 
 						int m = temp_idx;
 
 						 int offset = (int)(m / 32);
@@ -245,15 +244,14 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 
 						 if (first & bitMaskFirst) {
 
-
 							 float iterN = ceilf((float)(nonTermsCount) / (float)blockDim.y);
-
+							 // for (int n = 0; n < nonTermsCount; n++) {
 							 for (int nd = 0; nd < (int)iterN; nd++) {
 
 								 int temp_idy = idy + (nd * blockDim.y);
 							 //all possibilities connected with rules
-							// for (int n = 0; n < nonTermsCount; n++) {
-							 int n = temp_idy;
+							
+								int n = temp_idy;
 
 								 int offset2 = (int)(n / 32); // shift by 32 is the next cell
 								 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
@@ -267,7 +265,6 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 										 //int bitValue = base << shiftValue;
 
 										 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
-																			  //cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
 										 int base = 1;
 										 int bitValue = base << (shiftValue - (offset * 32));
 
@@ -285,8 +282,7 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 
 			 } // end j loop
 
-
-		 }
+		 } // end i loop
 	 }
  }	else if (action == 4) { //////////////////////////////////////////////////////////////// magisterka rozwiazanie pierwsze
 
@@ -349,77 +345,151 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 	 int idx = threadIdx.x;
 	 int idy = threadIdx.y;
 
-		 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+		 //for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
-			 /*int pidx = i - idy - 1;
-			 int pidy = idx + idy + 1;*/
+			// /*int pidx = i - idy - 1;
+			// int pidy = idx + idy + 1;*/
 
-			 //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+			// //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
 
-			 float iter = ceilf((float)(inputStringLength - i) / (float)blockDim.x);
-			 //iter = 2.0f;
+			// float iter = ceilf((float)(inputStringLength - i) / (float)blockDim.x);
+			// //iter = 2.0f;
 
-			 for (int r = 0; r < (int)iter; r++) {
+			// for (int r = 0; r < (int)iter; r++) {
 
-				 int temp_idx = idx + (r * blockDim.x);
+			//	 int temp_idx = idx + (r * blockDim.x);
 
-				 float iter2 = ceilf((float)(i) / (float)blockDim.y);
+			//	 float iter2 = ceilf((float)(i) / (float)blockDim.y);
 
-				 for (int s = 0; s < (int)iter2; s++) {
+			//	 for (int s = 0; s < (int)iter2; s++) {
 
-					 int temp_idy = idy + (s * blockDim.y);
+			//		 int temp_idy = idy + (s * blockDim.y);
+
+			//	 if (temp_idx < inputStringLength - i && temp_idy < i) {
+			//		 int j = temp_idx;
+			//		 int k = temp_idy;
+
+			//		 //for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+			//			 //TODO correct split points!
+			//			 int first = cykArray[k][j];
+			//			 int second = cykArray[i - k - 1][j + k + 1];
+
+			//			 //decode nonterminals (find out if bits are on a given positions)
+			//			 int base = 1;
+			//			 for (int l = 0; l < nonTermsCount; l++) {
+
+			//				 int bitMaskFirst = base << l;
+
+			//				 // all possibilities connected with rules
+			//				 for (int m = 0; m < nonTermsCount; m++) {
+			//					 int bitMaskSecond = base << m;
+
+			//					 // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+			//					 if (first & bitMaskFirst && second & bitMaskSecond) {
+
+			//						 //rule exists
+			//						 if (rulesNonTermsArray[l][m] != -1) {
+			//							 int shiftValue = rulesNonTermsArray[l][m];
+			//							 int bitValue = base << shiftValue;
+
+			//							 cykArray[i][j] |= bitValue;
+			//						 }
+
+			//					 }
+
+			//				 }
+
+			//			 } // l loop end
+			//	 
+
+			//		 //} // k loop
+
+			//		 }
+			//	 } // end s loop
+
+		 //} // r loop
+
+			// __syncthreads();
+
+			// //break; //only first line
+
+		 //} // l loop
+		 
+	 //if (idx < inputStringLength && idy < inputStringLength) {
+	 if (true) {
+	 
+	 int base = 1;
+	 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+		 float iterJ = ceilf((float)(inputStringLength - i) / (float)blockDim.x);
+		 for (int jd = 0; jd < (int)iterJ; jd++) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
+																////TODO!!!!
+			 int temp_idx = idx + (jd * blockDim.x);
+
+			 float iterK = ceilf((float)(i) / (float)blockDim.y);
+			 for (int kd = 0; kd < (int)iterK; kd++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+				 int temp_idy = idy + (kd * blockDim.y);
 
 				 if (temp_idx < inputStringLength - i && temp_idy < i) {
-					 int j = temp_idx;
+
+					 //printf("%d - %d \n", temp_idx, temp_idy);
+
+					 int j = temp_idx * cellWidth;
 					 int k = temp_idy;
 
-					 //for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+					
+					 for (int m = 0; m < nonTermsCount; m++) {
 
-						 //TODO correct split points!
-						 int first = cykArray[k][j];
-						 int second = cykArray[i - k - 1][j + k + 1];
+						 int offset = (int)(m / 32);
+						 int first = cykArray[k][j + offset];
+						 int bitMaskFirst = (base << (m - (offset * 32)));
 
-						 //decode nonterminals (find out if bits are on a given positions)
-						 int base = 1;
-						 for (int l = 0; l < nonTermsCount; l++) {
+						 //if (first & bitMaskFirst) {
+						 if (first & bitMaskFirst) {
+							 
+							 for (int n = 0; n < nonTermsCount; n++) {
 
-							 int bitMaskFirst = base << l;
+								 int offset2 = (int)(n / 32); // shift by 32 is the next cell
+								 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+								 int bitMaskSecond = (base << (n - (offset2 * 32)));
 
-							 // all possibilities connected with rules
-							 for (int m = 0; m < nonTermsCount; m++) {
-								 int bitMaskSecond = base << m;
-
-								 // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
-								 if (first & bitMaskFirst && second & bitMaskSecond) {
-
+								 if (second & bitMaskSecond) {
+									 
 									 //rule exists
-									 if (rulesNonTermsArray[l][m] != -1) {
-										 int shiftValue = rulesNonTermsArray[l][m];
-										 int bitValue = base << shiftValue;
+									 if (rulesNonTermsArray[m][n] != -1) {
+										 
+										 int shiftValue = rulesNonTermsArray[m][n];
+										 //int bitValue = base << shiftValue;
 
-										 cykArray[i][j] |= bitValue;
+										 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+										 int base = 1;
+										 int bitValue = base << (shiftValue - (offset * 32));
+
+										 cykArray[i][j + offset] |= bitValue;
 									 }
 
 								 }
 
-							 }
+							 } // end n loop
+						 }
 
-						 } // l loop end
-				 
+					 } // end m loop
 
-					 //} // k loop
+				 }
 
-					 }
-				 } // end s loop
+			 } // end k loop
 
-		 } // r loop
+		 } // end j loop
 
-			 __syncthreads();
+		 __syncthreads();
 
-			 //break; //only first line
+	 } // end i loop
 
-		 }
-	}
+
+ }
+	 }
 
 	
 	__syncthreads();
@@ -437,17 +507,17 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 		//	printf("\n");
 		//}
 
-		//for (int j = 1; j < inputStringLength; j++) {
-		//	for (int i = 0; i < inputStringLength - j; i++) {
-		//		printf("%d | ", cykArray[j][i]);
-		//	}
-		//	printf("\n");
-		//}
+		/*for (int j = 1; j < inputStringLength; j++) {
+			for (int i = 0; i < inputStringLength - j; i++) {
+				printf("%d | ", cykArray[j][i]);
+			}
+			printf("\n");
+		}*/
 
-		//int* result = data.getResult();
+		int* result = data.getResult();
 		//printf("RESUUUULt: %d | ", result[0]);
-		//result[0] = 1337;
-		printf("JEST? %d \n", cykArray[inputStringLength -1][0]);
+		result[0] = cykArray[inputStringLength - 1][0];
+		//printf("JEST? %d \n", cykArray[inputStringLength -1][0]);
 	}
 
 	__syncthreads();
@@ -465,6 +535,7 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 	__shared__ int inputStringLength;
 	__shared__ int** rulesNonTermsArray;
 	__shared__ int nonTermsCount;
+	__shared__ int cellWidth;
 
 	int bidx = blockIdx.x;
 	int idx = threadIdx.x;
@@ -477,6 +548,7 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 		rulesNonTermsArray = data.getRulesNonTermsArray();
 		nonTermsCount = data.getNonTermsCount();
 		//printf("Dim %d\n", gridDim.x);
+		cellWidth = (int)(ceilf(((float)nonTermsCount / 32.0f)));
 	}
 
 
@@ -563,6 +635,75 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 		}
 
 		// only thread 0 is used for synchronization
+
+		//int base = 1;
+	 //for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+		// float iterJ = ceilf((float)(inputStringLength - i) / (float)blockDim.x);
+		// for (int jd = 0; jd < (int)iterJ; jd++) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
+		//														////TODO!!!!
+		//	 int temp_idx = idx + (jd * blockDim.x);
+
+		//	 float iterK = ceilf((float)(i) / (float)blockDim.y);
+		//	 for (int kd = 0; kd < (int)iterK; kd++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+		//		 int temp_idy = idy + (kd * blockDim.y);
+
+		//		 if (temp_idx < inputStringLength - i && temp_idy < i) {
+
+		//			 //printf("%d - %d \n", temp_idx, temp_idy);
+
+		//			 int j = temp_idx * cellWidth;
+		//			 int k = temp_idy;
+
+		//			 
+
+		//			 for (int m = 0; m < nonTermsCount; m++) {
+
+		//				 int offset = (int)(m / 32);
+		//				 int first = cykArray[k][j + offset];
+		//				 int bitMaskFirst = (base << (m - (offset * 32)));
+
+		//				 //if (first & bitMaskFirst) {
+		//				 if (first & bitMaskFirst) {
+		//					 
+		//					 for (int n = 0; n < nonTermsCount; n++) {
+
+		//						 int offset2 = (int)(n / 32); // shift by 32 is the next cell
+		//						 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+		//						 int bitMaskSecond = (base << (n - (offset2 * 32)));
+
+		//						 if (second & bitMaskSecond) {
+		//							 
+		//							 //rule exists
+		//							 if (rulesNonTermsArray[m][n] != -1) {
+		//								 
+		//								 int shiftValue = rulesNonTermsArray[m][n];
+		//								 //int bitValue = base << shiftValue;
+
+		//								 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+		//								 int base = 1;
+		//								 int bitValue = base << (shiftValue - (offset * 32));
+
+		//								 cykArray[i][j + offset] |= bitValue;
+		//							 }
+
+		//						 }
+
+		//					 } // end n loop
+		//				 }
+
+		//			 } // end m loop
+
+		//		 }
+
+		//	 } // end k loop
+
+		// } // end j loop
+
+		// __syncthreads();
+
+	 //} // end i loop
 
 
 	} else if (action == 1) { //////////////////////////////////////////////////////////////// entry = block, block used are decremented, threads 2D + FAST BARIER SYNCHRONISATION
@@ -843,7 +984,212 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 			}
 		}
 
-	} 
+	}
+	 else if (action == 4) { //////////////////////////////////////////////////////////////// entry = block, block used are decremented, threads 2D + FAST BARIER SYNCHRONISATION
+
+		 if (threadIdx.x < nonTermsCount) {
+
+			 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+														   //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+				 float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
+				 //iter = 2.0f;
+
+				 for (int r = 0; r < (int)iter; r++) {
+
+					 int temp_bidx = bidx + (r * gridDim.x);
+
+					 if (temp_bidx < inputStringLength - i) {
+						 int j = temp_bidx * cellWidth;
+
+						 int idy = threadIdx.y;
+
+						 float iter2 = ceilf((float)(i) / (float)blockDim.y);
+
+						 for (int s = 0; s < (int)iter2; s++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+							 int temp_idy = idy + (s * blockDim.y);
+
+							 if (temp_idy < i) {
+
+								 int k = temp_idy;
+
+								 //TODO correct split points!
+								 int first = cykArray[k][j];
+								 int second = cykArray[i - k - 1][j + k + 1];
+
+								 //decode nonterminals (find out if bits are on a given positions)
+								 int base = 1;
+								 //for (int l = 0; l < nonTermsCount; l++) {
+								 //int l = idx;
+								 //int bitMaskFirst = base << l;
+								 ////all possibilities connected with rules
+
+								 //for (int m = 0; m < nonTermsCount; m++) {
+									// int bitMaskSecond = base << m;
+
+									// // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+									// if (first & bitMaskFirst && second & bitMaskSecond) {
+									//	 //cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+
+									//	 //rule exists
+									//	 if (rulesNonTermsArray[l][m] != -1) {
+									//		 int shiftValue = rulesNonTermsArray[l][m];
+									//		 int bitValue = base << shiftValue;
+
+									//		 //TODO - tutaj może być problem
+									//		 atomicOr(&cykArray[i][j], bitValue);
+
+									//		 //cykArray[i][j] |= bitValue;
+									//	 }
+
+									// }
+
+
+								 //}
+								 
+
+								 float iterM = ceilf((float)(nonTermsCount) / (float)blockDim.x);
+								 for (int md = 0; md < (int)iterM; md++) {
+
+									 int temp_idx = idy + (md * blockDim.x); 
+
+									 if (temp_idx < nonTermsCount) {
+
+										 int m = temp_idx;
+
+										 int offset = (int)(m / 32);
+										 int first = cykArray[k][j + offset];
+										 int bitMaskFirst = (base << (m - (offset * 32)));
+
+										 //if (first & bitMaskFirst) {
+										 if (first & bitMaskFirst) {
+
+											 for (int n = 0; n < nonTermsCount; n++) {
+
+												 int offset2 = (int)(n / 32); // shift by 32 is the next cell
+												 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+												 int bitMaskSecond = (base << (n - (offset2 * 32)));
+
+												 if (second & bitMaskSecond) {
+
+													 //rule exists
+													 if (rulesNonTermsArray[m][n] != -1) {
+
+														 int shiftValue = rulesNonTermsArray[m][n];
+														 //int bitValue = base << shiftValue;
+
+														 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+														 int base = 1;
+														 int bitValue = base << (shiftValue - (offset * 32));
+
+														 cykArray[i][j + offset] |= bitValue;
+													 }
+
+												 }
+
+											 } // end n loop
+										 }
+									 }
+
+									 
+
+								 } // end m loop
+
+							 } //end s loop
+						 }
+
+					 }
+				 }
+
+				 //break; //only first line
+				 if (idx == 0 && idy == 0) {
+					 //printf("%d | ", g_mutex);
+					 atomicAdd((int *)&g_mutex, 1);
+					 //only when all blocks add 1 to g_mutex
+					 //will g_mutex equal to goalVal
+					 while (g_mutex != (gridDim.x * i)) {
+						 //Do nothing here
+					 }
+
+				 }
+				 __syncthreads();
+
+			 }
+		 }
+
+		 //start
+		 int base = 1;
+		 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+			 float iterJ = ceilf((float)(inputStringLength - i) / (float)blockDim.x);
+			 for (int jd = 0; jd < (int)iterJ; jd++) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
+													   ////TODO!!!!
+				 int temp_idx = idx + (jd * blockDim.x);
+
+				 float iterK = ceilf((float)(i) / (float)blockDim.y);
+				 for (int kd = 0; kd < (int)iterK; kd++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+					 int temp_idy = idy + (kd * blockDim.y);
+
+					 if (temp_idx < inputStringLength - i && temp_idy < i) {
+
+						 //printf("%d - %d \n", temp_idx, temp_idy);
+
+						 int j = temp_idx * cellWidth;
+						 int k = temp_idy;
+
+
+						 for (int m = 0; m < nonTermsCount; m++) {
+
+							 int offset = (int)(m / 32);
+							 int first = cykArray[k][j + offset];
+							 int bitMaskFirst = (base << (m - (offset * 32)));
+
+							 //if (first & bitMaskFirst) {
+							 if (first & bitMaskFirst) {
+
+								 for (int n = 0; n < nonTermsCount; n++) {
+
+									 int offset2 = (int)(n / 32); // shift by 32 is the next cell
+									 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+									 int bitMaskSecond = (base << (n - (offset2 * 32)));
+
+									 if (second & bitMaskSecond) {
+
+										 //rule exists
+										 if (rulesNonTermsArray[m][n] != -1) {
+
+											 int shiftValue = rulesNonTermsArray[m][n];
+											 //int bitValue = base << shiftValue;
+
+											 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+											 int base = 1;
+											 int bitValue = base << (shiftValue - (offset * 32));
+
+											 cykArray[i][j + offset] |= bitValue;
+										 }
+
+									 }
+
+								 } // end n loop
+							 }
+
+						 } // end m loop
+
+					 }
+
+				 } // end k loop
+
+			 } // end j loop
+
+			 __syncthreads();
+
+		 } // end i loop
+		 //end
+
+	 }
 
 	
 
@@ -851,27 +1197,27 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 
 	if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
 		
-		for (int i = 0; i < nonTermsCount; i++) {
-			for (int j = 0; j < nonTermsCount; j++) {
-				//cout << rulesNonTermsArray[i][j] << " | ";
+		//for (int i = 0; i < nonTermsCount; i++) {
+		//	for (int j = 0; j < nonTermsCount; j++) {
+		//		//cout << rulesNonTermsArray[i][j] << " | ";
 
-				printf("%d | ", rulesNonTermsArray[i][j]);
-			}
-			//cout << endl;
+		//		printf("%d | ", rulesNonTermsArray[i][j]);
+		//	}
+		//	//cout << endl;
 
-			printf("\n");
-		}
+		//	printf("\n");
+		//}
 
-		for (int j = 1; j < inputStringLength; j++) {
-			for (int i = 0; i < inputStringLength - j; i++) {
-				printf("%d | ", cykArray[j][i]);
-			}
-			printf("\n");
-		}
+		//for (int j = 1; j < inputStringLength; j++) {
+		//	for (int i = 0; i < inputStringLength - j; i++) {
+		//		printf("%d | ", cykArray[j][i]);
+		//	}
+		//	printf("\n");
+		//}
 
-		int* result = data.getResult();
-		printf("RESUUUULt: %d | ", result[0]);
-		result[0] = 1337;
+		//int* result = data.getResult();
+		//printf("RESUUUULt: %d | ", result[0]);
+		//result[0] = 1337;
 	}
 
 	__syncthreads();

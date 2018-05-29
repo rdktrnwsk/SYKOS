@@ -648,6 +648,7 @@ c:\program files\nvidia gpu computing toolkit\cuda\v9.1\include\curand_mtgp32_ke
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
 D:\Programy\Visual Studio\VC\include\iostream
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h
+D:\Programy\Visual Studio\VC\include\ctime
 c:\users\prc\desktop\cyk\sykos\cyk\Ogolne.cuh
 c:\users\prc\desktop\cyk\sykos\cyk\Base.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\cuda_runtime.h
@@ -666,3 +667,5 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh
 c:\users\prc\desktop\cyk\sykos\cyk\Cultural.cuh
 c:\users\prc\desktop\cyk\sykos\cyk\Cultural.cu
 c:\users\prc\desktop\cyk\sykos\cyk\Cultural.cuh
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\cooperative_groups.h
+c:\program files\nvidia gpu computing toolkit\cuda\v9.1\include\cooperative_groups_helpers.h

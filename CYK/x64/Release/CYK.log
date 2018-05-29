@@ -1,57 +1,116 @@
 ﻿  Compiling CUDA source file Cultural.cu...
-  Compiling CUDA source file functions.cu...
   Compiling CUDA source file CYK.cu...
-  Compiling CUDA source file kernel.cu...
-  
-  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\Cultural.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Cultural.cu" 
-  
-  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\functions.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\functions.cu" 
-  
-  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\kernel.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\kernel.cu" 
   
   C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\CYK.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\CYK.cu" 
-  kernel.cu
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(7): warning : variable "maxInt" was declared but never referenced
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(105): warning : statement is unreachable
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(162): warning : missing return statement at end of non-void function "testRouteArray"
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\Cultural.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Cultural.cu" 
+  Compiling CUDA source file functions.cu...
+  
+  C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\functions.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\functions.cu" 
   Compiling CUDA source file main.cu...
   
   C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\main.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\main.cu" 
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1239): warning : variable "bidy" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1239): warning : variable "bidy" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1239): warning : variable "bidy" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(7): warning : variable "maxInt" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(105): warning : statement is unreachable
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(162): warning : missing return statement at end of non-void function "testRouteArray"
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(25): warning : variable "name" was declared but never referenced
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(229): warning : variable "d_instanceMatrix" was declared but never referenced
-  Cultural.cu
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(28): warning : variable "name" was declared but never referenced
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(18): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=2]" cannot be instantiated -- no template definition was supplied
-  functions.cu
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(21): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=3]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(24): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=4]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(27): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=5]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(36): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(39): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(42): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=2]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(45): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=3]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(48): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=4]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(63): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(66): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=2]" cannot be instantiated -- no template definition was supplied
+  Cultural.cu
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(24): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(290): warning : variable "idx" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1019): warning : variable "first" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1020): warning : variable "second" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/CYK.cu(1239): warning : variable "bidy" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(7): warning : variable "maxInt" was declared but never referenced
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(105): warning : statement is unreachable
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/functions.cu(162): warning : missing return statement at end of non-void function "testRouteArray"
   CYK.cu
-c:\users\prc\desktop\cyk\sykos\cyk\functions.cu(162): warning C4715: 'testRouteArray': not all control paths return a value
+  functions.cu
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Compiling CUDA source file Ogolne.cu...
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(31): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(28): warning : variable "name" was declared but never referenced
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(18): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=2]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(21): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=3]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(24): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=4]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(27): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=5]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(36): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(39): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(42): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=2]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(45): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=3]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(48): warning : function "cykAlgorithmCooperative<action>(DeviceCYKData, curandState *, volatile int *, volatile int *) [with action=4]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(59): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=0]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(63): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=1]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(66): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=2]" cannot be instantiated -- no template definition was supplied
   
   C:\Users\Prc\Desktop\CYK\SYKOS\CYK>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\nvcc.exe" -gencode=arch=compute_30,code=\"sm_30,compute_30\" --use-local-env --cl-version 2015 -ccbin "D:\Programy\Visual Studio\VC\bin\x86_amd64" -x cu  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include"     --keep-dir x64\Release -maxrregcount=0  --machine 64 --compile -cudart static     -DWIN32 -DWIN64 -DNDEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /O2 /FS /Zi  /MD " -o x64\Release\Ogolne.cu.obj "C:\Users\Prc\Desktop\CYK\SYKOS\CYK\Ogolne.cu" 
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(25): warning : variable "name" was declared but never referenced
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(229): warning : variable "d_instanceMatrix" was declared but never referenced
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(12): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=0]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(15): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=1]" cannot be instantiated -- no template definition was supplied
-c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(18): warning : function "cykAlgorithm<action>(DeviceCYKData, curandState *) [with action=2]" cannot be instantiated -- no template definition was supplied
   main.cu
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(53): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(223): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(229): warning C4101: 'd_instanceMatrix': unreferenced local variable
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\prc\desktop\cyk\sykos\cyk\functions.cu(162): warning C4715: 'testRouteArray': not all control paths return a value
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(54): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(309): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
   Ogolne.cu
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Ogolne.cpp
+c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 Ogolne.cpp(13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 Ogolne.cpp(56): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 Ogolne.cpp(99): warning C4473: 'sscanf_s' : not enough arguments passed for format string
   Ogolne.cpp(99): note: placeholders and their parameters expect 2 variadic arguments, but 1 were provided
   Ogolne.cpp(99): note: the missing variadic argument 2 is required by format string '%s'
   Ogolne.cpp(99): note: this argument is used as a buffer size
-  Utility.cpp
   Generating code
-  All 166 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  8 of 170 functions ( 4.7%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    15 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Release\CYK.exe
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Release\CYK.pdb (Full PDB)
