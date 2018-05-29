@@ -32,7 +32,7 @@ int main(int argc, char** argv)
 	string inputStrings[3] = { "cababcabdcffabeedcababcabfffabeeecffabeeebdabfabebeb", "eeababkabdknteeababkabdtoc", "fdablsmteeababkabdtrfdablsmteeababkabdtrfdablsmabjrimabjrhmteeababkabdtreeababkabdhmabjreababhmabjreabab" };
 
 	int cpuVersion = 1;
-	int algorithmChoice = 15;
+	int algorithmChoice = 32;
 
 	for (int x = 0; x < iterations; x++) {
 
@@ -194,7 +194,7 @@ int main(int argc, char** argv)
 											int shiftValue = rulesNonTermsArray[m][n];
 											//int bitValue = base << shiftValue;
 
-											int offset = (shiftValue / 32); // shift by 32 is the next cell
+											int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
 											//cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
 
 											int bitValue = base << (shiftValue - (offset * 32));
@@ -533,9 +533,9 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 32) {
 			//blockNumber = nonTermsWithRulesCount;
-			dim3 dimBlock(32, 1, 1); //TODO change number of threads
-			dim3 dimBl(2, nonTermsWithRulesCount, 1); // y - left symbol, x - j loop
-			cykAlgorithmRules<1> << <dimBl, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, 0);
+			dim3 dimBlock(16, 1, 1); //TODO change number of threads, number of rules -> x
+			dim3 dimGrid(4, nonTermsWithRulesCount, 1); // y - left symbol, x - j loop
+			cykAlgorithmRules<1> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, 0);
 
 		}
 		else {
