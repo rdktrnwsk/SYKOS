@@ -195,7 +195,9 @@ class CYKData {
 public:
 	CYKData(int** cykArray, int inputStringLength, int** d_rulesNonTermsArray, int nonTerminalsCount ) {
 
-		createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength);
+		int cellWidth = ceil(((float)nonTerminalsCount / 32.0f));
+
+		createCuda2DArrayInt(this->h_cykArray, this->cykArray, cykArray, inputStringLength, inputStringLength * cellWidth);
 		
 		rulesNonTermsArray = d_rulesNonTermsArray;
 

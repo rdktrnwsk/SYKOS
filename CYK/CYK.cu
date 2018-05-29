@@ -7,12 +7,14 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 	__shared__ int inputStringLength;
 	__shared__ int** rulesNonTermsArray;
 	__shared__ int nonTermsCount;
+	__shared__ int cellWidth;
 
 	if (threadIdx.x == 0 && threadIdx.y == 0) {
 		cykArray = data.getCYKArray();
 		inputStringLength = data.getInputCount();
 		rulesNonTermsArray = data.getRulesNonTermsArray();
 		nonTermsCount = data.getNonTermsCount();
+		cellWidth = (int)(ceilf(((float)nonTermsCount / 32.0f)));
 	}
 
 	__syncthreads();
@@ -172,66 +174,117 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 		
 	} else if (action == 3) { //////////////////////////////////////////////////////////////// each entry 2D threads (last loop 1)
 
-	 if (threadIdx.x <= nonTermsCount && threadIdx.y <= nonTermsCount) {
+	 if (threadIdx.x < nonTermsCount && threadIdx.y < nonTermsCount) {
 		 int idx = threadIdx.x;
 		 int idy = threadIdx.y;
 
+		 //for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+			// for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+			//	 for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+			//								   //TODO correct split points!
+			//		 int first = cykArray[k][j];
+			//		 int second = cykArray[i - k - 1][j + k + 1];
+
+			//		 //decode nonterminals (find out if bits are on a given positions)
+			//		 int base = 1;
+
+			//		 int l = idx;
+			//		 int bitMaskFirst = base << l;
+
+
+
+			//			 int m = idy;
+
+			//			 int bitMaskSecond = base << m;
+
+			//			 // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+			//			 if (first & bitMaskFirst && second & bitMaskSecond) {
+			//				 //cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+
+			//				 //rule exists
+			//				 if (rulesNonTermsArray[l][m] != -1) {
+			//					 int shiftValue = rulesNonTermsArray[l][m];
+			//					 int bitValue = base << shiftValue;
+
+			//					 //TODO - tutaj może być problem
+			//					 atomicOr(&cykArray[i][j], bitValue);
+
+			//					 //cykArray[i][j] |= bitValue;
+			//				 }
+
+			//			 }
+
+			//	 }
+
+			// }
+
+		 //}
 		 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
-			 for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+			 for (int j = 0; j < (inputStringLength - i) * cellWidth; j += cellWidth) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
 
 				 for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
-											   //TODO correct split points!
-					 int first = cykArray[k][j];
-					 int second = cykArray[i - k - 1][j + k + 1];
-
-					 //decode nonterminals (find out if bits are on a given positions)
+											   //decode nonterminals (find out if bits are on a given positions)
 					 int base = 1;
-					 //for (int l = 0; l < nonTermsCount; l++) {
-					 int l = idx;
-					 int bitMaskFirst = base << l;
-					 //all possibilities connected with rules
+					 float iterM = ceilf((float)(nonTermsCount) / (float)blockDim.x);
 
+					 for (int md = 0; md < (int)iterM; md++) {
+
+						int temp_idx = idx + (md * blockDim.x);
 					 //for (int m = 0; m < nonTermsCount; m++) {
 
-						 int m = idy;
+						int m = temp_idx;
 
-						 int bitMaskSecond = base << m;
+						 int offset = (int)(m / 32);
+						 int first = cykArray[k][j + offset];
+						 int bitMaskFirst = (base << (m - (offset * 32)));
 
-						 // if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
-						 if (first & bitMaskFirst && second & bitMaskSecond) {
-							 //cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+						 if (first & bitMaskFirst) {
 
-							 //rule exists
-							 if (rulesNonTermsArray[l][m] != -1) {
-								 int shiftValue = rulesNonTermsArray[l][m];
-								 int bitValue = base << shiftValue;
 
-								 //TODO - tutaj może być problem
-								 atomicOr(&cykArray[i][j], bitValue);
+							 float iterN = ceilf((float)(nonTermsCount) / (float)blockDim.y);
 
-								 //cykArray[i][j] |= bitValue;
-							 }
+							 for (int nd = 0; nd < (int)iterN; nd++) {
 
+								 int temp_idy = idy + (nd * blockDim.y);
+							 //all possibilities connected with rules
+							// for (int n = 0; n < nonTermsCount; n++) {
+							 int n = temp_idy;
+
+								 int offset2 = (int)(n / 32); // shift by 32 is the next cell
+								 int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+								 int bitMaskSecond = (base << (n - (offset2 * 32)));
+
+								 if (second & bitMaskSecond) {
+
+									 //rule exists
+									 if (rulesNonTermsArray[m][n] != -1) {
+										 int shiftValue = rulesNonTermsArray[m][n];
+										 //int bitValue = base << shiftValue;
+
+										 int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+																			  //cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
+										 int base = 1;
+										 int bitValue = base << (shiftValue - (offset * 32));
+
+										 cykArray[i][j + offset] |= bitValue;
+									 }
+
+								 }
+
+							 } // end n loop
 						 }
 
+					 } // end m loop
 
-					// }
+				 } // end k loop
 
-					 //} // l loop end
+			 } // end j loop
 
-					 //cout << first << " | " << second << endl;
-
-					 //combinations of productions
-
-					 // for each production (rulesNonTerminals)
-
-				 }
-
-			 }
-
-			 //break; //only first line
 
 		 }
 	 }
@@ -373,27 +426,28 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 	
 	if (threadIdx.x == 0 && threadIdx.y == 0) {
 
-		for (int i = 0; i < nonTermsCount; i++) {
-			for (int j = 0; j < nonTermsCount; j++) {
-				//cout << rulesNonTermsArray[i][j] << " | ";
+		//for (int i = 0; i < nonTermsCount; i++) {
+		//	for (int j = 0; j < nonTermsCount; j++) {
+		//		//cout << rulesNonTermsArray[i][j] << " | ";
 
-				printf("%d | ", rulesNonTermsArray[i][j]);
-			}
-			//cout << endl;
+		//		printf("%d | ", rulesNonTermsArray[i][j]);
+		//	}
+		//	//cout << endl;
 
-			printf("\n");
-		}
+		//	printf("\n");
+		//}
 
-		for (int j = 1; j < inputStringLength; j++) {
-			for (int i = 0; i < inputStringLength - j; i++) {
-				printf("%d | ", cykArray[j][i]);
-			}
-			printf("\n");
-		}
+		//for (int j = 1; j < inputStringLength; j++) {
+		//	for (int i = 0; i < inputStringLength - j; i++) {
+		//		printf("%d | ", cykArray[j][i]);
+		//	}
+		//	printf("\n");
+		//}
 
-		int* result = data.getResult();
-		printf("RESUUUULt: %d | ", result[0]);
-		result[0] = 1337;
+		//int* result = data.getResult();
+		//printf("RESUUUULt: %d | ", result[0]);
+		//result[0] = 1337;
+		printf("JEST? %d \n", cykArray[inputStringLength -1][0]);
 	}
 
 	__syncthreads();

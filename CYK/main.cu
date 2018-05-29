@@ -161,109 +161,51 @@ int main(int argc, char** argv)
 
 			for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
-				//for (int c = 0; c < cellWidth; c++) {
-
 					//decode nonterminals (find out if bits are on a given positions)
 					int base = 1;
 					for (int m = 0; m < nonTermsCount; m++) {
 
-						//int shiftValue = rulesTermsArray[terminalIndex];
-						//int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
-						//int base = 1;
-						//int bitValue = base << (shiftValue - (offset * 32));
-						////cout << "X" << bitValue << endl;
-						//cykArray[0][i + offset] |= bitValue;
-
-						int offset = (int)(m / 32); // shift by 32 is the next cell
+						int offset = (int)(m / 32);
 						int first = cykArray[k][j + offset];
-
 						int bitMaskFirst = (base << (m - (offset * 32)));
 
-						//all possibilities connected with rules
-						for (int n = 0; n < nonTermsCount; n++) {
+						if (first & bitMaskFirst) {
 
-							int offset2 = (int)(n / 32); // shift by 32 is the next cell
-							int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+							//all possibilities connected with rules
+							for (int n = 0; n < nonTermsCount; n++) {
 
-							int bitMaskSecond = (base << (n - (offset2 * 32)));
+								int offset2 = (int)(n / 32); // shift by 32 is the next cell
+								int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+								int bitMaskSecond = (base << (n - (offset2 * 32)));
 
-							// if rule with 'm' index and 'n' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
-							if (first & bitMaskFirst && second & bitMaskSecond) {
-								//cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
-								
-								//rule exists
-								if (rulesNonTermsArray[m][n] != -1) {
-									int shiftValue = rulesNonTermsArray[m][n];
-									//int bitValue = base << shiftValue;
-									
-									int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
-									//cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
-									int base = 1;
-									int bitValue = base << (shiftValue - (offset * 32));
+								if (second & bitMaskSecond) {
 
-									cykArray[i][j + offset] |= bitValue;
+									//rule exists
+									if (rulesNonTermsArray[m][n] != -1) {
+										int shiftValue = rulesNonTermsArray[m][n];
+										//int bitValue = base << shiftValue;
+
+										int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+										//cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
+										int base = 1;
+										int bitValue = base << (shiftValue - (offset * 32));
+
+										cykArray[i][j + offset] |= bitValue;
+									}
+
 								}
 
-							}
-
+							} // end n loop
 						}
 
-					}
-
-				//} // end c loop
+					} // end m loop
 
 			} // end k loop
 
 		} // end j loop
 
 
-
 	}
-
-	//for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
-
-	//	for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
-
-	//		for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
-
-	//									  //TODO correct split points!
-	//			int first = cykArray[k][j];
-	//			int second = cykArray[i - k - 1][j + k + 1];
-
-	//			//decode nonterminals (find out if bits are on a given positions)
-	//			int base = 1;
-	//			for (int l = 0; l < nonTermsCount; l++) {
-
-	//				int bitMaskFirst = base << l;
-
-	//				// all possibilities connected with rules
-	//				for (int m = 0; m < nonTermsCount; m++) {
-	//					int bitMaskSecond = base << m;
-
-	//					// if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
-	//					if (first & bitMaskFirst && second & bitMaskSecond) {
-	//						
-	//						//rule exists
-	//						if (rulesNonTermsArray[l][m] != -1) {
-	//							int shiftValue = rulesNonTermsArray[l][m];
-	//							int bitValue = base << shiftValue;
-	//							cout << "ok - " << i << " _ " << j << " | " << l << " - " << n << " - " << "Brak" << " - " << shiftValue << endl;
-	//							cykArray[i][j] |= bitValue;
-	//						}
-
-	//					}
-
-	//				}
-
-	//			} // l loop end
-
-	//		}
-
-	//	}
-
-	//	//break; //only first line
-
-	//}
 
 
 
@@ -274,7 +216,7 @@ int main(int argc, char** argv)
 
 	
 
-	for (int j = 1; j < inputStringLength; j++) {
+	/*for (int j = 1; j < inputStringLength; j++) {
 		for (int i = 0; i < inputStringLength - j; i++) {
 			for (int c = 0; c < cellWidth; c++) {
 				cout << cykArray[j][i + c] << " - ";
@@ -282,16 +224,13 @@ int main(int argc, char** argv)
 			cout <<  " | ";
 		}
 		cout << endl;
-	}
-	getchar();
+	}*/
 
 	/******************************************************************CUDA PART*********************************************************************/
 	
 	// variables
 	int deviceNumber = 1;
 
-
-	
 
 	//select device number
 	cudaSetDevice(deviceNumber);
@@ -332,7 +271,7 @@ int main(int argc, char** argv)
 	CulturalData culturalData(instanceSize + 2, threadsNumber);
 	// make array clear
 	for (int i = 2; i < inputStringLength; i++) {
-		for (int j = 0; j < inputStringLength; j++) {
+		for (int j = 0; j < inputStringLength * cellWidth; j++) {
 			cykArray[i][j] = 0;
 		}
 	}
@@ -343,7 +282,7 @@ int main(int argc, char** argv)
 	
 	cudaEventRecord(cudaStartTime, defStream); //start counting time
 	
-	int algorithmChoice = 11;
+	int algorithmChoice = 13;
 
 	int blockNumber = 16;
 	int* h_array_in;
@@ -458,7 +397,7 @@ int main(int argc, char** argv)
 	}
 	else if (algorithmChoice == 13) {
 		// noTermsCount < 32
-		dim3 dimBlock(nonTermsCount, nonTermsCount, 1);
+		dim3 dimBlock(32, 32, 1);
 		cykAlgorithm<3> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState);
 	}
 	else if (algorithmChoice == 14) {
