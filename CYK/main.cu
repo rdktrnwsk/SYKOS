@@ -58,25 +58,27 @@ int main(int argc, char** argv)
 	int inputStringLength = inputString.length();
 
 	int cellWidth =  ceil(((float)nonTermsCount / 32.0f));
+	//cellWidth = 1;
+	cout << "hahahah" << cellWidth << endl;
 
 	int** cykArray = new int*[inputStringLength];
 	for (int i = 0; i < inputStringLength; i++) {
-		cykArray[i] = new int[inputStringLength];
+		cykArray[i] = new int[inputStringLength * cellWidth]; // columns multiplied
 	}
 	// make array clear
 	for (int i = 0; i < inputStringLength; i++) {
-		for (int j = 0; j < inputStringLength; j++) {
+		for (int j = 0; j < inputStringLength * cellWidth; j++) {
 			cykArray[i][j] = 0;
 		}
 	}
 
 	// first phase, terminal rules array, for every input string character
-	for (int i = 0; i < inputStringLength; i++) {
+	for (int i = 0; i < inputStringLength * cellWidth; i+= cellWidth) {
 
 		// find character (terminal index)
 		int terminalIndex = -1;
 		for (int j = 0; j < termsCount; j++) {
-			if (inputString[i] == termsArray[j]) {
+			if (inputString[i/cellWidth] == termsArray[j]) {
 				terminalIndex = j;
 				break;
 			}
@@ -87,13 +89,20 @@ int main(int argc, char** argv)
 			/*if (terminalIndex == rulesTermsArray[terminalIndex]) {
 				cykArray[0][i] = j;
 			}*/
+
+		
+
 		if (rulesTermsArray[terminalIndex] >= 0) {
 			int shiftValue = rulesTermsArray[terminalIndex];
 
-			int base = 1;
-			int bitValue = base << shiftValue;
+			int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
 
-			cykArray[0][i] |= bitValue;
+			int base = 1;
+			int bitValue = base << (shiftValue - (offset * 32));
+
+			//cout << "X" << bitValue << endl;
+
+			cykArray[0][i + offset] |= bitValue;
 		}
 		//}
 	}
@@ -117,11 +126,11 @@ int main(int argc, char** argv)
 	}
 	cout << endl;
 
-	/*for (int i = 0; i < inputStringLength; i++) {
+	for (int i = 0; i < inputStringLength * cellWidth; i++) {
 
 		cout << cykArray[0][i] << " | ";
-	}*/
-
+	}
+	cout << endl;
 	// 2. Second part
 
 	// code input string to number
@@ -146,57 +155,117 @@ int main(int argc, char** argv)
 	std::clock_t c_start = std::clock();
 	// your_algorithm
 	
-
-
 	for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
-		for (int j = 0; j < inputStringLength - i; j++) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
+		for (int j = 0; j < (inputStringLength - i) * cellWidth; j += cellWidth) { // every word <of given length: 5 words, 4 words, 3 words, 2, 1...> (2)
 
 			for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
-				 //TODO correct split points!
-				int first = cykArray[k][j];
-				int second = cykArray[i - k - 1][j + k + 1];
+				//for (int c = 0; c < cellWidth; c++) {
 
-				//decode nonterminals (find out if bits are on a given positions)
-				int base = 1;
-				for (int l = 0; l < nonTermsCount; l++) {
-					int bitMaskFirst = base << l;
-					//all possibilities connected with rules
+					//decode nonterminals (find out if bits are on a given positions)
+					int base = 1;
 					for (int m = 0; m < nonTermsCount; m++) {
-						int bitMaskSecond = base << m;
 
-						// if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
-						if (first & bitMaskFirst && second & bitMaskSecond) {
-							//cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+						//int shiftValue = rulesTermsArray[terminalIndex];
+						//int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+						//int base = 1;
+						//int bitValue = base << (shiftValue - (offset * 32));
+						////cout << "X" << bitValue << endl;
+						//cykArray[0][i + offset] |= bitValue;
 
-							//rule exists
-							if (rulesNonTermsArray[l][m] != -1) {
-								int shiftValue = rulesNonTermsArray[l][m];
-								int bitValue = base << shiftValue;
+						int offset = (int)(m / 32); // shift by 32 is the next cell
+						int first = cykArray[k][j + offset];
 
-								cykArray[i][j] |= bitValue;
+						int bitMaskFirst = (base << (m - (offset * 32)));
+
+						//all possibilities connected with rules
+						for (int n = 0; n < nonTermsCount; n++) {
+
+							int offset2 = (int)(n / 32); // shift by 32 is the next cell
+							int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+
+							int bitMaskSecond = (base << (n - (offset2 * 32)));
+
+							// if rule with 'm' index and 'n' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+							if (first & bitMaskFirst && second & bitMaskSecond) {
+								//cout << bitMaskFirst << ", " << bitMaskSecond << " | ";
+								
+								//rule exists
+								if (rulesNonTermsArray[m][n] != -1) {
+									int shiftValue = rulesNonTermsArray[m][n];
+									//int bitValue = base << shiftValue;
+									
+									int offset = (int)(shiftValue / 32); // shift by 32 is the next cell
+									//cout << "ok - " << i << " _ " <<  j << " | " << m << " - " << n << " - " << offset  << " - " << shiftValue << " - bitFirst " << bitMaskFirst << " value1 " << first <<" - bitSeconf " << bitMaskSecond << " val2 " << second << " WTF _  " << ((j + k + 1) * cellWidth) + offset2 << "A standardowo: " << j + k + 1 << endl;
+									int base = 1;
+									int bitValue = base << (shiftValue - (offset * 32));
+
+									cykArray[i][j + offset] |= bitValue;
+								}
+
 							}
 
 						}
 
 					}
 
-				}
+				//} // end c loop
 
-				//cout << first << " | " << second << endl;
+			} // end k loop
 
-				//combinations of productions
+		} // end j loop
 
-				// for each production (rulesNonTerminals)
 
-			}
-
-		}
-
-		//break; //only first line
 
 	}
+
+	//for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+
+	//	for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+
+	//		for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+
+	//									  //TODO correct split points!
+	//			int first = cykArray[k][j];
+	//			int second = cykArray[i - k - 1][j + k + 1];
+
+	//			//decode nonterminals (find out if bits are on a given positions)
+	//			int base = 1;
+	//			for (int l = 0; l < nonTermsCount; l++) {
+
+	//				int bitMaskFirst = base << l;
+
+	//				// all possibilities connected with rules
+	//				for (int m = 0; m < nonTermsCount; m++) {
+	//					int bitMaskSecond = base << m;
+
+	//					// if rule with 'l' index and 'm' index is created and ready to be found if corrrect X ->lm (does X exist in a grammar?)
+	//					if (first & bitMaskFirst && second & bitMaskSecond) {
+	//						
+	//						//rule exists
+	//						if (rulesNonTermsArray[l][m] != -1) {
+	//							int shiftValue = rulesNonTermsArray[l][m];
+	//							int bitValue = base << shiftValue;
+	//							cout << "ok - " << i << " _ " << j << " | " << l << " - " << n << " - " << "Brak" << " - " << shiftValue << endl;
+	//							cykArray[i][j] |= bitValue;
+	//						}
+
+	//					}
+
+	//				}
+
+	//			} // l loop end
+
+	//		}
+
+	//	}
+
+	//	//break; //only first line
+
+	//}
+
+
 
 	std::clock_t c_end = std::clock();
 
@@ -207,8 +276,10 @@ int main(int argc, char** argv)
 
 	for (int j = 1; j < inputStringLength; j++) {
 		for (int i = 0; i < inputStringLength - j; i++) {
-
-			cout << cykArray[j][i] << " | ";
+			for (int c = 0; c < cellWidth; c++) {
+				cout << cykArray[j][i + c] << " - ";
+			}
+			cout <<  " | ";
 		}
 		cout << endl;
 	}
