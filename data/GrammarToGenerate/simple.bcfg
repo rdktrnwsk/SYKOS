@@ -1,0 +1,46 @@
+S -> NP VP
+S -> VP
+NP -> Det NP
+NP -> N
+NP -> NNP
+NP -> NNS
+NP -> NP PP
+VP -> V NP
+VP -> VP PP
+VP -> V ADJ
+VP -> TO VP
+VP -> VB PP
+PP -> P NP
+PP -> TO VP
+PP -> IN
+ADJP -> RB JJS
+ADJP -> JJ S
+Det -> 'the'
+Det -> 'The'
+NNP -> 'John'
+NNS -> 'companies'
+N -> 'box'
+N -> 'floor'
+N -> 'stock'
+V -> 'is'
+V -> 'saw'
+ADJ -> 'happy'
+P -> 'on'
+P -> 'with'
+RB -> 'very'
+JJS -> 'biggest'
+VBP -> 'are'
+RB -> 'not'
+JJ -> 'likely'
+VB -> 'go'
+IN -> 'under'
+TO -> 'to'
+Punct -> '.'
+S0 -> NP VP
+S -> S0 Punct
+NP1 -> Det ADJP
+NP -> NP1 NNS
+VP2 -> VBP RB
+VP -> VP2 ADJP
+ADJP3 -> RB JJ
+ADJP -> ADJP3 PP

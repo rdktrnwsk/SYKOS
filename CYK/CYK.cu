@@ -1488,73 +1488,83 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 		} // end i loop
 
-		// only thread 0 is used for synchronization
+	} else if (action == 3) { //////////////////////////////////////////////////////////////// blocks + threads
 
-		//int numberOfProductions = rulesArray[blockIdx.y][1];
+							// bidx - i loop, bidy - each left symbol, idx - left symbol connected rules
+							// block dim y - number of unique left symbols
 
-		//	//if (idx == 0 && idy == 0) {
-		//	//	printf("HEHE %d\n", rulesArray[blockIdx.y][1]);
-		//	//}
-		//	
-		//	for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
+		int numberOfProductions = rulesArray[bidy][1];
 
-		//												  //for (int j = 0; j < inputStringLength - i; j++) { // every word of given length 5, 4, 3, 2, 1... (2)
+		int i =  additionalVariable;
 
-		//		float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
-		//		//iter = 2.0f;
+			float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
 
-		//		for (int r = 0; r < (int)iter; r++) {
+			for (int jd = 0; jd < (int)iter; jd++) {
 
-		//			int temp_bidx = bidx + (r * gridDim.x);
+				int temp_bidx = bidx + (jd * gridDim.x);
 
-		//			if (temp_bidx < inputStringLength - i) {
-		//				int j = temp_bidx; //J
+				if (temp_bidx < inputStringLength - i) {
 
-		//								   //for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
-		//				if (idx < numberOfProductions) {
+					int j = temp_bidx * cellWidth;
 
-		//					int p = idx;
+					//for (int p = 0; p < rulesCount; p++) { //for each production (each rule)
 
-		//					for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
+					float iterX = ceilf((float)(numberOfProductions) / (float)(blockDim.x));
 
-		//												  //TODO correct split points!
-		//						int first = cykArray[k][j];
-		//						int second = cykArray[i - k - 1][j + k + 1];
+					for (int xd = 0; xd < (int)iterX; xd++) {
 
-		//						//decode nonterminals (find out if bits are on a given positions)
-		//						int base = 1;
-		//						int bitMaskFirst = base << rulesArray[blockIdx.y][(p + 1) * 2];
-		//						int bitMaskSecond = base << rulesArray[blockIdx.y][(p + 1) * 2 + 1];
-		//						if (first & bitMaskFirst && second & bitMaskSecond) {
+						//printf("%d \n", (int)iterX);
 
-		//							int shiftValue = rulesArray[blockIdx.y][0];
-		//							int bitValue = base << shiftValue;
-		//							//TODO - tutaj może być problem
-		//							atomicOr(&cykArray[i][j], bitValue);
-		//						}
+						int temp_idx = idx + (xd * blockDim.x);
 
-		//					}
-		//				}
+						if (temp_idx < numberOfProductions) {
 
-		//			}
-		//		}
+							int r = temp_idx;
 
-		//		//break; //only first line
-		//		if (idx == 0 && idy == 0) {
-		//			//printf("%d | ", g_mutex);
-		//			atomicAdd((int *)&g_mutex, 1);
-		//			//only when all blocks add 1 to g_mutex
-		//			//will g_mutex equal to goalVal
-		//			while (g_mutex != (gridDim.y * gridDim.x * i)) {
-		//				//Do nothing here
-		//			}
+							for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
-		//		}
-		//		__syncthreads();
+								int rule1 = rulesArray[blockIdx.y][(r + 1) * 2];
+								int rule2 = rulesArray[blockIdx.y][(r + 1) * 2 + 1];
 
-		//	}
 
-		//// only thread 0 is used for synchronization
+								//int first = cykArray[k][j];
+								int offset = (int)(rule1 / 32);
+								int first = cykArray[k][j + offset];
+
+								int offset2 = (int)(rule2 / 32);
+								int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
+								//int second = cykArray[i - k - 1][j + k + 1];
+
+								//decode nonterminals (find out if bits are on a given positions)
+								int base = 1;
+								//int bitMaskFirst = base << rulesArray[blockIdx.y][(r + 1) * 2];
+								int bitMaskFirst = (base << (rule1 - (offset * 32)));
+								//int bitMaskSecond = base << rulesArray[blockIdx.y][(r + 1) * 2 + 1];
+								int bitMaskSecond = (base << (rule2 - (offset2 * 32)));
+								if (first & bitMaskFirst && second & bitMaskSecond) {
+
+									int shiftValue = rulesArray[blockIdx.y][0];
+									int offset = (int)(shiftValue / 32);
+									int bitValue = base << (shiftValue - (offset * 32));
+
+									atomicOr(&cykArray[i][j + offset], bitValue);
+
+									//int shiftValue = rulesArray[blockIdx.y][0];
+									//							int bitValue = base << shiftValue;
+									//							//TODO - tutaj może być problem
+									//							atomicOr(&cykArray[i][j], bitValue);
+								}
+
+							}
+						}
+
+					} // xd loop
+
+				}
+
+			} // jd loop
+
+			__syncthreads();
 
 
 	}

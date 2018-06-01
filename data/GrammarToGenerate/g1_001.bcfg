@@ -1,0 +1,187 @@
+S -> NP
+S -> NPPRD
+S -> VP
+S -> VP PUNCpoint
+PUNCpoint -> '.'
+VBG -> 'buying'
+VBD -> 'observed'
+VBD -> 'saw'
+ADJP -> RB JJS
+VBN -> 'Given'
+VBN -> 'argued'
+VBN -> 'imported'
+VBN -> 'returned'
+VBN -> 'shown'
+VBN -> 'supported'
+VBP -> 'are'
+VBP -> 'lose'
+VBP -> 'wish'
+JJ -> 'Polish'
+JJ -> 'adjustable'
+JJ -> 'available'
+JJ -> 'congressional'
+JJ -> 'dependent'
+JJ -> 'happy'
+JJ -> 'healthcare'
+JJ -> 'legitimate'
+JJ -> 'likely'
+JJ -> 'magnetic'
+JJ -> 'serial'
+JJ -> 'stupid'
+JJ -> 'synthetic'
+JJ -> 'yearago'
+VBZ -> 'is'
+VBZ -> 'manages'
+VBZ -> 'recalls'
+DT -> 'The'
+DT -> 'the'
+PP -> IN
+PP -> IN NP
+PP -> RB PP
+NN -> 'bank'
+NN -> 'city'
+NN -> 'comfort'
+NN -> 'convention'
+NN -> 'decade'
+NN -> 'knowledge'
+NN -> 'legislation'
+NN -> 'management'
+NN -> 'nomination'
+NN -> 'notebook'
+NN -> 'outcome'
+NN -> 'platinum'
+NN -> 'purchasing'
+NN -> 'result'
+NN -> 'scandal'
+NN -> 'spite'
+NN -> 'stock'
+NN -> 'swing'
+NN -> 'total'
+NN -> 'war'
+ADVPTMP -> RBR NP
+TO -> 'to'
+RB -> 'finally'
+RB -> 'not'
+RB -> 'very'
+NP -> DT NN
+NP -> DT NNS
+NP -> EX
+NP -> NP
+NP -> NP NP
+NP -> NPR
+NP -> QPMONEY
+NP -> S
+NPPRD -> NP ADJP
+NPPRD -> NPR
+NNS -> 'assets'
+NNS -> 'companies'
+NNS -> 'instructions'
+NNS -> 'prisons'
+NNS -> 'properties'
+NNS -> 'relationships'
+NNS -> 'scenarios'
+NNP -> 'Campbell'
+NNP -> 'Dick'
+NNP -> 'French'
+NNP -> 'Ill'
+NNP -> 'Income'
+NNP -> 'Jefferies'
+NNP -> 'John'
+NNP -> 'McCaw'
+NNP -> 'Mitchell'
+NNP -> 'Northeast'
+NNP -> 'Party'
+NNP -> 'Robertson'
+NNP -> 'Superfund'
+NNP -> 'Sweden'
+NNP -> 'The'
+VB -> 'contribute'
+VB -> 'go'
+VB -> 'solve'
+CD -> '170'
+CD -> '22'
+CD -> '400'
+CD -> '800'
+VP -> JJ
+VP -> TO VP
+VP -> VB PP
+VP -> VB PPLOCPRD
+VP -> VBN PRT
+VP -> VBZ
+VP -> VBZ ADJPPRD
+IN -> 'at'
+IN -> 'under'
+IN -> 'with'
+X -> IN
+MD -> 'Can'
+SBARADV -> X S
+NNPS -> 'Appeals'
+NNPS -> 'Containers'
+NNPS -> 'Dynamics'
+ADJPPRD -> JJ
+ADJPPRD -> JJ PPLOC
+ADJPPRD -> JJ S
+JJS -> 'biggest'
+NPR -> NNP
+S0 -> NP VP
+S -> S0 PUNCpoint
+S1 -> PPLOC COMMA
+S2 -> S1 NP
+S3 -> S2 VP
+S4 -> S3 PUNCpoint
+S -> S4 PUNCquotequote
+SBAR5 -> RB IN
+SBAR -> SBAR5 S
+ADJP6 -> RB RB
+ADJP -> ADJP6 JJ
+PP7 -> ADVP IN
+PP -> PP7 SNOM
+PP8 -> RB IN
+PP -> PP8 NP
+PRN9 -> PUNCLRB NP
+PRN -> PRN9 PUNCRRB
+NP10 -> DT ADJP
+NP -> NP10 NNS
+NP11 -> NP COMMA
+NP12 -> NP11 SBAR
+NP -> NP12 COMMA
+NP13 -> NP PP
+NP -> NP13 PRN
+NP14 -> NP PPLOC
+NP15 -> NP14 PP
+NP -> NP15 PP
+NP16 -> PRPdollar VBG
+NP -> NP16 NNS
+NPLOC17 -> NP COMMA
+NPLOC18 -> NPLOC17 NP
+NPLOC -> NPLOC18 PUNCpoint
+QP19 -> RB RB
+QP -> QP19 QP
+VP20 -> VB NP
+VP -> VP20 PRT
+VP21 -> VB NP
+VP -> VP21 VP
+VP22 -> VBD NP
+VP23 -> VP22 NPTMP
+VP -> VP23 PPLOC
+VP24 -> VBD NP
+VP -> VP24 PP
+VP25 -> VBD NP
+VP26 -> VP25 PP
+VP27 -> VP26 PP
+VP28 -> VP27 COMMA
+VP -> VP28 SADV
+VP29 -> VBD NP
+VP -> VP29 S
+VP30 -> VBP RB
+VP -> VP30 ADJPPRD
+VP31 -> VBZ ADJPPRD
+VP -> VP31 SBAR
+VP32 -> VBZ PRT
+VP -> VP32 NP
+ADJPPRD33 -> PUNCbquotebquote JJ
+ADJPPRD34 -> ADJPPRD33 PUNCquotequote
+ADJPPRD -> ADJPPRD34 PP
+SBARQ35 -> RB WHNP
+SBARQ36 -> SBARQ35 SQ
+SBARQ -> SBARQ36 PUNCpoint

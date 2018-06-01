@@ -1,0 +1,6726 @@
+S -> ADJPPRD
+S -> ADVP VP
+S -> NP
+S -> NP ADJPPRD
+S -> NP PPLOCPRD
+S -> NP PPPRD
+S -> NPPRD
+S -> NPTMP VP
+S -> PP VP
+S -> PPTMP VP
+S -> PRN VP
+S -> PUNCbquotebquote NPPRD
+S -> SNOM VP
+S -> VP
+S -> VP PUNCpoint
+SBAR -> PUNCbquotebquote S
+SBAR -> WDT S
+PPPRD -> IN NP
+PPPRD -> JJ NP
+PPPRD -> TO NP
+SBARPRPPRD -> IN S
+WDT -> 'that'
+WDT -> 'whatever'
+JJ -> '12year'
+JJ -> '190point'
+JJ -> '20th'
+JJ -> '2for1'
+JJ -> '300ashare'
+JJ -> '30share'
+JJ -> '52week'
+JJ -> 'African'
+JJ -> 'Arab'
+JJ -> 'Asian'
+JJ -> 'Canadian'
+JJ -> 'Christian'
+JJ -> 'Colombian'
+JJ -> 'Communist'
+JJ -> 'Democratic'
+JJ -> 'European'
+JJ -> 'Finnish'
+JJ -> 'French'
+JJ -> 'German'
+JJ -> 'Great'
+JJ -> 'Highgrade'
+JJ -> 'Hungarian'
+JJ -> 'Indian'
+JJ -> 'Israeli'
+JJ -> 'Italian'
+JJ -> 'Korean'
+JJ -> 'Latin'
+JJ -> 'Londonbased'
+JJ -> 'Mexican'
+JJ -> 'Northern'
+JJ -> 'Polish'
+JJ -> 'Soviet'
+JJ -> 'Spanish'
+JJ -> 'Swedish'
+JJ -> 'Taiwanese'
+JJ -> 'Vietnamese'
+JJ -> 'Washingtonbased'
+JJ -> 'able'
+JJ -> 'academic'
+JJ -> 'acceptable'
+JJ -> 'additional'
+JJ -> 'adjustable'
+JJ -> 'administrative'
+JJ -> 'adverse'
+JJ -> 'affluent'
+JJ -> 'aftertax'
+JJ -> 'aggressive'
+JJ -> 'agricultural'
+JJ -> 'alternative'
+JJ -> 'ample'
+JJ -> 'annual'
+JJ -> 'annualized'
+JJ -> 'anticipated'
+JJ -> 'anxious'
+JJ -> 'apparent'
+JJ -> 'appropriate'
+JJ -> 'atmospheric'
+JJ -> 'attractive'
+JJ -> 'available'
+JJ -> 'average'
+JJ -> 'aware'
+JJ -> 'back'
+JJ -> 'bad'
+JJ -> 'bankbacked'
+JJ -> 'base'
+JJ -> 'bearish'
+JJ -> 'benchmark'
+JJ -> 'big'
+JJ -> 'black'
+JJ -> 'blackandwhite'
+JJ -> 'bleak'
+JJ -> 'blue'
+JJ -> 'bluechip'
+JJ -> 'bondequivalent'
+JJ -> 'brief'
+JJ -> 'bright'
+JJ -> 'brisk'
+JJ -> 'budgetary'
+JJ -> 'buy'
+JJ -> 'buyout'
+JJ -> 'call'
+JJ -> 'capable'
+JJ -> 'careful'
+JJ -> 'certain'
+JJ -> 'chaotic'
+JJ -> 'charitable'
+JJ -> 'cheap'
+JJ -> 'chief'
+JJ -> 'civil'
+JJ -> 'classic'
+JJ -> 'clinical'
+JJ -> 'closedend'
+JJ -> 'cold'
+JJ -> 'collective'
+JJ -> 'combined'
+JJ -> 'coming'
+JJ -> 'comparable'
+JJ -> 'compelling'
+JJ -> 'complex'
+JJ -> 'comprehensive'
+JJ -> 'computerdriven'
+JJ -> 'concentrated'
+JJ -> 'concrete'
+JJ -> 'confidential'
+JJ -> 'congressional'
+JJ -> 'conservative'
+JJ -> 'considerable'
+JJ -> 'constant'
+JJ -> 'continuing'
+JJ -> 'controversial'
+JJ -> 'conventional'
+JJ -> 'convertible'
+JJ -> 'convinced'
+JJ -> 'core'
+JJ -> 'covert'
+JJ -> 'creative'
+JJ -> 'credible'
+JJ -> 'cubic'
+JJ -> 'current'
+JJ -> 'damaged'
+JJ -> 'daytoday'
+JJ -> 'dead'
+JJ -> 'decent'
+JJ -> 'deep'
+JJ -> 'defensive'
+JJ -> 'defunct'
+JJ -> 'democratic'
+JJ -> 'dependent'
+JJ -> 'depositary'
+JJ -> 'deputy'
+JJ -> 'desirable'
+JJ -> 'desperate'
+JJ -> 'different'
+JJ -> 'diplomatic'
+JJ -> 'direct'
+JJ -> 'disappointing'
+JJ -> 'discount'
+JJ -> 'discretionary'
+JJ -> 'dizzying'
+JJ -> 'domestic'
+JJ -> 'down'
+JJ -> 'downward'
+JJ -> 'dramatic'
+JJ -> 'dry'
+JJ -> 'dual'
+JJ -> 'dutyfree'
+JJ -> 'east'
+JJ -> 'educational'
+JJ -> 'electric'
+JJ -> 'enough'
+JJ -> 'environmental'
+JJ -> 'estimated'
+JJ -> 'evident'
+JJ -> 'exact'
+JJ -> 'excellent'
+JJ -> 'excessive'
+JJ -> 'expected'
+JJ -> 'extensive'
+JJ -> 'external'
+JJ -> 'fair'
+JJ -> 'famous'
+JJ -> 'favorable'
+JJ -> 'federal'
+JJ -> 'few'
+JJ -> 'final'
+JJ -> 'first'
+JJ -> 'fiscal'
+JJ -> 'former'
+JJ -> 'fourthquarter'
+JJ -> 'fouryearold'
+JJ -> 'free'
+JJ -> 'fresh'
+JJ -> 'friendly'
+JJ -> 'full'
+JJ -> 'fundamental'
+JJ -> 'further'
+JJ -> 'future'
+JJ -> 'generous'
+JJ -> 'genuine'
+JJ -> 'global'
+JJ -> 'gold'
+JJ -> 'golden'
+JJ -> 'good'
+JJ -> 'grand'
+JJ -> 'gray'
+JJ -> 'green'
+JJ -> 'grim'
+JJ -> 'half'
+JJ -> 'handy'
+JJ -> 'happy'
+JJ -> 'healthcare'
+JJ -> 'heavy'
+JJ -> 'hefty'
+JJ -> 'high'
+JJ -> 'highdefinition'
+JJ -> 'highend'
+JJ -> 'hightech'
+JJ -> 'historical'
+JJ -> 'horrible'
+JJ -> 'identical'
+JJ -> 'imminent'
+JJ -> 'immune'
+JJ -> 'important'
+JJ -> 'improved'
+JJ -> 'incomplete'
+JJ -> 'independent'
+JJ -> 'indirect'
+JJ -> 'industrial'
+JJ -> 'industrywide'
+JJ -> 'inevitable'
+JJ -> 'influential'
+JJ -> 'informal'
+JJ -> 'initial'
+JJ -> 'innovative'
+JJ -> 'institutional'
+JJ -> 'insured'
+JJ -> 'interbank'
+JJ -> 'interim'
+JJ -> 'internal'
+JJ -> 'international'
+JJ -> 'interstate'
+JJ -> 'ironic'
+JJ -> 'joint'
+JJ -> 'jumbo'
+JJ -> 'junkbond'
+JJ -> 'key'
+JJ -> 'large'
+JJ -> 'last'
+JJ -> 'lastminute'
+JJ -> 'later'
+JJ -> 'leading'
+JJ -> 'leftist'
+JJ -> 'legislative'
+JJ -> 'legitimate'
+JJ -> 'liberal'
+JJ -> 'like'
+JJ -> 'likely'
+JJ -> 'limited'
+JJ -> 'loanloss'
+JJ -> 'long'
+JJ -> 'low'
+JJ -> 'loyal'
+JJ -> 'magnetic'
+JJ -> 'main'
+JJ -> 'mandatory'
+JJ -> 'massmarket'
+JJ -> 'mechanical'
+JJ -> 'medical'
+JJ -> 'middle'
+JJ -> 'military'
+JJ -> 'modest'
+JJ -> 'moneymarket'
+JJ -> 'moral'
+JJ -> 'municipal'
+JJ -> 'narrow'
+JJ -> 'nasty'
+JJ -> 'national'
+JJ -> 'nationwide'
+JJ -> 'nearby'
+JJ -> 'necessary'
+JJ -> 'negotiable'
+JJ -> 'nervous'
+JJ -> 'new'
+JJ -> 'next'
+JJ -> 'nice'
+JJ -> 'nonexecutive'
+JJ -> 'normal'
+JJ -> 'nuclear'
+JJ -> 'obvious'
+JJ -> 'oneday'
+JJ -> 'onethird'
+JJ -> 'onetime'
+JJ -> 'ongoing'
+JJ -> 'onsite'
+JJ -> 'open'
+JJ -> 'optical'
+JJ -> 'optimistic'
+JJ -> 'other'
+JJ -> 'outside'
+JJ -> 'outstanding'
+JJ -> 'overnight'
+JJ -> 'overseas'
+JJ -> 'overthecounter'
+JJ -> 'painful'
+JJ -> 'par'
+JJ -> 'partial'
+JJ -> 'particular'
+JJ -> 'passive'
+JJ -> 'payable'
+JJ -> 'peaceful'
+JJ -> 'persistent'
+JJ -> 'pessimistic'
+JJ -> 'photographic'
+JJ -> 'plastic'
+JJ -> 'pleased'
+JJ -> 'popular'
+JJ -> 'portable'
+JJ -> 'positive'
+JJ -> 'possible'
+JJ -> 'postcrash'
+JJ -> 'practical'
+JJ -> 'preferred'
+JJ -> 'preliminary'
+JJ -> 'present'
+JJ -> 'presidential'
+JJ -> 'pretax'
+JJ -> 'previous'
+JJ -> 'prime'
+JJ -> 'principal'
+JJ -> 'prior'
+JJ -> 'private'
+JJ -> 'privatesector'
+JJ -> 'procedural'
+JJ -> 'prochoice'
+JJ -> 'prodemocracy'
+JJ -> 'programtrading'
+JJ -> 'proposed'
+JJ -> 'prospective'
+JJ -> 'provisional'
+JJ -> 'prudent'
+JJ -> 'punitive'
+JJ -> 'quarterly'
+JJ -> 'questionable'
+JJ -> 'quiet'
+JJ -> 'radical'
+JJ -> 'rapid'
+JJ -> 'rare'
+JJ -> 'reasonable'
+JJ -> 'record'
+JJ -> 'red'
+JJ -> 'reduced'
+JJ -> 'relative'
+JJ -> 'reluctant'
+JJ -> 'remarkable'
+JJ -> 'residential'
+JJ -> 'responsible'
+JJ -> 'restrictive'
+JJ -> 'revised'
+JJ -> 'right'
+JJ -> 'rigid'
+JJ -> 'risky'
+JJ -> 'rough'
+JJ -> 'sad'
+JJ -> 'sales'
+JJ -> 'savingsandloan'
+JJ -> 'scarce'
+JJ -> 'scheduled'
+JJ -> 'scientific'
+JJ -> 'secondlargest'
+JJ -> 'secondquarter'
+JJ -> 'serial'
+JJ -> 'sevenday'
+JJ -> 'seventh'
+JJ -> 'sevenyear'
+JJ -> 'significant'
+JJ -> 'simple'
+JJ -> 'sixth'
+JJ -> 'sizable'
+JJ -> 'slim'
+JJ -> 'sluggish'
+JJ -> 'social'
+JJ -> 'socialist'
+JJ -> 'soft'
+JJ -> 'sound'
+JJ -> 'south'
+JJ -> 'southern'
+JJ -> 'special'
+JJ -> 'specific'
+JJ -> 'spectacular'
+JJ -> 'square'
+JJ -> 'standardized'
+JJ -> 'stateowned'
+JJ -> 'steady'
+JJ -> 'steep'
+JJ -> 'stiff'
+JJ -> 'strange'
+JJ -> 'striking'
+JJ -> 'strong'
+JJ -> 'stupid'
+JJ -> 'such'
+JJ -> 'sufficient'
+JJ -> 'sure'
+JJ -> 'surprising'
+JJ -> 'sweeping'
+JJ -> 'synthetic'
+JJ -> 'technical'
+JJ -> 'temporary'
+JJ -> 'tentative'
+JJ -> 'thin'
+JJ -> 'third'
+JJ -> 'top'
+JJ -> 'traditional'
+JJ -> 'troubled'
+JJ -> 'troublesome'
+JJ -> 'troubling'
+JJ -> 'twoday'
+JJ -> 'twoyear'
+JJ -> 'typical'
+JJ -> 'uncertain'
+JJ -> 'unchanged'
+JJ -> 'unclear'
+JJ -> 'unconstitutional'
+JJ -> 'unexpected'
+JJ -> 'unfair'
+JJ -> 'unfilled'
+JJ -> 'unsettled'
+JJ -> 'unsuccessful'
+JJ -> 'unusual'
+JJ -> 'unwanted'
+JJ -> 'upscale'
+JJ -> 'urban'
+JJ -> 'usual'
+JJ -> 'valuable'
+JJ -> 'vast'
+JJ -> 'very'
+JJ -> 'vigorous'
+JJ -> 'visible'
+JJ -> 'voluntary'
+JJ -> 'weak'
+JJ -> 'weird'
+JJ -> 'welcome'
+JJ -> 'western'
+JJ -> 'white'
+JJ -> 'whitecollar'
+JJ -> 'whole'
+JJ -> 'wide'
+JJ -> 'wild'
+JJ -> 'willing'
+JJ -> 'worried'
+JJ -> 'wouldbe'
+JJ -> 'wrong'
+JJ -> 'yearago'
+JJ -> 'yearearlier'
+JJ -> 'yearend'
+JJ -> 'yearly'
+JJ -> 'young'
+WP -> 'What'
+WP -> 'Who'
+WP -> 'what'
+WP -> 'who'
+PUNCdollar -> '$'
+PUNCdollar -> 'Adollar'
+PUNCdollar -> 'Cdollar'
+PUNCdollar -> 'HKdollar'
+NPRS -> NNPS NNPS
+RP -> 'about'
+RP -> 'along'
+RP -> 'around'
+RP -> 'aside'
+RP -> 'by'
+RP -> 'over'
+RP -> 'up'
+PRN -> COMMA S
+PRN -> PUNCcolon NP
+PRN -> SINV
+PRP -> 'It'
+PRP -> 'She'
+PRP -> 'he'
+PRP -> 'herself'
+PRP -> 'him'
+PRP -> 'himself'
+PRP -> 'it'
+PRP -> 'itself'
+PRP -> 'me'
+PRP -> 'one'
+PRP -> 'you'
+PRP -> 'yourself'
+RB -> "n't"
+RB -> 'Maybe'
+RB -> 'Never'
+RB -> 'Now'
+RB -> 'Obviously'
+RB -> 'Sometimes'
+RB -> 'Then'
+RB -> 'about'
+RB -> 'actively'
+RB -> 'actually'
+RB -> 'adequately'
+RB -> 'after'
+RB -> 'afterward'
+RB -> 'again'
+RB -> 'aggressively'
+RB -> 'almost'
+RB -> 'also'
+RB -> 'altogether'
+RB -> 'anyway'
+RB -> 'anywhere'
+RB -> 'apart'
+RB -> 'apiece'
+RB -> 'apointmpoint'
+RB -> 'approximately'
+RB -> 'around'
+RB -> 'as'
+RB -> 'aside'
+RB -> 'back'
+RB -> 'barely'
+RB -> 'before'
+RB -> 'below'
+RB -> 'broadly'
+RB -> 'commonly'
+RB -> 'considerably'
+RB -> 'consistently'
+RB -> 'constantly'
+RB -> 'deliberately'
+RB -> 'downward'
+RB -> 'due'
+RB -> 'early'
+RB -> 'easy'
+RB -> 'entirely'
+RB -> 'even'
+RB -> 'ever'
+RB -> 'everywhere'
+RB -> 'exactly'
+RB -> 'exceptionally'
+RB -> 'exclusively'
+RB -> 'fairly'
+RB -> 'fast'
+RB -> 'finally'
+RB -> 'financially'
+RB -> 'first'
+RB -> 'forever'
+RB -> 'formally'
+RB -> 'formerly'
+RB -> 'fractionally'
+RB -> 'frequently'
+RB -> 'fully'
+RB -> 'further'
+RB -> 'gradually'
+RB -> 'hard'
+RB -> 'here'
+RB -> 'high'
+RB -> 'highly'
+RB -> 'historically'
+RB -> 'illegally'
+RB -> 'in'
+RB -> 'increasingly'
+RB -> 'indirectly'
+RB -> 'instead'
+RB -> 'jointly'
+RB -> 'largely'
+RB -> 'late'
+RB -> 'likely'
+RB -> 'literally'
+RB -> 'mainly'
+RB -> 'maybe'
+RB -> 'moderately'
+RB -> 'monthly'
+RB -> 'moreover'
+RB -> 'mostly'
+RB -> 'much'
+RB -> 'narrowly'
+RB -> 'nearby'
+RB -> 'nervously'
+RB -> 'never'
+RB -> 'newly'
+RB -> 'no'
+RB -> 'nonetheless'
+RB -> 'not'
+RB -> 'now'
+RB -> 'often'
+RB -> 'once'
+RB -> 'openly'
+RB -> 'over'
+RB -> 'overly'
+RB -> 'partially'
+RB -> 'particularly'
+RB -> 'perfectly'
+RB -> 'perhaps'
+RB -> 'politically'
+RB -> 'possibly'
+RB -> 'ppointm'
+RB -> 'prior'
+RB -> 'probably'
+RB -> 'promptly'
+RB -> 'properly'
+RB -> 'publicly'
+RB -> 'quickly'
+RB -> 'rapidly'
+RB -> 'rather'
+RB -> 'real'
+RB -> 'reasonably'
+RB -> 'recently'
+RB -> 'right'
+RB -> 'routinely'
+RB -> 'seasonally'
+RB -> 'shortly'
+RB -> 'significantly'
+RB -> 'similarly'
+RB -> 'simply'
+RB -> 'slowly'
+RB -> 'solely'
+RB -> 'somewhere'
+RB -> 'specifically'
+RB -> 'still'
+RB -> 'substantially'
+RB -> 'successfully'
+RB -> 'supposedly'
+RB -> 'sure'
+RB -> 'surprisingly'
+RB -> 'temporarily'
+RB -> 'tentatively'
+RB -> 'that'
+RB -> 'there'
+RB -> 'thereafter'
+RB -> 'though'
+RB -> 'together'
+RB -> 'too'
+RB -> 'totally'
+RB -> 'traditionally'
+RB -> 'typically'
+RB -> 'unanimously'
+RB -> 'unfairly'
+RB -> 'unsuccessfully'
+RB -> 'unusually'
+RB -> 'upward'
+RB -> 'very'
+RB -> 'virtually'
+RB -> 'wildly'
+RB -> 'worldwide'
+RB -> 'yesterday'
+RB -> 'yet'
+NNS -> '1960s'
+NNS -> '1990s'
+NNS -> 'Americans'
+NNS -> 'CFCs'
+NNS -> 'Democrats'
+NNS -> 'EURODOLLARS'
+NNS -> 'Japanese'
+NNS -> 'LBOs'
+NNS -> 'Notes'
+NNS -> 'Soviets'
+NNS -> 'abuses'
+NNS -> 'acceptances'
+NNS -> 'accounts'
+NNS -> 'accusations'
+NNS -> 'acres'
+NNS -> 'actions'
+NNS -> 'activists'
+NNS -> 'adjusters'
+NNS -> 'ads'
+NNS -> 'advertisers'
+NNS -> 'advisers'
+NNS -> 'advocates'
+NNS -> 'agencies'
+NNS -> 'agreements'
+NNS -> 'aides'
+NNS -> 'allegations'
+NNS -> 'alternatives'
+NNS -> 'amounts'
+NNS -> 'analysts'
+NNS -> 'announcements'
+NNS -> 'answers'
+NNS -> 'apples'
+NNS -> 'applications'
+NNS -> 'appointments'
+NNS -> 'appropriations'
+NNS -> 'arrangements'
+NNS -> 'articles'
+NNS -> 'aspects'
+NNS -> 'assets'
+NNS -> 'associates'
+NNS -> 'attempts'
+NNS -> 'averages'
+NNS -> 'backers'
+NNS -> 'bacteria'
+NNS -> 'barrels'
+NNS -> 'bases'
+NNS -> 'bells'
+NNS -> 'bidders'
+NNS -> 'bikes'
+NNS -> 'billions'
+NNS -> 'bills'
+NNS -> 'blacks'
+NNS -> 'blocks'
+NNS -> 'boards'
+NNS -> 'bonds'
+NNS -> 'books'
+NNS -> 'borrowers'
+NNS -> 'borrowings'
+NNS -> 'boxes'
+NNS -> 'branches'
+NNS -> 'breakers'
+NNS -> 'broadcasts'
+NNS -> 'brokers'
+NNS -> 'brothers'
+NNS -> 'budgets'
+NNS -> 'bugs'
+NNS -> 'builders'
+NNS -> 'bushels'
+NNS -> 'businessmen'
+NNS -> 'buyouts'
+NNS -> 'calls'
+NNS -> 'camps'
+NNS -> 'candidates'
+NNS -> 'capitalgains'
+NNS -> 'cards'
+NNS -> 'careers'
+NNS -> 'cells'
+NNS -> 'centers'
+NNS -> 'chains'
+NNS -> 'challenges'
+NNS -> 'changes'
+NNS -> 'charities'
+NNS -> 'charts'
+NNS -> 'children'
+NNS -> 'circumstances'
+NNS -> 'cities'
+NNS -> 'citizens'
+NNS -> 'claims'
+NNS -> 'clients'
+NNS -> 'colleagues'
+NNS -> 'commercials'
+NNS -> 'commissions'
+NNS -> 'committees'
+NNS -> 'communications'
+NNS -> 'communities'
+NNS -> 'companies'
+NNS -> 'comparisons'
+NNS -> 'competitors'
+NNS -> 'concessions'
+NNS -> 'conditions'
+NNS -> 'conservatives'
+NNS -> 'considerations'
+NNS -> 'constituents'
+NNS -> 'consumers'
+NNS -> 'contractors'
+NNS -> 'contracts'
+NNS -> 'controls'
+NNS -> 'conversations'
+NNS -> 'copies'
+NNS -> 'corporations'
+NNS -> 'costs'
+NNS -> 'countries'
+NNS -> 'credentials'
+NNS -> 'creditors'
+NNS -> 'credits'
+NNS -> 'criminals'
+NNS -> 'curbs'
+NNS -> 'cutbacks'
+NNS -> 'cuts'
+NNS -> 'cycles'
+NNS -> 'data'
+NNS -> 'days'
+NNS -> 'dealers'
+NNS -> 'dealings'
+NNS -> 'deals'
+NNS -> 'decades'
+NNS -> 'decisions'
+NNS -> 'defendants'
+NNS -> 'defenses'
+NNS -> 'delays'
+NNS -> 'demands'
+NNS -> 'demonstrators'
+NNS -> 'desks'
+NNS -> 'developers'
+NNS -> 'devices'
+NNS -> 'diabetics'
+NNS -> 'difficulties'
+NNS -> 'directors'
+NNS -> 'discounts'
+NNS -> 'discussions'
+NNS -> 'displays'
+NNS -> 'dissidents'
+NNS -> 'dividends'
+NNS -> 'dollars'
+NNS -> 'drives'
+NNS -> 'drugs'
+NNS -> 'duties'
+NNS -> 'economics'
+NNS -> 'economies'
+NNS -> 'editions'
+NNS -> 'editors'
+NNS -> 'efforts'
+NNS -> 'eggs'
+NNS -> 'elevators'
+NNS -> 'employees'
+NNS -> 'engineers'
+NNS -> 'entities'
+NNS -> 'environmentalists'
+NNS -> 'environments'
+NNS -> 'estimates'
+NNS -> 'events'
+NNS -> 'exchanges'
+NNS -> 'executives'
+NNS -> 'expectations'
+NNS -> 'expenditures'
+NNS -> 'expenses'
+NNS -> 'experts'
+NNS -> 'exporters'
+NNS -> 'exposures'
+NNS -> 'facilities'
+NNS -> 'factors'
+NNS -> 'families'
+NNS -> 'fans'
+NNS -> 'fares'
+NNS -> 'farmers'
+NNS -> 'fears'
+NNS -> 'features'
+NNS -> 'feet'
+NNS -> 'fibers'
+NNS -> 'fields'
+NNS -> 'financings'
+NNS -> 'findings'
+NNS -> 'firms'
+NNS -> 'flights'
+NNS -> 'folks'
+NNS -> 'forces'
+NNS -> 'foreigners'
+NNS -> 'fortunes'
+NNS -> 'franchisees'
+NNS -> 'francs'
+NNS -> 'freedoms'
+NNS -> 'fuels'
+NNS -> 'fundamentals'
+NNS -> 'funds'
+NNS -> 'gainers'
+NNS -> 'gallons'
+NNS -> 'games'
+NNS -> 'generations'
+NNS -> 'genes'
+NNS -> 'goals'
+NNS -> 'goods'
+NNS -> 'governments'
+NNS -> 'governors'
+NNS -> 'graphics'
+NNS -> 'grounds'
+NNS -> 'groups'
+NNS -> 'guarantees'
+NNS -> 'guests'
+NNS -> 'guidelines'
+NNS -> 'guns'
+NNS -> 'guys'
+NNS -> 'hands'
+NNS -> 'headquarters'
+NNS -> 'hearings'
+NNS -> 'heels'
+NNS -> 'highs'
+NNS -> 'holders'
+NNS -> 'hopes'
+NNS -> 'hospitals'
+NNS -> 'hotels'
+NNS -> 'households'
+NNS -> 'houses'
+NNS -> 'hurdles'
+NNS -> 'imbalances'
+NNS -> 'implications'
+NNS -> 'imports'
+NNS -> 'indexes'
+NNS -> 'indications'
+NNS -> 'indicators'
+NNS -> 'individuals'
+NNS -> 'initiatives'
+NNS -> 'insiders'
+NNS -> 'installations'
+NNS -> 'instructions'
+NNS -> 'interests'
+NNS -> 'interviews'
+NNS -> 'inventories'
+NNS -> 'investigators'
+NNS -> 'jobs'
+NNS -> 'journalists'
+NNS -> 'judges'
+NNS -> 'jurors'
+NNS -> 'kids'
+NNS -> 'lawmakers'
+NNS -> 'lawyers'
+NNS -> 'letters'
+NNS -> 'levels'
+NNS -> 'liabilities'
+NNS -> 'liberals'
+NNS -> 'licenses'
+NNS -> 'lights'
+NNS -> 'limits'
+NNS -> 'lives'
+NNS -> 'locations'
+NNS -> 'losers'
+NNS -> 'lows'
+NNS -> 'magazines'
+NNS -> 'mainframes'
+NNS -> 'margins'
+NNS -> 'marketers'
+NNS -> 'marketmakers'
+NNS -> 'markets'
+NNS -> 'marks'
+NNS -> 'masters'
+NNS -> 'materials'
+NNS -> 'maturities'
+NNS -> 'measures'
+NNS -> 'members'
+NNS -> 'men'
+NNS -> 'merchants'
+NNS -> 'metals'
+NNS -> 'milestones'
+NNS -> 'millions'
+NNS -> 'minutes'
+NNS -> 'mortgages'
+NNS -> 'moves'
+NNS -> 'movies'
+NNS -> 'municipals'
+NNS -> 'names'
+NNS -> 'nations'
+NNS -> 'needs'
+NNS -> 'negotiations'
+NNS -> 'networks'
+NNS -> 'newspapers'
+NNS -> 'objections'
+NNS -> 'objectives'
+NNS -> 'occasions'
+NNS -> 'offerings'
+NNS -> 'offers'
+NNS -> 'officers'
+NNS -> 'ones'
+NNS -> 'opponents'
+NNS -> 'organizations'
+NNS -> 'outlets'
+NNS -> 'packages'
+NNS -> 'pages'
+NNS -> 'parents'
+NNS -> 'partnerships'
+NNS -> 'patients'
+NNS -> 'patterns'
+NNS -> 'payments'
+NNS -> 'pence'
+NNS -> 'periods'
+NNS -> 'permits'
+NNS -> 'pharmaceuticals'
+NNS -> 'phones'
+NNS -> 'pickers'
+NNS -> 'pictures'
+NNS -> 'pigs'
+NNS -> 'plaintiffs'
+NNS -> 'planes'
+NNS -> 'plants'
+NNS -> 'points'
+NNS -> 'policies'
+NNS -> 'portfolios'
+NNS -> 'portions'
+NNS -> 'predictions'
+NNS -> 'preferences'
+NNS -> 'pressures'
+NNS -> 'prices'
+NNS -> 'priorities'
+NNS -> 'prisons'
+NNS -> 'problems'
+NNS -> 'processors'
+NNS -> 'products'
+NNS -> 'projections'
+NNS -> 'projects'
+NNS -> 'promotions'
+NNS -> 'properties'
+NNS -> 'proponents'
+NNS -> 'proposals'
+NNS -> 'pros'
+NNS -> 'prospects'
+NNS -> 'provisions'
+NNS -> 'purchasers'
+NNS -> 'puts'
+NNS -> 'quantities'
+NNS -> 'quarters'
+NNS -> 'questions'
+NNS -> 'quotas'
+NNS -> 'raiders'
+NNS -> 'ranks'
+NNS -> 'rates'
+NNS -> 'ratings'
+NNS -> 'receipts'
+NNS -> 'reductions'
+NNS -> 'reforms'
+NNS -> 'refugees'
+NNS -> 'refunds'
+NNS -> 'regions'
+NNS -> 'relations'
+NNS -> 'relationships'
+NNS -> 'repairs'
+NNS -> 'reporters'
+NNS -> 'reports'
+NNS -> 'representatives'
+NNS -> 'requirements'
+NNS -> 'researchers'
+NNS -> 'residents'
+NNS -> 'resignations'
+NNS -> 'resources'
+NNS -> 'respondents'
+NNS -> 'responses'
+NNS -> 'restrictions'
+NNS -> 'retailers'
+NNS -> 'returns'
+NNS -> 'revenues'
+NNS -> 'ringers'
+NNS -> 'roads'
+NNS -> 'routes'
+NNS -> 'rules'
+NNS -> 'rumors'
+NNS -> 'salaries'
+NNS -> 'salesmen'
+NNS -> 'sanctions'
+NNS -> 'savings'
+NNS -> 'scandals'
+NNS -> 'scenarios'
+NNS -> 'scientists'
+NNS -> 'scores'
+NNS -> 'secrets'
+NNS -> 'sections'
+NNS -> 'sectors'
+NNS -> 'securities'
+NNS -> 'seeds'
+NNS -> 'segments'
+NNS -> 'senators'
+NNS -> 'sentences'
+NNS -> 'services'
+NNS -> 'sessions'
+NNS -> 'shareholders'
+NNS -> 'sheets'
+NNS -> 'shows'
+NNS -> 'sides'
+NNS -> 'signs'
+NNS -> 'soldiers'
+NNS -> 'solutions'
+NNS -> 'sources'
+NNS -> 'sports'
+NNS -> 'staffers'
+NNS -> 'stages'
+NNS -> 'standards'
+NNS -> 'statements'
+NNS -> 'stations'
+NNS -> 'statistics'
+NNS -> 'stockholders'
+NNS -> 'stones'
+NNS -> 'stores'
+NNS -> 'stories'
+NNS -> 'strategists'
+NNS -> 'students'
+NNS -> 'studios'
+NNS -> 'styles'
+NNS -> 'suggestions'
+NNS -> 'suits'
+NNS -> 'superconductors'
+NNS -> 'suppliers'
+NNS -> 'supplies'
+NNS -> 'syndicates'
+NNS -> 'systems'
+NNS -> 'tactics'
+NNS -> 'talks'
+NNS -> 'tariffs'
+NNS -> 'taxes'
+NNS -> 'taxpayers'
+NNS -> 'teachers'
+NNS -> 'teams'
+NNS -> 'technologies'
+NNS -> 'temperatures'
+NNS -> 'thanks'
+NNS -> 'things'
+NNS -> 'thrifts'
+NNS -> 'tickets'
+NNS -> 'times'
+NNS -> 'tons'
+NNS -> 'tools'
+NNS -> 'tourists'
+NNS -> 'toys'
+NNS -> 'traders'
+NNS -> 'trades'
+NNS -> 'traffickers'
+NNS -> 'transactions'
+NNS -> 'travelers'
+NNS -> 'trends'
+NNS -> 'troops'
+NNS -> 'troubles'
+NNS -> 'trucks'
+NNS -> 'twothirds'
+NNS -> 'units'
+NNS -> 'vessels'
+NNS -> 'visitors'
+NNS -> 'votes'
+NNS -> 'wages'
+NNS -> 'warnings'
+NNS -> 'warrants'
+NNS -> 'waves'
+NNS -> 'ways'
+NNS -> 'weeks'
+NNS -> 'whites'
+NNS -> 'wines'
+NNS -> 'winners'
+NNS -> 'woes'
+NNS -> 'women'
+NNS -> 'workstations'
+NNS -> 'years'
+PUNCquotequote -> "''"
+NNP -> 'ABB'
+NNP -> 'ABC'
+NNP -> 'AZT'
+NNP -> 'Acquisition'
+NNP -> 'Act'
+NNP -> 'Admpoint'
+NNP -> 'Advanced'
+NNP -> 'Aer'
+NNP -> 'Aetna'
+NNP -> 'Africa'
+NNP -> 'Agnos'
+NNP -> 'Agricole'
+NNP -> 'Air'
+NNP -> 'Airport'
+NNP -> 'Airways'
+NNP -> 'Albert'
+NNP -> 'Alexander'
+NNP -> 'Alfred'
+NNP -> 'Alliance'
+NNP -> 'Allianz'
+NNP -> 'Amex'
+NNP -> 'Amoco'
+NNP -> 'Anderson'
+NNP -> 'Andersson'
+NNP -> 'Andrew'
+NNP -> 'Anne'
+NNP -> 'Apogee'
+NNP -> 'Apple'
+NNP -> 'April'
+NNP -> 'Arco'
+NNP -> 'Area'
+NNP -> 'Arizona'
+NNP -> 'Arizpoint'
+NNP -> 'Armstrong'
+NNP -> 'Army'
+NNP -> 'Arnold'
+NNP -> 'Art'
+NNP -> 'Ashland'
+NNP -> 'Assembly'
+NNP -> 'Asset'
+NNP -> 'Associates'
+NNP -> 'Association'
+NNP -> 'Atlantic'
+NNP -> 'Atlantis'
+NNP -> 'Attorney'
+NNP -> 'Augpoint'
+NNP -> 'August'
+NNP -> 'Austin'
+NNP -> 'Australia'
+NNP -> 'Average'
+NNP -> 'BNL'
+NNP -> 'BSN'
+NNP -> 'Banc'
+NNP -> 'Banco'
+NNP -> 'Bancorp'
+NNP -> 'Bank'
+NNP -> 'BankAmerica'
+NNP -> 'Bankers'
+NNP -> 'Banking'
+NNP -> 'Banque'
+NNP -> 'Barry'
+NNP -> 'Bartlett'
+NNP -> 'Bates'
+NNP -> 'Bay'
+NNP -> 'Bear'
+NNP -> 'Beatrice'
+NNP -> 'Belgium'
+NNP -> 'Bell'
+NNP -> 'Bernstein'
+NNP -> 'Berry'
+NNP -> 'Beverly'
+NNP -> 'Bill'
+NNP -> 'Black'
+NNP -> 'Bob'
+NNP -> 'Bobby'
+NNP -> 'Boeing'
+NNP -> 'Bogart'
+NNP -> 'Bombay'
+NNP -> 'Bork'
+NNP -> 'Boyd'
+NNP -> 'Bradford'
+NNP -> 'Bradley'
+NNP -> 'Brawer'
+NNP -> 'Brazil'
+NNP -> 'Breeden'
+NNP -> 'Brian'
+NNP -> 'Bridge'
+NNP -> 'Broadcasting'
+NNP -> 'Budapest'
+NNP -> 'Budget'
+NNP -> 'Buffett'
+NNP -> 'Building'
+NNP -> 'Bureau'
+NNP -> 'Burmah'
+NNP -> 'Burnham'
+NNP -> 'Burt'
+NNP -> 'Business'
+NNP -> 'CFCs'
+NNP -> 'CFTC'
+NNP -> 'CMS'
+NNP -> 'CS'
+NNP -> 'Cable'
+NNP -> 'Cabrera'
+NNP -> 'Cadillac'
+NNP -> 'Califpoint'
+NNP -> 'Caltrans'
+NNP -> 'Campbell'
+NNP -> 'Cancer'
+NNP -> 'Capital'
+NNP -> 'Capitol'
+NNP -> 'Carl'
+NNP -> 'Carlos'
+NNP -> 'Carolina'
+NNP -> 'Carpenter'
+NNP -> 'Catholic'
+NNP -> 'Cellular'
+NNP -> 'CenTrust'
+NNP -> 'Chancellor'
+NNP -> 'Chapter'
+NNP -> 'Chase'
+NNP -> 'Cheer'
+NNP -> 'Cheney'
+NNP -> 'Chevrolet'
+NNP -> 'Chevron'
+NNP -> 'Chicago'
+NNP -> 'China'
+NNP -> 'Christie'
+NNP -> 'Christmas'
+NNP -> 'Ciepoint'
+NNP -> 'Cineplex'
+NNP -> 'Citicorp'
+NNP -> 'Clara'
+NNP -> 'Clark'
+NNP -> 'Class'
+NNP -> 'Co'
+NNP -> 'Cocom'
+NNP -> 'Code'
+NNP -> 'Cohen'
+NNP -> 'Coleman'
+NNP -> 'Colgate'
+NNP -> 'College'
+NNP -> 'Color'
+NNP -> 'Colorado'
+NNP -> 'Commerce'
+NNP -> 'Commission'
+NNP -> 'Commodore'
+NNP -> 'Commonwealth'
+NNP -> 'Communist'
+NNP -> 'Company'
+NNP -> 'Compaq'
+NNP -> 'Composite'
+NNP -> 'Computer'
+NNP -> 'Coniston'
+NNP -> 'Conn'
+NNP -> 'Connecticut'
+NNP -> 'Conner'
+NNP -> 'Connpoint'
+NNP -> 'Consolidated'
+NNP -> 'Container'
+NNP -> 'Continental'
+NNP -> 'Contra'
+NNP -> 'Coors'
+NNP -> 'Corning'
+NNP -> 'Corporate'
+NNP -> 'Corppoint'
+NNP -> 'Cospoint'
+NNP -> 'Courtaulds'
+NNP -> 'Courter'
+NNP -> 'Cpoint'
+NNP -> 'Cross'
+NNP -> 'Cruise'
+NNP -> 'Cup'
+NNP -> 'Czechoslovakia'
+NNP -> 'DAX'
+NNP -> 'DPC'
+NNP -> 'DWG'
+NNP -> 'Daily'
+NNP -> 'Daiwa'
+NNP -> 'Dalkon'
+NNP -> 'Dallas'
+NNP -> 'Dan'
+NNP -> 'Daniel'
+NNP -> 'Danny'
+NNP -> 'Data'
+NNP -> 'Datapoint'
+NNP -> 'Dataproducts'
+NNP -> 'David'
+NNP -> 'Davis'
+NNP -> 'Deaver'
+NNP -> 'December'
+NNP -> 'Delaware'
+NNP -> 'Dell'
+NNP -> 'Deloitte'
+NNP -> 'Dentsu'
+NNP -> 'Detrex'
+NNP -> 'Dick'
+NNP -> 'Diego'
+NNP -> 'Digital'
+NNP -> 'Dingell'
+NNP -> 'Dinkins'
+NNP -> 'District'
+NNP -> 'Doman'
+NNP -> 'Don'
+NNP -> 'Donoghue'
+NNP -> 'Dow'
+NNP -> 'Dozen'
+NNP -> 'DpointTpoint'
+NNP -> 'Dresdner'
+NNP -> 'Drexel'
+NNP -> 'Dreyfus'
+NNP -> 'Drpoint'
+NNP -> 'Du'
+NNP -> 'Dunkin'
+NNP -> 'EPA'
+NNP -> 'EPO'
+NNP -> 'Earth'
+NNP -> 'Eastman'
+NNP -> 'Economic'
+NNP -> 'Edelman'
+NNP -> 'Education'
+NNP -> 'Edward'
+NNP -> 'Edwards'
+NNP -> 'Egg'
+NNP -> 'Electric'
+NNP -> 'Elizabeth'
+NNP -> 'Enfield'
+NNP -> 'English'
+NNP -> 'Entertainment'
+NNP -> 'Equity'
+NNP -> 'Erbamont'
+NNP -> 'Erich'
+NNP -> 'Estate'
+NNP -> 'Eurocom'
+NNP -> 'European'
+NNP -> 'Executive'
+NNP -> 'Exterior'
+NNP -> 'Exxon'
+NNP -> 'FBI'
+NNP -> 'FCC'
+NNP -> 'FEMA'
+NNP -> 'FTC'
+NNP -> 'FTSE'
+NNP -> 'Fannie'
+NNP -> 'Far'
+NNP -> 'Farmers'
+NNP -> 'February'
+NNP -> 'Federated'
+NNP -> 'Federation'
+NNP -> 'Fidelity'
+NNP -> 'Financiere'
+NNP -> 'Finland'
+NNP -> 'Fireman'
+NNP -> 'First'
+NNP -> 'Fitzwater'
+NNP -> 'Flapoint'
+NNP -> 'Foods'
+NNP -> 'Force'
+NNP -> 'Ford'
+NNP -> 'Foreign'
+NNP -> 'Fort'
+NNP -> 'Foster'
+NNP -> 'Fox'
+NNP -> 'Fpoint'
+NNP -> 'Frank'
+NNP -> 'Frankfurt'
+NNP -> 'Freddie'
+NNP -> 'Freeman'
+NNP -> 'French'
+NNP -> 'Friday'
+NNP -> 'Friedman'
+NNP -> 'Friend'
+NNP -> 'Funding'
+NNP -> 'Futures'
+NNP -> 'GMAC'
+NNP -> 'GNP'
+NNP -> 'GOP'
+NNP -> 'Gabelli'
+NNP -> 'Galileo'
+NNP -> 'Gandhi'
+NNP -> 'Gapoint'
+NNP -> 'Gas'
+NNP -> 'GenProbe'
+NNP -> 'General'
+NNP -> 'Generale'
+NNP -> 'Genetics'
+NNP -> 'George'
+NNP -> 'Georgia'
+NNP -> 'GeorgiaPacific'
+NNP -> 'Giants'
+NNP -> 'Ginnie'
+NNP -> 'Glenn'
+NNP -> 'Gold'
+NNP -> 'Golden'
+NNP -> 'Goldman'
+NNP -> 'Goodson'
+NNP -> 'Goupil'
+NNP -> 'GrammRudman'
+NNP -> 'Graphics'
+NNP -> 'Gray'
+NNP -> 'Green'
+NNP -> 'Grenfell'
+NNP -> 'Guard'
+NNP -> 'Guber'
+NNP -> 'Guinness'
+NNP -> 'Gulf'
+NNP -> 'Guzman'
+NNP -> 'H&R'
+NNP -> 'HBO'
+NNP -> 'Hall'
+NNP -> 'Hammond'
+NNP -> 'Hampshire'
+NNP -> 'Hanover'
+NNP -> 'Harris'
+NNP -> 'Harvard'
+NNP -> 'Hastings'
+NNP -> 'Hatch'
+NNP -> 'Henry'
+NNP -> 'Herald'
+NNP -> 'Herbert'
+NNP -> 'Heritage'
+NNP -> 'Hertz'
+NNP -> 'Hess'
+NNP -> 'HewlettPackard'
+NNP -> 'Hilton'
+NNP -> 'Holdings'
+NNP -> 'Holiday'
+NNP -> 'Home'
+NNP -> 'HomeFed'
+NNP -> 'Honda'
+NNP -> 'Honecker'
+NNP -> 'Hong'
+NNP -> 'Hooker'
+NNP -> 'House'
+NNP -> 'Hudson'
+NNP -> 'Hughes'
+NNP -> 'Humana'
+NNP -> 'Hunter'
+NNP -> 'Hutchinson'
+NNP -> 'Hutton'
+NNP -> 'IBM'
+NNP -> 'II'
+NNP -> 'IRS'
+NNP -> 'ISI'
+NNP -> 'Icahn'
+NNP -> 'Ill'
+NNP -> 'Illpoint'
+NNP -> 'Illuminating'
+NNP -> 'Imperial'
+NNP -> 'Inco'
+NNP -> 'Income'
+NNP -> 'Index'
+NNP -> 'Indpoint'
+NNP -> 'Industrial'
+NNP -> 'Industries'
+NNP -> 'Industry'
+NNP -> 'Information'
+NNP -> 'Ingersoll'
+NNP -> 'Institute'
+NNP -> 'Insurance'
+NNP -> 'Intelogic'
+NNP -> 'Intermediate'
+NNP -> 'Interpublic'
+NNP -> 'Interstate'
+NNP -> 'Investors'
+NNP -> 'Ira'
+NNP -> 'Iran'
+NNP -> 'IranContra'
+NNP -> 'Ireland'
+NNP -> 'Irving'
+NNP -> 'Island'
+NNP -> 'Israel'
+NNP -> 'Italy'
+NNP -> 'Iverson'
+NNP -> 'Jack'
+NNP -> 'Jackson'
+NNP -> 'January'
+NNP -> 'Japan'
+NNP -> 'Jefferies'
+NNP -> 'Jeffrey'
+NNP -> 'Jersey'
+NNP -> 'Jim'
+NNP -> 'Joe'
+NNP -> 'John'
+NNP -> 'Jonathan'
+NNP -> 'Journal'
+NNP -> 'Jpoint'
+NNP -> 'Jr'
+NNP -> 'Jupiter'
+NNP -> 'Kangyo'
+NNP -> 'Kao'
+NNP -> 'Kasparov'
+NNP -> 'Katz'
+NNP -> 'Keating'
+NNP -> 'Kemper'
+NNP -> 'Kenneth'
+NNP -> 'Khmer'
+NNP -> 'Kingdom'
+NNP -> 'Kleinwort'
+NNP -> 'Kohl'
+NNP -> 'Korea'
+NNP -> 'Kpoint'
+NNP -> 'Kuala'
+NNP -> 'Labor'
+NNP -> 'Land'
+NNP -> 'Larry'
+NNP -> 'Latin'
+NNP -> 'Law'
+NNP -> 'Leader'
+NNP -> 'League'
+NNP -> 'Legal'
+NNP -> 'LeighPemberton'
+NNP -> 'Leipzig'
+NNP -> 'Lewis'
+NNP -> 'Lexington'
+NNP -> 'Libor'
+NNP -> 'Life'
+NNP -> 'Lilly'
+NNP -> 'Limited'
+NNP -> 'Line'
+NNP -> 'Litigation'
+NNP -> 'Lloyd'
+NNP -> 'London'
+NNP -> 'Loral'
+NNP -> 'Lorenzo'
+NNP -> 'Los'
+NNP -> 'Louisville'
+NNP -> 'LpointJpoint'
+NNP -> 'MCA'
+NNP -> 'MCI'
+NNP -> 'MGM:slash:UA'
+NNP -> 'Machines'
+NNP -> 'Mack'
+NNP -> 'Macmillan'
+NNP -> 'Madison'
+NNP -> 'Mae'
+NNP -> 'Magazine'
+NNP -> 'Major'
+NNP -> 'Majority'
+NNP -> 'Malaysia'
+NNP -> 'Malcolm'
+NNP -> 'Management'
+NNP -> 'Marcos'
+NNP -> 'Market'
+NNP -> 'Marketing'
+NNP -> 'Markey'
+NNP -> 'Marlin'
+NNP -> 'Marshall'
+NNP -> 'Marvin'
+NNP -> 'Maryland'
+NNP -> 'Masspoint'
+NNP -> 'Matra'
+NNP -> 'Max'
+NNP -> 'Maxwell'
+NNP -> 'May'
+NNP -> 'McCaw'
+NNP -> 'McDonald'
+NNP -> 'McDonough'
+NNP -> 'McDuffie'
+NNP -> 'McGrawHill'
+NNP -> 'McNamee'
+NNP -> 'Mdpoint'
+NNP -> 'Media'
+NNP -> 'Medicine'
+NNP -> 'Mehl'
+NNP -> 'Menlo'
+NNP -> 'Merc'
+NNP -> 'Mercantile'
+NNP -> 'Meridian'
+NNP -> 'Merieux'
+NNP -> 'Merkur'
+NNP -> 'Mesa'
+NNP -> 'Miami'
+NNP -> 'Michael'
+NNP -> 'Microsoft'
+NNP -> 'Mike'
+NNP -> 'Milan'
+NNP -> 'Miller'
+NNP -> 'Mills'
+NNP -> 'Milunovich'
+NNP -> 'Ministry'
+NNP -> 'Minneapolis'
+NNP -> 'Mips'
+NNP -> 'Mississippi'
+NNP -> 'Mitchell'
+NNP -> 'Mixte'
+NNP -> 'Mobil'
+NNP -> 'Money'
+NNP -> 'Montedison'
+NNP -> 'Montgomery'
+NNP -> 'Montreal'
+NNP -> 'Moody'
+NNP -> 'Moore'
+NNP -> 'Morishita'
+NNP -> 'Morris'
+NNP -> 'Moscow'
+NNP -> 'Motor'
+NNP -> 'Motors'
+NNP -> 'Mullins'
+NNP -> 'Municipal'
+NNP -> 'Murdoch'
+NNP -> 'NAHB'
+NNP -> 'NASA'
+NNP -> 'NATO'
+NNP -> 'NBC'
+NNP -> 'NEC'
+NNP -> 'NIH'
+NNP -> 'NYSE'
+NNP -> 'Nashua'
+NNP -> 'National'
+NNP -> 'Navigation'
+NNP -> 'Neal'
+NNP -> 'Nebpoint'
+NNP -> 'Needham'
+NNP -> 'Nekoosa'
+NNP -> 'Nelson'
+NNP -> 'Nestle'
+NNP -> 'Newport'
+NNP -> 'News'
+NNP -> 'Nicaragua'
+NNP -> 'Nicholas'
+NNP -> 'Nielsen'
+NNP -> 'Nigel'
+NNP -> 'Nikkei'
+NNP -> 'Nippon'
+NNP -> 'Nixon'
+NNP -> 'Norman'
+NNP -> 'North'
+NNP -> 'Northeast'
+NNP -> 'Northern'
+NNP -> 'Northwest'
+NNP -> 'NpointC'
+NNP -> 'NpointJ'
+NNP -> 'NpointYpoint'
+NNP -> 'Oakland'
+NNP -> 'Octel'
+NNP -> 'October'
+NNP -> 'Office'
+NNP -> 'Oklahoma'
+NNP -> 'Oklapoint'
+NNP -> 'Olivetti'
+NNP -> 'Options'
+NNP -> 'Oregon'
+NNP -> 'Orepoint'
+NNP -> 'Organization'
+NNP -> 'Orkem'
+NNP -> 'Otto'
+NNP -> 'P&G'
+NNP -> 'PASOK'
+NNP -> 'PLC'
+NNP -> 'PLO'
+NNP -> 'PS'
+NNP -> 'Pacific'
+NNP -> 'Packwood'
+NNP -> 'PaineWebber'
+NNP -> 'Panama'
+NNP -> 'Paper'
+NNP -> 'Papoint'
+NNP -> 'Paribas'
+NNP -> 'Paris'
+NNP -> 'Parker'
+NNP -> 'Part'
+NNP -> 'Partnership'
+NNP -> 'Party'
+NNP -> 'Pat'
+NNP -> 'Patrick'
+NNP -> 'Peck'
+NNP -> 'Pemex'
+NNP -> 'Penney'
+NNP -> 'Pentagon'
+NNP -> 'Peterson'
+NNP -> 'Petrie'
+NNP -> 'Petroleum'
+NNP -> 'Pharmacia'
+NNP -> 'Philadelphia'
+NNP -> 'Philip'
+NNP -> 'Phoenix'
+NNP -> 'Pickens'
+NNP -> 'Picop'
+NNP -> 'Pinnacle'
+NNP -> 'Pioneer'
+NNP -> 'Pittsburgh'
+NNP -> 'Pizza'
+NNP -> 'Plant'
+NNP -> 'Poland'
+NNP -> 'Polaroid'
+NNP -> 'Posner'
+NNP -> 'Prebon'
+NNP -> 'President'
+NNP -> 'Price'
+NNP -> 'Prudential'
+NNP -> 'PrudentialBache'
+NNP -> 'Public'
+NNP -> 'Publishing'
+NNP -> 'Qintex'
+NNP -> 'Quantum'
+NNP -> 'Quebecor'
+NNP -> 'Quotron'
+NNP -> 'Radio'
+NNP -> 'Rally'
+NNP -> 'Ratners'
+NNP -> 'Raymond'
+NNP -> 'Reagan'
+NNP -> 'Recognition'
+NNP -> 'Red'
+NNP -> 'Redford'
+NNP -> 'Reed'
+NNP -> 'Reinvestment'
+NNP -> 'Reliance'
+NNP -> 'Remic'
+NNP -> 'Renaissance'
+NNP -> 'Report'
+NNP -> 'Reppoint'
+NNP -> 'Republic'
+NNP -> 'Republican'
+NNP -> 'Research'
+NNP -> 'Reserve'
+NNP -> 'Resolution'
+NNP -> 'Resources'
+NNP -> 'Revenue'
+NNP -> 'Review'
+NNP -> 'Revpoint'
+NNP -> 'Reynolds'
+NNP -> 'Richard'
+NNP -> 'Richmond'
+NNP -> 'Richter'
+NNP -> 'Rick'
+NNP -> 'Right'
+NNP -> 'River'
+NNP -> 'Roberts'
+NNP -> 'Robertson'
+NNP -> 'Rock'
+NNP -> 'Rockwell'
+NNP -> 'Roderick'
+NNP -> 'Roe'
+NNP -> 'Roh'
+NNP -> 'Roman'
+NNP -> 'Rowe'
+NNP -> 'Royal'
+NNP -> 'Runkel'
+NNP -> 'Russell'
+NNP -> 'Ruth'
+NNP -> 'Ryder'
+NNP -> 'S&L'
+NNP -> 'SCI'
+NNP -> 'SaabScania'
+NNP -> 'Saatchi'
+NNP -> 'Sachs'
+NNP -> 'Salinger'
+NNP -> 'Salomon'
+NNP -> 'Salvador'
+NNP -> 'Sam'
+NNP -> 'Sanford'
+NNP -> 'Santa'
+NNP -> 'Saudi'
+NNP -> 'Savaiko'
+NNP -> 'Savings'
+NNP -> 'Schaeffer'
+NNP -> 'ScheringPlough'
+NNP -> 'School'
+NNP -> 'Schwab'
+NNP -> 'Schwarz'
+NNP -> 'Sea'
+NNP -> 'Sears'
+NNP -> 'Section'
+NNP -> 'Securities'
+NNP -> 'Security'
+NNP -> 'Seidman'
+NNP -> 'Seoul'
+NNP -> 'Service'
+NNP -> 'Services'
+NNP -> 'Shack'
+NNP -> 'Showtime'
+NNP -> 'Simmons'
+NNP -> 'Singapore'
+NNP -> 'Sinyard'
+NNP -> 'Sisulu'
+NNP -> 'Skinner'
+NNP -> 'SmithKline'
+NNP -> 'Social'
+NNP -> 'Solidarity'
+NNP -> 'Sony'
+NNP -> 'Soo'
+NNP -> 'Sotheby'
+NNP -> 'Soup'
+NNP -> 'South'
+NNP -> 'Southeast'
+NNP -> 'Southern'
+NNP -> 'Soviet'
+NNP -> 'Spain'
+NNP -> 'Speaker'
+NNP -> 'Sperry'
+NNP -> 'Spiegel'
+NNP -> 'Spointp'
+NNP -> 'Springs'
+NNP -> 'Squibb'
+NNP -> 'Stanley'
+NNP -> 'Star'
+NNP -> 'State'
+NNP -> 'States'
+NNP -> 'StatesWest'
+NNP -> 'Stateswest'
+NNP -> 'Statistics'
+NNP -> 'Stearns'
+NNP -> 'Steel'
+NNP -> 'Steinhardt'
+NNP -> 'Stephen'
+NNP -> 'Sterling'
+NNP -> 'Steve'
+NNP -> 'Stevens'
+NNP -> 'Stewart'
+NNP -> 'Store'
+NNP -> 'Straszheim'
+NNP -> 'Street'
+NNP -> 'Suisse'
+NNP -> 'Sun'
+NNP -> 'Sunday'
+NNP -> 'Superfund'
+NNP -> 'Supervision'
+NNP -> 'Susan'
+NNP -> 'Sweden'
+NNP -> 'Swedish'
+NNP -> 'Systems'
+NNP -> 'Tax'
+NNP -> 'Technology'
+NNP -> 'Ted'
+NNP -> 'Teddy'
+NNP -> 'Telecommunications'
+NNP -> 'Temple'
+NNP -> 'Tenneco'
+NNP -> 'Tennessee'
+NNP -> 'Tennpoint'
+NNP -> 'Tesoro'
+NNP -> 'Texas'
+NNP -> 'The'
+NNP -> 'Thi'
+NNP -> 'Third'
+NNP -> 'Thompson'
+NNP -> 'Three'
+NNP -> 'Timbers'
+NNP -> 'Times'
+NNP -> 'Today'
+NNP -> 'Tokyo'
+NNP -> 'Toronto'
+NNP -> 'Toseland'
+NNP -> 'Tower'
+NNP -> 'Tpoint'
+NNP -> 'Trade'
+NNP -> 'Trading'
+NNP -> 'Trans'
+NNP -> 'TransCanada'
+NNP -> 'Travel'
+NNP -> 'Trinity'
+NNP -> 'Trump'
+NNP -> 'Tucson'
+NNP -> 'Turner'
+NNP -> 'Turnpike'
+NNP -> 'UNESCO'
+NNP -> 'Unilever'
+NNP -> 'United'
+NNP -> 'Upjohn'
+NNP -> 'UpointSpointSpointRpoint'
+NNP -> 'Va'
+NNP -> 'Valley'
+NNP -> 'Vancouver'
+NNP -> 'Vapoint'
+NNP -> 'Vax'
+NNP -> 'Viacom'
+NNP -> 'Victor'
+NNP -> 'View'
+NNP -> 'Vincent'
+NNP -> 'Virginia'
+NNP -> 'Volokh'
+NNP -> 'WSJ'
+NNP -> 'Wade'
+NNP -> 'Wall'
+NNP -> 'Walter'
+NNP -> 'War'
+NNP -> 'Ward'
+NNP -> 'Warner'
+NNP -> 'Warren'
+NNP -> 'Warsaw'
+NNP -> 'Webster'
+NNP -> 'Wednesday'
+NNP -> 'Wedtech'
+NNP -> 'Weisfield'
+NNP -> 'Weisman'
+NNP -> 'Wells'
+NNP -> 'West'
+NNP -> 'Western'
+NNP -> 'Westmoreland'
+NNP -> 'Wilson'
+NNP -> 'Windsor'
+NNP -> 'Wisconsin'
+NNP -> 'World'
+NNP -> 'Wpoint'
+NNP -> 'Xerox'
+NNP -> 'Yale'
+NNP -> 'Zealand'
+NNP -> 'aids'
+NNP -> 'apple'
+NNP -> 'assets'
+NNP -> 'baker'
+NNP -> 'bell'
+NNP -> 'big'
+NNP -> 'chase'
+NNP -> 'china'
+NNP -> 'computer'
+NNP -> 'control'
+NNP -> 'du'
+NNP -> 'first'
+NNP -> 'giant'
+NNP -> 'government'
+NNP -> 'house'
+NNP -> 'integrated'
+NNP -> 'international'
+NNP -> 'judge'
+NNP -> 'loan'
+NNP -> 'mart'
+NNP -> 'midOctober'
+NNP -> 'paper'
+NNP -> 'president'
+NNP -> 'prime'
+NNP -> 'quantum'
+NNP -> 'rally'
+NNP -> 'rate'
+NNP -> 'ready'
+NNP -> 'royal'
+NNP -> 'secretary'
+NNP -> 'security'
+NNP -> 'separately'
+NNP -> 'silicon'
+NNP -> 'south'
+NNP -> 'sun'
+NNP -> 'trust'
+NNP -> 'union'
+NNP -> 'valley'
+NNP -> 'van'
+WRB -> 'How'
+WRB -> 'Where'
+WRB -> 'where'
+NPADV -> DT
+NPADV -> DT NN
+NPADV -> DT RB
+NPADV -> NP PP
+NPADV -> NP SBAR
+NPADV -> NP VP
+NPADV -> PRP
+NPADV -> QP NNS
+QPMONEY -> IN QPMONEY
+QPMONEY -> RB QPMONEY
+SBARNOM -> IN S
+SBARNOM -> WHADVP S
+SBARNOM -> WHNP S
+X -> IN
+X -> X NP
+SYM -> 'a'
+SYM -> 'b'
+SYM -> STAR
+NPR -> NNP
+NPR -> NNP NNP
+NPR -> NNPS NNP
+NPR -> NPRS
+WHADVP -> IN
+WHADVP -> RB WRB
+WHADVP -> WRB RB
+PP -> IN
+PP -> IN ADJP
+PP -> IN ADVP
+PP -> IN NP
+PP -> IN NPLOC
+PP -> IN PP
+PP -> IN SBARNOM
+PP -> NPR NP
+PP -> RB ADJP
+PP -> RB PP
+PP -> RP NP
+PP -> TO NP
+PP -> TO NPdollar
+PP -> VBG NP
+PP -> VBN NP
+PP -> VBN PP
+SBARTMP -> IN S
+SBARTMP -> IN SNOM
+SBARTMP -> WHADVP S
+PUNCpoint -> '.'
+PUNCpoint -> '?'
+LST -> LS
+SBARPRD -> IN S
+ROOT -> S
+PUNCbquotebquote -> '`'
+PUNCbquotebquote -> '``'
+EX -> 'There'
+ADVP -> ADVP
+ADVP -> ADVP PP
+ADVP -> IN
+ADVP -> IN DT
+ADVP -> IN NN
+ADVP -> IN NP
+ADVP -> IN PP
+ADVP -> IN RB
+ADVP -> JJ
+ADVP -> JJR
+ADVP -> NPADV RBR
+ADVP -> RB IN
+ADVP -> RB JJ
+ADVP -> RB NP
+ADVP -> RB RB
+ADVP -> RB S
+ADVP -> RBR
+ADVP -> RBR IN
+VBD -> 'abandoned'
+VBD -> 'accepted'
+VBD -> 'accounted'
+VBD -> 'accused'
+VBD -> 'acknowledged'
+VBD -> 'added'
+VBD -> 'agreed'
+VBD -> 'alleged'
+VBD -> 'amended'
+VBD -> 'amounted'
+VBD -> 'appealed'
+VBD -> 'appeared'
+VBD -> 'argued'
+VBD -> 'arrived'
+VBD -> 'asked'
+VBD -> 'asserted'
+VBD -> 'attended'
+VBD -> 'attracted'
+VBD -> 'authorized'
+VBD -> 'averaged'
+VBD -> 'became'
+VBD -> 'believed'
+VBD -> 'blamed'
+VBD -> 'boosted'
+VBD -> 'broke'
+VBD -> 'built'
+VBD -> 'came'
+VBD -> 'capped'
+VBD -> 'caught'
+VBD -> 'charged'
+VBD -> 'cited'
+VBD -> 'climbed'
+VBD -> 'closed'
+VBD -> 'collapsed'
+VBD -> 'concluded'
+VBD -> 'considered'
+VBD -> 'contributed'
+VBD -> 'cost'
+VBD -> 'created'
+VBD -> 'cut'
+VBD -> 'declined'
+VBD -> 'described'
+VBD -> 'determined'
+VBD -> 'dismissed'
+VBD -> 'doubled'
+VBD -> 'drove'
+VBD -> 'earned'
+VBD -> 'edged'
+VBD -> 'ended'
+VBD -> 'endorsed'
+VBD -> 'entered'
+VBD -> 'estimated'
+VBD -> 'exceeded'
+VBD -> 'expired'
+VBD -> 'feared'
+VBD -> 'fell'
+VBD -> 'flew'
+VBD -> 'forced'
+VBD -> 'fueled'
+VBD -> 'gained'
+VBD -> 'gave'
+VBD -> 'generated'
+VBD -> 'got'
+VBD -> 'had'
+VBD -> 'happened'
+VBD -> 'held'
+VBD -> 'helped'
+VBD -> 'hinted'
+VBD -> 'hoped'
+VBD -> 'increased'
+VBD -> 'indicated'
+VBD -> 'insisted'
+VBD -> 'kicked'
+VBD -> 'landed'
+VBD -> 'led'
+VBD -> 'let'
+VBD -> 'lived'
+VBD -> 'looked'
+VBD -> 'lost'
+VBD -> 'managed'
+VBD -> 'marked'
+VBD -> 'meant'
+VBD -> 'moved'
+VBD -> 'named'
+VBD -> 'needed'
+VBD -> 'noted'
+VBD -> 'observed'
+VBD -> 'occurred'
+VBD -> 'opposed'
+VBD -> 'placed'
+VBD -> 'played'
+VBD -> 'pleaded'
+VBD -> 'plummeted'
+VBD -> 'pointed'
+VBD -> 'postponed'
+VBD -> 'predicted'
+VBD -> 'preferred'
+VBD -> 'promised'
+VBD -> 'provided'
+VBD -> 'pulled'
+VBD -> 'put'
+VBD -> 'questioned'
+VBD -> 'raised'
+VBD -> 'rallied'
+VBD -> 'recalled'
+VBD -> 'received'
+VBD -> 'recommended'
+VBD -> 'recorded'
+VBD -> 'referred'
+VBD -> 'reflected'
+VBD -> 'required'
+VBD -> 'resigned'
+VBD -> 'retired'
+VBD -> 'returned'
+VBD -> 'rose'
+VBD -> 'ruled'
+VBD -> 'rushed'
+VBD -> 'said'
+VBD -> 'sank'
+VBD -> 'saw'
+VBD -> 'seemed'
+VBD -> 'served'
+VBD -> 'shed'
+VBD -> 'shot'
+VBD -> 'shouted'
+VBD -> 'signed'
+VBD -> 'slipped'
+VBD -> 'snapped'
+VBD -> 'soared'
+VBD -> 'sold'
+VBD -> 'sought'
+VBD -> 'sparked'
+VBD -> 'staged'
+VBD -> 'stated'
+VBD -> 'stemmed'
+VBD -> 'stopped'
+VBD -> 'stressed'
+VBD -> 'succeeded'
+VBD -> 'suffered'
+VBD -> 'supported'
+VBD -> 'surprised'
+VBD -> 'suspended'
+VBD -> 'taught'
+VBD -> 'termed'
+VBD -> 'terminated'
+VBD -> 'threw'
+VBD -> 'triggered'
+VBD -> 'trimmed'
+VBD -> 'turned'
+VBD -> 'unveiled'
+VBD -> 'used'
+VBD -> 'valued'
+VBD -> 'visited'
+VBD -> 'vowed'
+VBD -> 'warned'
+VBD -> 'welcomed'
+VBD -> 'went'
+VBD -> 'withdrew'
+VBD -> 'wrote'
+MD -> 'Can'
+MD -> 'could'
+MD -> 'may'
+MD -> 'must'
+MD -> 'will'
+MD -> 'wo'
+SBARQ -> WHNP SQ
+SPRP -> VP
+UH -> 'quack'
+SPRD -> VP
+STPC -> SBARNOM VP
+STPC -> VP
+VBG -> 'Excluding'
+VBG -> 'Having'
+VBG -> 'Looking'
+VBG -> 'Reflecting'
+VBG -> 'Using'
+VBG -> 'accepting'
+VBG -> 'accompanying'
+VBG -> 'acquiring'
+VBG -> 'adjusting'
+VBG -> 'advancing'
+VBG -> 'affecting'
+VBG -> 'allowing'
+VBG -> 'announcing'
+VBG -> 'attempting'
+VBG -> 'attending'
+VBG -> 'attracting'
+VBG -> 'awaiting'
+VBG -> 'backing'
+VBG -> 'banning'
+VBG -> 'becoming'
+VBG -> 'beginning'
+VBG -> 'being'
+VBG -> 'believing'
+VBG -> 'blocking'
+VBG -> 'breaking'
+VBG -> 'building'
+VBG -> 'buying'
+VBG -> 'catching'
+VBG -> 'circulating'
+VBG -> 'claiming'
+VBG -> 'climbing'
+VBG -> 'closing'
+VBG -> 'coming'
+VBG -> 'competing'
+VBG -> 'concerning'
+VBG -> 'confirming'
+VBG -> 'considering'
+VBG -> 'consisting'
+VBG -> 'consulting'
+VBG -> 'continuing'
+VBG -> 'cutting'
+VBG -> 'dealing'
+VBG -> 'declaring'
+VBG -> 'declining'
+VBG -> 'delivering'
+VBG -> 'demanding'
+VBG -> 'doing'
+VBG -> 'doubling'
+VBG -> 'earning'
+VBG -> 'easing'
+VBG -> 'encouraging'
+VBG -> 'equaling'
+VBG -> 'exceeding'
+VBG -> 'excluding'
+VBG -> 'expanding'
+VBG -> 'experiencing'
+VBG -> 'explaining'
+VBG -> 'exploring'
+VBG -> 'facing'
+VBG -> 'failing'
+VBG -> 'featuring'
+VBG -> 'feeling'
+VBG -> 'filling'
+VBG -> 'finding'
+VBG -> 'floating'
+VBG -> 'flying'
+VBG -> 'focusing'
+VBG -> 'following'
+VBG -> 'gaining'
+VBG -> 'getting'
+VBG -> 'going'
+VBG -> 'granting'
+VBG -> 'growing'
+VBG -> 'heading'
+VBG -> 'helping'
+VBG -> 'hitting'
+VBG -> 'holding'
+VBG -> 'hurting'
+VBG -> 'imposing'
+VBG -> 'increasing'
+VBG -> 'investing'
+VBG -> 'issuing'
+VBG -> 'joining'
+VBG -> 'keeping'
+VBG -> 'killing'
+VBG -> 'lagging'
+VBG -> 'launching'
+VBG -> 'learning'
+VBG -> 'limiting'
+VBG -> 'living'
+VBG -> 'lobbying'
+VBG -> 'looking'
+VBG -> 'losing'
+VBG -> 'maintaining'
+VBG -> 'manufacturing'
+VBG -> 'marketing'
+VBG -> 'marking'
+VBG -> 'matching'
+VBG -> 'moving'
+VBG -> 'mulling'
+VBG -> 'negotiating'
+VBG -> 'offsetting'
+VBG -> 'opening'
+VBG -> 'ordering'
+VBG -> 'picking'
+VBG -> 'posting'
+VBG -> 'pouring'
+VBG -> 'predicting'
+VBG -> 'preparing'
+VBG -> 'preventing'
+VBG -> 'prompting'
+VBG -> 'pulling'
+VBG -> 'pushing'
+VBG -> 'reacting'
+VBG -> 'referring'
+VBG -> 'reflecting'
+VBG -> 'remaining'
+VBG -> 'requiring'
+VBG -> 'resigning'
+VBG -> 'resisting'
+VBG -> 'responding'
+VBG -> 'resulting'
+VBG -> 'reviewing'
+VBG -> 'riding'
+VBG -> 'running'
+VBG -> 'rushing'
+VBG -> 'saying'
+VBG -> 'searching'
+VBG -> 'sending'
+VBG -> 'serving'
+VBG -> 'shifting'
+VBG -> 'showing'
+VBG -> 'shrinking'
+VBG -> 'signing'
+VBG -> 'slowing'
+VBG -> 'soaring'
+VBG -> 'spending'
+VBG -> 'standing'
+VBG -> 'starting'
+VBG -> 'succeeding'
+VBG -> 'suggesting'
+VBG -> 'surrounding'
+VBG -> 'talking'
+VBG -> 'telling'
+VBG -> 'thinking'
+VBG -> 'totaling'
+VBG -> 'trading'
+VBG -> 'underlying'
+VBG -> 'warning'
+VBG -> 'watching'
+VBG -> 'weakening'
+VBG -> 'wearing'
+VBG -> 'working'
+VBG -> 'writing'
+VBG -> 'yielding'
+FW -> 'glasnost'
+FW -> 'pro'
+FW -> 'vspoint'
+VBN -> 'Asked'
+VBN -> 'Given'
+VBN -> 'Guaranteed'
+VBN -> 'Posted'
+VBN -> 'accepted'
+VBN -> 'accompanied'
+VBN -> 'achieved'
+VBN -> 'adjusted'
+VBN -> 'advanced'
+VBN -> 'affected'
+VBN -> 'aged'
+VBN -> 'aimed'
+VBN -> 'amended'
+VBN -> 'appointed'
+VBN -> 'approved'
+VBN -> 'argued'
+VBN -> 'arrested'
+VBN -> 'arrived'
+VBN -> 'asked'
+VBN -> 'attached'
+VBN -> 'attributed'
+VBN -> 'authorized'
+VBN -> 'awarded'
+VBN -> 'barred'
+VBN -> 'become'
+VBN -> 'been'
+VBN -> 'begun'
+VBN -> 'believed'
+VBN -> 'bound'
+VBN -> 'brought'
+VBN -> 'built'
+VBN -> 'capped'
+VBN -> 'caught'
+VBN -> 'caused'
+VBN -> 'changed'
+VBN -> 'claimed'
+VBN -> 'collapsed'
+VBN -> 'combined'
+VBN -> 'complicated'
+VBN -> 'concluded'
+VBN -> 'conducted'
+VBN -> 'confirmed'
+VBN -> 'continued'
+VBN -> 'contributed'
+VBN -> 'controlled'
+VBN -> 'converted'
+VBN -> 'convinced'
+VBN -> 'counted'
+VBN -> 'covered'
+VBN -> 'criticized'
+VBN -> 'cut'
+VBN -> 'dated'
+VBN -> 'declined'
+VBN -> 'delivered'
+VBN -> 'denied'
+VBN -> 'described'
+VBN -> 'developed'
+VBN -> 'died'
+VBN -> 'diluted'
+VBN -> 'disclosed'
+VBN -> 'discovered'
+VBN -> 'distributed'
+VBN -> 'dominated'
+VBN -> 'dropped'
+VBN -> 'earned'
+VBN -> 'elected'
+VBN -> 'eliminated'
+VBN -> 'employed'
+VBN -> 'enacted'
+VBN -> 'encouraged'
+VBN -> 'engineered'
+VBN -> 'entered'
+VBN -> 'entitled'
+VBN -> 'established'
+VBN -> 'expanded'
+VBN -> 'exposed'
+VBN -> 'expressed'
+VBN -> 'faced'
+VBN -> 'failed'
+VBN -> 'fallen'
+VBN -> 'fed'
+VBN -> 'felt'
+VBN -> 'filed'
+VBN -> 'financed'
+VBN -> 'finished'
+VBN -> 'followed'
+VBN -> 'forecast'
+VBN -> 'found'
+VBN -> 'fueled'
+VBN -> 'got'
+VBN -> 'gotten'
+VBN -> 'grown'
+VBN -> 'guaranteed'
+VBN -> 'headed'
+VBN -> 'helped'
+VBN -> 'hidden'
+VBN -> 'hired'
+VBN -> 'hoped'
+VBN -> 'hurt'
+VBN -> 'identified'
+VBN -> 'ignored'
+VBN -> 'imported'
+VBN -> 'included'
+VBN -> 'initiated'
+VBN -> 'installed'
+VBN -> 'insured'
+VBN -> 'intended'
+VBN -> 'interpreted'
+VBN -> 'introduced'
+VBN -> 'justified'
+VBN -> 'killed'
+VBN -> 'known'
+VBN -> 'learned'
+VBN -> 'left'
+VBN -> 'lifted'
+VBN -> 'limited'
+VBN -> 'liquidated'
+VBN -> 'located'
+VBN -> 'matched'
+VBN -> 'mentioned'
+VBN -> 'mixed'
+VBN -> 'named'
+VBN -> 'narrowed'
+VBN -> 'needed'
+VBN -> 'noted'
+VBN -> 'notified'
+VBN -> 'opposed'
+VBN -> 'ousted'
+VBN -> 'owed'
+VBN -> 'paid'
+VBN -> 'painted'
+VBN -> 'passed'
+VBN -> 'performed'
+VBN -> 'permitted'
+VBN -> 'planned'
+VBN -> 'pleased'
+VBN -> 'preferred'
+VBN -> 'presented'
+VBN -> 'priced'
+VBN -> 'printed'
+VBN -> 'processed'
+VBN -> 'produced'
+VBN -> 'promised'
+VBN -> 'proposed'
+VBN -> 'proved'
+VBN -> 'published'
+VBN -> 'pulled'
+VBN -> 'pushed'
+VBN -> 'put'
+VBN -> 'quoted'
+VBN -> 'raised'
+VBN -> 'recognized'
+VBN -> 'redeemed'
+VBN -> 'reduced'
+VBN -> 'reflected'
+VBN -> 'rejected'
+VBN -> 'related'
+VBN -> 'released'
+VBN -> 'remained'
+VBN -> 'renewed'
+VBN -> 'replaced'
+VBN -> 'reported'
+VBN -> 'requested'
+VBN -> 'required'
+VBN -> 'resolved'
+VBN -> 'restored'
+VBN -> 'restricted'
+VBN -> 'resulted'
+VBN -> 'retired'
+VBN -> 'returned'
+VBN -> 'revised'
+VBN -> 'risen'
+VBN -> 'rumored'
+VBN -> 'run'
+VBN -> 'seen'
+VBN -> 'selected'
+VBN -> 'served'
+VBN -> 'set'
+VBN -> 'settled'
+VBN -> 'shown'
+VBN -> 'shut'
+VBN -> 'slowed'
+VBN -> 'soared'
+VBN -> 'sold'
+VBN -> 'sought'
+VBN -> 'specified'
+VBN -> 'stalled'
+VBN -> 'stated'
+VBN -> 'stolen'
+VBN -> 'stopped'
+VBN -> 'stuck'
+VBN -> 'studied'
+VBN -> 'succeeded'
+VBN -> 'sued'
+VBN -> 'suggested'
+VBN -> 'supplied'
+VBN -> 'supported'
+VBN -> 'switched'
+VBN -> 'taped'
+VBN -> 'tendered'
+VBN -> 'tested'
+VBN -> 'thought'
+VBN -> 'thrown'
+VBN -> 'tied'
+VBN -> 'told'
+VBN -> 'traded'
+VBN -> 'transferred'
+VBN -> 'tried'
+VBN -> 'triggered'
+VBN -> 'troubled'
+VBN -> 'turned'
+VBN -> 'used'
+VBN -> 'viewed'
+VBN -> 'watched'
+VBN -> 'won'
+VBN -> 'written'
+VBP -> "'m"
+VBP -> 'Do'
+VBP -> 'account'
+VBP -> 'allow'
+VBP -> 'appear'
+VBP -> 'approve'
+VBP -> 'are'
+VBP -> 'argue'
+VBP -> 'build'
+VBP -> 'buy'
+VBP -> 'change'
+VBP -> 'charge'
+VBP -> 'cite'
+VBP -> 'come'
+VBP -> 'complain'
+VBP -> 'consider'
+VBP -> 'estimate'
+VBP -> 'exist'
+VBP -> 'face'
+VBP -> 'fall'
+VBP -> 'fare'
+VBP -> 'favor'
+VBP -> 'feel'
+VBP -> 'hate'
+VBP -> 'hit'
+VBP -> 'illustrate'
+VBP -> 'indicate'
+VBP -> 'insist'
+VBP -> 'intend'
+VBP -> 'keep'
+VBP -> 'lead'
+VBP -> 'like'
+VBP -> 'live'
+VBP -> 'lose'
+VBP -> 'love'
+VBP -> 'mean'
+VBP -> 'move'
+VBP -> 'pay'
+VBP -> 'prefer'
+VBP -> 'put'
+VBP -> 'raise'
+VBP -> 'range'
+VBP -> 'reach'
+VBP -> 'read'
+VBP -> 'realize'
+VBP -> 'reflect'
+VBP -> 'remain'
+VBP -> 'rise'
+VBP -> 'see'
+VBP -> 'seem'
+VBP -> 'sell'
+VBP -> 'show'
+VBP -> 'stay'
+VBP -> 'suspect'
+VBP -> 'total'
+VBP -> 'trade'
+VBP -> 'understand'
+VBP -> 'view'
+VBP -> 'wish'
+VBP -> 'worry'
+VBZ -> "'s"
+VBZ -> 'accounts'
+VBZ -> 'acknowledges'
+VBZ -> 'adds'
+VBZ -> 'admits'
+VBZ -> 'advises'
+VBZ -> 'agrees'
+VBZ -> 'amounts'
+VBZ -> 'argues'
+VBZ -> 'asks'
+VBZ -> 'asserts'
+VBZ -> 'assumes'
+VBZ -> 'attracts'
+VBZ -> 'bears'
+VBZ -> 'boasts'
+VBZ -> 'boosts'
+VBZ -> 'calls'
+VBZ -> 'carries'
+VBZ -> 'causes'
+VBZ -> 'claims'
+VBZ -> 'comes'
+VBZ -> 'complains'
+VBZ -> 'considers'
+VBZ -> 'contains'
+VBZ -> 'continues'
+VBZ -> 'controls'
+VBZ -> 'costs'
+VBZ -> 'covers'
+VBZ -> 'declares'
+VBZ -> 'declines'
+VBZ -> 'demonstrates'
+VBZ -> 'denies'
+VBZ -> 'does'
+VBZ -> 'doubts'
+VBZ -> 'drops'
+VBZ -> 'emerges'
+VBZ -> 'exceeds'
+VBZ -> 'explains'
+VBZ -> 'faces'
+VBZ -> 'falls'
+VBZ -> 'follows'
+VBZ -> 'gives'
+VBZ -> 'goes'
+VBZ -> 'grows'
+VBZ -> 'happens'
+VBZ -> 'has'
+VBZ -> 'heads'
+VBZ -> 'helps'
+VBZ -> 'hopes'
+VBZ -> 'includes'
+VBZ -> 'increases'
+VBZ -> 'indicates'
+VBZ -> 'is'
+VBZ -> 'joins'
+VBZ -> 'keeps'
+VBZ -> 'knows'
+VBZ -> 'leaves'
+VBZ -> 'likes'
+VBZ -> 'maintains'
+VBZ -> 'manages'
+VBZ -> 'marks'
+VBZ -> 'matches'
+VBZ -> 'meets'
+VBZ -> 'misses'
+VBZ -> 'narrows'
+VBZ -> 'needs'
+VBZ -> 'offers'
+VBZ -> 'owes'
+VBZ -> 'pays'
+VBZ -> 'permits'
+VBZ -> 'places'
+VBZ -> 'plans'
+VBZ -> 'points'
+VBZ -> 'prohibits'
+VBZ -> 'provides'
+VBZ -> 'quotes'
+VBZ -> 'raises'
+VBZ -> 'reaches'
+VBZ -> 'recalls'
+VBZ -> 'reflects'
+VBZ -> 'refuses'
+VBZ -> 'regains'
+VBZ -> 'remains'
+VBZ -> 'requires'
+VBZ -> 'retains'
+VBZ -> 'returns'
+VBZ -> 'says'
+VBZ -> 'seeks'
+VBZ -> 'seems'
+VBZ -> 'sees'
+VBZ -> 'sells'
+VBZ -> 'shares'
+VBZ -> 'specializes'
+VBZ -> 'states'
+VBZ -> 'stems'
+VBZ -> 'takes'
+VBZ -> 'talks'
+VBZ -> 'throws'
+VBZ -> 'tracks'
+VBZ -> 'trades'
+VBZ -> 'understands'
+VBZ -> 'values'
+VBZ -> 'wants'
+VBZ -> 'widens'
+VBZ -> 'works'
+NN -> '%'
+NN -> 'Chapter'
+NN -> 'Class'
+NN -> 'Everybody'
+NN -> 'HDTV'
+NN -> 'House'
+NN -> 'LBO'
+NN -> 'Man'
+NN -> 'Market'
+NN -> 'Nothing'
+NN -> 'S&L'
+NN -> 'Series'
+NN -> 'a'
+NN -> 'abortion'
+NN -> 'absence'
+NN -> 'acceleration'
+NN -> 'acceptance'
+NN -> 'accord'
+NN -> 'account'
+NN -> 'achievement'
+NN -> 'act'
+NN -> 'activity'
+NN -> 'ad'
+NN -> 'addition'
+NN -> 'address'
+NN -> 'administration'
+NN -> 'administrator'
+NN -> 'advantage'
+NN -> 'advertising'
+NN -> 'advice'
+NN -> 'affair'
+NN -> 'aftermath'
+NN -> 'age'
+NN -> 'agenda'
+NN -> 'agreement'
+NN -> 'aid'
+NN -> 'aim'
+NN -> 'aircraft'
+NN -> 'airport'
+NN -> 'ally'
+NN -> 'aluminum'
+NN -> 'analysis'
+NN -> 'animal'
+NN -> 'announcement'
+NN -> 'anticipation'
+NN -> 'anxiety'
+NN -> 'apartheid'
+NN -> 'apartment'
+NN -> 'appeal'
+NN -> 'appearance'
+NN -> 'appetite'
+NN -> 'apple'
+NN -> 'application'
+NN -> 'appointment'
+NN -> 'appreciation'
+NN -> 'architecture'
+NN -> 'area'
+NN -> 'argument'
+NN -> 'arm'
+NN -> 'army'
+NN -> 'artist'
+NN -> 'asbestos'
+NN -> 'assassination'
+NN -> 'assembly'
+NN -> 'asset'
+NN -> 'assistance'
+NN -> 'assistant'
+NN -> 'associate'
+NN -> 'association'
+NN -> 'assurance'
+NN -> 'atmosphere'
+NN -> 'attack'
+NN -> 'attitude'
+NN -> 'attorney'
+NN -> 'audience'
+NN -> 'autumn'
+NN -> 'availability'
+NN -> 'award'
+NN -> 'baby'
+NN -> 'back'
+NN -> 'ball'
+NN -> 'balloon'
+NN -> 'band'
+NN -> 'bank'
+NN -> 'banker'
+NN -> 'banking'
+NN -> 'bar'
+NN -> 'base'
+NN -> 'bear'
+NN -> 'bearing'
+NN -> 'beef'
+NN -> 'beginning'
+NN -> 'behavior'
+NN -> 'benchmark'
+NN -> 'bid'
+NN -> 'bidding'
+NN -> 'bill'
+NN -> 'binge'
+NN -> 'biotechnology'
+NN -> 'blame'
+NN -> 'bloc'
+NN -> 'blood'
+NN -> 'board'
+NN -> 'boiler'
+NN -> 'bonus'
+NN -> 'book'
+NN -> 'boost'
+NN -> 'border'
+NN -> 'brain'
+NN -> 'brand'
+NN -> 'break'
+NN -> 'breaker'
+NN -> 'brewer'
+NN -> 'brewing'
+NN -> 'brief'
+NN -> 'broadcast'
+NN -> 'brokerage'
+NN -> 'budget'
+NN -> 'building'
+NN -> 'bulk'
+NN -> 'bullet'
+NN -> 'burden'
+NN -> 'bureau'
+NN -> 'bus'
+NN -> 'bushel'
+NN -> 'business'
+NN -> 'buy'
+NN -> 'cable'
+NN -> 'calendar'
+NN -> 'cancer'
+NN -> 'candidate'
+NN -> 'capability'
+NN -> 'capacity'
+NN -> 'capita'
+NN -> 'carbon'
+NN -> 'card'
+NN -> 'care'
+NN -> 'cargo'
+NN -> 'carpet'
+NN -> 'carpeting'
+NN -> 'carrier'
+NN -> 'catalog'
+NN -> 'category'
+NN -> 'caution'
+NN -> 'ceiling'
+NN -> 'cell'
+NN -> 'cent'
+NN -> 'center'
+NN -> 'centerpiece'
+NN -> 'chamber'
+NN -> 'champion'
+NN -> 'charge'
+NN -> 'charity'
+NN -> 'check'
+NN -> 'chemical'
+NN -> 'chief'
+NN -> 'chip'
+NN -> 'choice'
+NN -> 'chromosome'
+NN -> 'chunk'
+NN -> 'church'
+NN -> 'cigarette'
+NN -> 'circuit'
+NN -> 'city'
+NN -> 'claim'
+NN -> 'climate'
+NN -> 'climb'
+NN -> 'closing'
+NN -> 'coal'
+NN -> 'coalition'
+NN -> 'cocoa'
+NN -> 'code'
+NN -> 'coffee'
+NN -> 'collapse'
+NN -> 'collateral'
+NN -> 'collection'
+NN -> 'colon'
+NN -> 'color'
+NN -> 'column'
+NN -> 'comedy'
+NN -> 'comfort'
+NN -> 'commission'
+NN -> 'community'
+NN -> 'comparison'
+NN -> 'competition'
+NN -> 'competitor'
+NN -> 'complaint'
+NN -> 'completion'
+NN -> 'composite'
+NN -> 'compound'
+NN -> 'compromise'
+NN -> 'computer'
+NN -> 'conclusion'
+NN -> 'conference'
+NN -> 'confidence'
+NN -> 'conglomerate'
+NN -> 'congress'
+NN -> 'congressman'
+NN -> 'connection'
+NN -> 'conservation'
+NN -> 'consolidation'
+NN -> 'consortium'
+NN -> 'construction'
+NN -> 'consultant'
+NN -> 'consumption'
+NN -> 'contest'
+NN -> 'context'
+NN -> 'contract'
+NN -> 'contrast'
+NN -> 'contribution'
+NN -> 'convenience'
+NN -> 'convention'
+NN -> 'conversion'
+NN -> 'copy'
+NN -> 'corner'
+NN -> 'cost'
+NN -> 'council'
+NN -> 'course'
+NN -> 'coverage'
+NN -> 'crack'
+NN -> 'crash'
+NN -> 'creation'
+NN -> 'credit'
+NN -> 'crime'
+NN -> 'criticism'
+NN -> 'crowd'
+NN -> 'cruise'
+NN -> 'currency'
+NN -> 'customer'
+NN -> 'cycle'
+NN -> 'danger'
+NN -> 'data'
+NN -> 'date'
+NN -> 'day'
+NN -> 'deadline'
+NN -> 'deal'
+NN -> 'dealer'
+NN -> 'debacle'
+NN -> 'debut'
+NN -> 'decade'
+NN -> 'declaration'
+NN -> 'decline'
+NN -> 'default'
+NN -> 'defense'
+NN -> 'deficiency'
+NN -> 'definition'
+NN -> 'deflator'
+NN -> 'degree'
+NN -> 'delay'
+NN -> 'delegation'
+NN -> 'demand'
+NN -> 'departure'
+NN -> 'depositary'
+NN -> 'depository'
+NN -> 'deputy'
+NN -> 'desk'
+NN -> 'destruction'
+NN -> 'detective'
+NN -> 'deterioration'
+NN -> 'devaluation'
+NN -> 'development'
+NN -> 'device'
+NN -> 'difficulty'
+NN -> 'direction'
+NN -> 'director'
+NN -> 'disappointment'
+NN -> 'disaster'
+NN -> 'discipline'
+NN -> 'discount'
+NN -> 'discounting'
+NN -> 'disease'
+NN -> 'disk'
+NN -> 'dismissal'
+NN -> 'distance'
+NN -> 'distributor'
+NN -> 'district'
+NN -> 'doctor'
+NN -> 'dog'
+NN -> 'doubt'
+NN -> 'downtown'
+NN -> 'downturn'
+NN -> 'draft'
+NN -> 'drop'
+NN -> 'drought'
+NN -> 'drug'
+NN -> 'duty'
+NN -> 'earning'
+NN -> 'earthquake'
+NN -> 'edge'
+NN -> 'edition'
+NN -> 'editor'
+NN -> 'efficiency'
+NN -> 'effort'
+NN -> 'egg'
+NN -> 'electricity'
+NN -> 'element'
+NN -> 'embarrassment'
+NN -> 'embryo'
+NN -> 'employee'
+NN -> 'enactment'
+NN -> 'encouragement'
+NN -> 'energy'
+NN -> 'enforcement'
+NN -> 'engine'
+NN -> 'engineer'
+NN -> 'engineering'
+NN -> 'entertainment'
+NN -> 'enthusiasm'
+NN -> 'entry'
+NN -> 'environment'
+NN -> 'equity'
+NN -> 'era'
+NN -> 'error'
+NN -> 'estate'
+NN -> 'estimate'
+NN -> 'ethylene'
+NN -> 'evening'
+NN -> 'event'
+NN -> 'everybody'
+NN -> 'everyone'
+NN -> 'evolution'
+NN -> 'examination'
+NN -> 'exception'
+NN -> 'excess'
+NN -> 'exclusion'
+NN -> 'excuse'
+NN -> 'exercise'
+NN -> 'exhibit'
+NN -> 'exhibition'
+NN -> 'existence'
+NN -> 'expansion'
+NN -> 'experience'
+NN -> 'export'
+NN -> 'extradition'
+NN -> 'facility'
+NN -> 'factory'
+NN -> 'failure'
+NN -> 'fairness'
+NN -> 'fall'
+NN -> 'family'
+NN -> 'fan'
+NN -> 'fashion'
+NN -> 'fate'
+NN -> 'father'
+NN -> 'favor'
+NN -> 'fee'
+NN -> 'feeling'
+NN -> 'fence'
+NN -> 'filing'
+NN -> 'film'
+NN -> 'finance'
+NN -> 'fine'
+NN -> 'fire'
+NN -> 'fit'
+NN -> 'flag'
+NN -> 'flavor'
+NN -> 'fleet'
+NN -> 'flexibility'
+NN -> 'flight'
+NN -> 'flood'
+NN -> 'floor'
+NN -> 'flow'
+NN -> 'following'
+NN -> 'food'
+NN -> 'foot'
+NN -> 'football'
+NN -> 'forecast'
+NN -> 'forest'
+NN -> 'form'
+NN -> 'format'
+NN -> 'formation'
+NN -> 'formula'
+NN -> 'founder'
+NN -> 'fraction'
+NN -> 'franchise'
+NN -> 'freedom'
+NN -> 'friend'
+NN -> 'friendship'
+NN -> 'front'
+NN -> 'fuel'
+NN -> 'fund'
+NN -> 'funding'
+NN -> 'gain'
+NN -> 'gallery'
+NN -> 'gamble'
+NN -> 'gap'
+NN -> 'gas'
+NN -> 'gasoline'
+NN -> 'general'
+NN -> 'ghost'
+NN -> 'giant'
+NN -> 'glass'
+NN -> 'gold'
+NN -> 'golf'
+NN -> 'grain'
+NN -> 'group'
+NN -> 'growth'
+NN -> 'guarantee'
+NN -> 'guide'
+NN -> 'habit'
+NN -> 'head'
+NN -> 'headline'
+NN -> 'headquarters'
+NN -> 'hearing'
+NN -> 'heart'
+NN -> 'hell'
+NN -> 'high'
+NN -> 'highway'
+NN -> 'hit'
+NN -> 'hold'
+NN -> 'holder'
+NN -> 'home'
+NN -> 'honor'
+NN -> 'hope'
+NN -> 'hospital'
+NN -> 'host'
+NN -> 'household'
+NN -> 'humor'
+NN -> 'husband'
+NN -> 'i'
+NN -> 'ice'
+NN -> 'idea'
+NN -> 'identity'
+NN -> 'image'
+NN -> 'impact'
+NN -> 'impeachment'
+NN -> 'impression'
+NN -> 'improvement'
+NN -> 'incentive'
+NN -> 'incident'
+NN -> 'incinerator'
+NN -> 'inclination'
+NN -> 'independence'
+NN -> 'indexarbitrage'
+NN -> 'indication'
+NN -> 'indictment'
+NN -> 'industry'
+NN -> 'inflation'
+NN -> 'initiative'
+NN -> 'injunction'
+NN -> 'insider'
+NN -> 'inspector'
+NN -> 'institute'
+NN -> 'institution'
+NN -> 'insulin'
+NN -> 'insurer'
+NN -> 'intelligence'
+NN -> 'interview'
+NN -> 'intraday'
+NN -> 'introduction'
+NN -> 'inventory'
+NN -> 'investigation'
+NN -> 'investing'
+NN -> 'investmentbanking'
+NN -> 'investor'
+NN -> 'involvement'
+NN -> 'island'
+NN -> 'issuance'
+NN -> 'issue'
+NN -> 'jail'
+NN -> 'jewelry'
+NN -> 'job'
+NN -> 'joint'
+NN -> 'joke'
+NN -> 'jolt'
+NN -> 'journalist'
+NN -> 'judge'
+NN -> 'judgment'
+NN -> 'junk'
+NN -> 'junkbond'
+NN -> 'kind'
+NN -> 'king'
+NN -> 'knowledge'
+NN -> 'labormanagement'
+NN -> 'lack'
+NN -> 'lady'
+NN -> 'land'
+NN -> 'launch'
+NN -> 'law'
+NN -> 'lawsuit'
+NN -> 'lawyer'
+NN -> 'leader'
+NN -> 'leadership'
+NN -> 'lease'
+NN -> 'leg'
+NN -> 'legislation'
+NN -> 'leisure'
+NN -> 'lesson'
+NN -> 'letter'
+NN -> 'level'
+NN -> 'library'
+NN -> 'license'
+NN -> 'life'
+NN -> 'linage'
+NN -> 'link'
+NN -> 'liquidity'
+NN -> 'list'
+NN -> 'load'
+NN -> 'loan'
+NN -> 'lobby'
+NN -> 'lobbyist'
+NN -> 'location'
+NN -> 'logic'
+NN -> 'look'
+NN -> 'loss'
+NN -> 'love'
+NN -> 'low'
+NN -> 'loyalty'
+NN -> 'luxury'
+NN -> 'luxurycar'
+NN -> 'machine'
+NN -> 'machinery'
+NN -> 'magazine'
+NN -> 'mainframe'
+NN -> 'mainstream'
+NN -> 'maintenance'
+NN -> 'making'
+NN -> 'man'
+NN -> 'management'
+NN -> 'manager'
+NN -> 'mandate'
+NN -> 'maneuver'
+NN -> 'manufacturer'
+NN -> 'march'
+NN -> 'margin'
+NN -> 'mark'
+NN -> 'marketplace'
+NN -> 'mart'
+NN -> 'massacre'
+NN -> 'master'
+NN -> 'material'
+NN -> 'matter'
+NN -> 'mayor'
+NN -> 'measure'
+NN -> 'meat'
+NN -> 'medicine'
+NN -> 'meeting'
+NN -> 'member'
+NN -> 'memo'
+NN -> 'memory'
+NN -> 'merchandise'
+NN -> 'merit'
+NN -> 'mess'
+NN -> 'message'
+NN -> 'method'
+NN -> 'midday'
+NN -> 'middle'
+NN -> 'midnight'
+NN -> 'milk'
+NN -> 'mine'
+NN -> 'minute'
+NN -> 'missile'
+NN -> 'mix'
+NN -> 'moment'
+NN -> 'money'
+NN -> 'monitoring'
+NN -> 'month'
+NN -> 'mood'
+NN -> 'mortality'
+NN -> 'mother'
+NN -> 'move'
+NN -> 'mural'
+NN -> 'mystery'
+NN -> 'nation'
+NN -> 'neighborhood'
+NN -> 'niche'
+NN -> 'nobody'
+NN -> 'nomination'
+NN -> 'none'
+NN -> 'north'
+NN -> 'nose'
+NN -> 'note'
+NN -> 'notebook'
+NN -> 'notion'
+NN -> 'objective'
+NN -> 'obligation'
+NN -> 'officer'
+NN -> 'oil'
+NN -> 'one'
+NN -> 'onethird'
+NN -> 'operator'
+NN -> 'opinion'
+NN -> 'opponent'
+NN -> 'optimism'
+NN -> 'order'
+NN -> 'ordinance'
+NN -> 'organization'
+NN -> 'outcome'
+NN -> 'outcry'
+NN -> 'output'
+NN -> 'ownership'
+NN -> 'ozone'
+NN -> 'p53'
+NN -> 'pace'
+NN -> 'packaging'
+NN -> 'page'
+NN -> 'painting'
+NN -> 'paper'
+NN -> 'parent'
+NN -> 'park'
+NN -> 'parliament'
+NN -> 'participation'
+NN -> 'partner'
+NN -> 'partnership'
+NN -> 'passenger'
+NN -> 'past'
+NN -> 'pasta'
+NN -> 'patient'
+NN -> 'pattern'
+NN -> 'pawn'
+NN -> 'pay'
+NN -> 'peak'
+NN -> 'percent'
+NN -> 'perception'
+NN -> 'performance'
+NN -> 'period'
+NN -> 'permission'
+NN -> 'personalcomputer'
+NN -> 'perspective'
+NN -> 'petrochemical'
+NN -> 'petroleum'
+NN -> 'phone'
+NN -> 'piece'
+NN -> 'place'
+NN -> 'placement'
+NN -> 'plan'
+NN -> 'plant'
+NN -> 'plastic'
+NN -> 'plate'
+NN -> 'platform'
+NN -> 'platinum'
+NN -> 'play'
+NN -> 'playing'
+NN -> 'plea'
+NN -> 'plunge'
+NN -> 'poison'
+NN -> 'police'
+NN -> 'policy'
+NN -> 'poll'
+NN -> 'pollution'
+NN -> 'polyethylene'
+NN -> 'popularity'
+NN -> 'position'
+NN -> 'poverty'
+NN -> 'power'
+NN -> 'ppointmpoint'
+NN -> 'practice'
+NN -> 'preamble'
+NN -> 'predecessor'
+NN -> 'prelude'
+NN -> 'premium'
+NN -> 'presence'
+NN -> 'presidency'
+NN -> 'president'
+NN -> 'press'
+NN -> 'pressure'
+NN -> 'pretax'
+NN -> 'price'
+NN -> 'pricing'
+NN -> 'pride'
+NN -> 'primetime'
+NN -> 'principal'
+NN -> 'print'
+NN -> 'printer'
+NN -> 'printing'
+NN -> 'prison'
+NN -> 'privatization'
+NN -> 'problem'
+NN -> 'procedure'
+NN -> 'process'
+NN -> 'producer'
+NN -> 'productivity'
+NN -> 'professor'
+NN -> 'profitability'
+NN -> 'program'
+NN -> 'programming'
+NN -> 'programtrading'
+NN -> 'progress'
+NN -> 'promise'
+NN -> 'proportion'
+NN -> 'prospectus'
+NN -> 'prosperity'
+NN -> 'protest'
+NN -> 'province'
+NN -> 'proxy'
+NN -> 'psychology'
+NN -> 'psyllium'
+NN -> 'public'
+NN -> 'publication'
+NN -> 'publicity'
+NN -> 'publisher'
+NN -> 'publishing'
+NN -> 'pulp'
+NN -> 'purchasing'
+NN -> 'push'
+NN -> 'quake'
+NN -> 'quality'
+NN -> 'quarter'
+NN -> 'quarterly'
+NN -> 'question'
+NN -> 'racketeering'
+NN -> 'radar'
+NN -> 'railroad'
+NN -> 'rain'
+NN -> 'ranch'
+NN -> 'rate'
+NN -> 'ratio'
+NN -> 'reaction'
+NN -> 'realestate'
+NN -> 'rebound'
+NN -> 'recognition'
+NN -> 'recommendation'
+NN -> 'recording'
+NN -> 'recovery'
+NN -> 'red'
+NN -> 'reduction'
+NN -> 'refund'
+NN -> 'region'
+NN -> 'registration'
+NN -> 'regulation'
+NN -> 'regulator'
+NN -> 'reinsurance'
+NN -> 'rejection'
+NN -> 'relationship'
+NN -> 'reliance'
+NN -> 'relief'
+NN -> 'remainder'
+NN -> 'reminder'
+NN -> 'renewal'
+NN -> 'rent'
+NN -> 'repair'
+NN -> 'repeal'
+NN -> 'replacement'
+NN -> 'reporting'
+NN -> 'representative'
+NN -> 'reputation'
+NN -> 'request'
+NN -> 'requirement'
+NN -> 'rescue'
+NN -> 'research'
+NN -> 'resignation'
+NN -> 'resistance'
+NN -> 'resort'
+NN -> 'restaurant'
+NN -> 'restraint'
+NN -> 'restructuring'
+NN -> 'result'
+NN -> 'retailing'
+NN -> 'retirement'
+NN -> 'retreat'
+NN -> 'return'
+NN -> 'reversal'
+NN -> 'review'
+NN -> 'revision'
+NN -> 'revival'
+NN -> 'revolution'
+NN -> 'ride'
+NN -> 'rise'
+NN -> 'risk'
+NN -> 'rival'
+NN -> 'roll'
+NN -> 'rout'
+NN -> 'route'
+NN -> 'rule'
+NN -> 'ruling'
+NN -> 'run'
+NN -> 'rush'
+NN -> 'safety'
+NN -> 'satisfaction'
+NN -> 'scale'
+NN -> 'scandal'
+NN -> 'scenario'
+NN -> 'schedule'
+NN -> 'school'
+NN -> 'science'
+NN -> 'search'
+NN -> 'season'
+NN -> 'second'
+NN -> 'section'
+NN -> 'security'
+NN -> 'seed'
+NN -> 'segment'
+NN -> 'selfincrimination'
+NN -> 'sell'
+NN -> 'selling'
+NN -> 'selloff'
+NN -> 'semiconductor'
+NN -> 'sense'
+NN -> 'sentence'
+NN -> 'session'
+NN -> 'setback'
+NN -> 'sex'
+NN -> 'shadow'
+NN -> 'shame'
+NN -> 'share'
+NN -> 'shareholder'
+NN -> 'shelf'
+NN -> 'shift'
+NN -> 'shipping'
+NN -> 'shipyard'
+NN -> 'shock'
+NN -> 'shop'
+NN -> 'shopping'
+NN -> 'shortage'
+NN -> 'show'
+NN -> 'shuttle'
+NN -> 'sign'
+NN -> 'signal'
+NN -> 'silver'
+NN -> 'ski'
+NN -> 'slowdown'
+NN -> 'slowing'
+NN -> 'smoking'
+NN -> 'softdrink'
+NN -> 'somebody'
+NN -> 'source'
+NN -> 'spacecraft'
+NN -> 'specialty'
+NN -> 'speculation'
+NN -> 'speed'
+NN -> 'spill'
+NN -> 'spite'
+NN -> 'split'
+NN -> 'sponsor'
+NN -> 'spread'
+NN -> 'spree'
+NN -> 'spring'
+NN -> 'spy'
+NN -> 'square'
+NN -> 'stability'
+NN -> 'stadium'
+NN -> 'staff'
+NN -> 'star'
+NN -> 'start'
+NN -> 'station'
+NN -> 'status'
+NN -> 'statute'
+NN -> 'steelmaker'
+NN -> 'step'
+NN -> 'stock'
+NN -> 'stockindex'
+NN -> 'storage'
+NN -> 'store'
+NN -> 'strain'
+NN -> 'strategist'
+NN -> 'street'
+NN -> 'stretch'
+NN -> 'strike'
+NN -> 'string'
+NN -> 'strip'
+NN -> 'structure'
+NN -> 'struggle'
+NN -> 'student'
+NN -> 'style'
+NN -> 'subcommittee'
+NN -> 'subject'
+NN -> 'substance'
+NN -> 'substitute'
+NN -> 'successor'
+NN -> 'suggestion'
+NN -> 'suitor'
+NN -> 'summer'
+NN -> 'sun'
+NN -> 'supply'
+NN -> 'support'
+NN -> 'surplus'
+NN -> 'surprise'
+NN -> 'survey'
+NN -> 'survival'
+NN -> 'swing'
+NN -> 'syndicate'
+NN -> 'table'
+NN -> 'takeover'
+NN -> 'talk'
+NN -> 'tape'
+NN -> 'target'
+NN -> 'task'
+NN -> 'taste'
+NN -> 'tea'
+NN -> 'teacher'
+NN -> 'team'
+NN -> 'television'
+NN -> 'tender'
+NN -> 'term'
+NN -> 'test'
+NN -> 'testing'
+NN -> 'theater'
+NN -> 'theory'
+NN -> 'third'
+NN -> 'thought'
+NN -> 'threat'
+NN -> 'time'
+NN -> 'timetable'
+NN -> 'tip'
+NN -> 'title'
+NN -> 'tonight'
+NN -> 'tool'
+NN -> 'total'
+NN -> 'tour'
+NN -> 'tourism'
+NN -> 'town'
+NN -> 'toxin'
+NN -> 'track'
+NN -> 'trading'
+NN -> 'traffic'
+NN -> 'training'
+NN -> 'transport'
+NN -> 'travel'
+NN -> 'treasurer'
+NN -> 'treasury'
+NN -> 'treatment'
+NN -> 'tree'
+NN -> 'trial'
+NN -> 'trip'
+NN -> 'troop'
+NN -> 'trough'
+NN -> 'tube'
+NN -> 'turnaround'
+NN -> 'turnover'
+NN -> 'tv'
+NN -> 'type'
+NN -> 'uncertainty'
+NN -> 'underwriting'
+NN -> 'unit'
+NN -> 'upscale'
+NN -> 'uptick'
+NN -> 'user'
+NN -> 'utility'
+NN -> 'vaccine'
+NN -> 'valuation'
+NN -> 'verdict'
+NN -> 'veto'
+NN -> 'victory'
+NN -> 'video'
+NN -> 'view'
+NN -> 'vision'
+NN -> 'volatility'
+NN -> 'vote'
+NN -> 'voting'
+NN -> 'wake'
+NN -> 'wall'
+NN -> 'war'
+NN -> 'warming'
+NN -> 'waste'
+NN -> 'watch'
+NN -> 'weather'
+NN -> 'weight'
+NN -> 'well'
+NN -> 'while'
+NN -> 'willingness'
+NN -> 'window'
+NN -> 'winter'
+NN -> 'wire'
+NN -> 'withdrawal'
+NN -> 'witness'
+NN -> 'word'
+NN -> 'work'
+NN -> 'worker'
+NN -> 'writedown'
+NN -> 'writeoff'
+NN -> 'writer'
+NN -> 'year'
+NN -> 'yearend'
+NN -> 'yeast'
+NN -> 'yesterday'
+NN -> 'youth'
+ADVPTMP -> ADVP PP
+ADVPTMP -> ADVP SBAR
+ADVPTMP -> NP IN
+ADVPTMP -> NP RB
+ADVPTMP -> RB NP
+ADVPTMP -> RB RB
+ADVPTMP -> RBR
+ADVPTMP -> RBR NP
+RRC -> ADVPTMP PPLOC
+NX -> NPR
+WHPP -> IN WHNP
+WHPP -> TO WHNP
+NP -> ADJP NN
+NP -> ADJP NNS
+NP -> ADJP NPRS
+NP -> DT FW
+NP -> DT JJS
+NP -> DT NN
+NP -> DT NNS
+NP -> DT PRP
+NP -> DT QPMONEY
+NP -> EX
+NP -> FW
+NP -> IN
+NP -> IN QP
+NP -> JJ NN
+NP -> JJ NPR
+NP -> JJ NPRS
+NP -> JJR
+NP -> JJR NN
+NP -> JJR NNS
+NP -> JJS
+NP -> JJS NNS
+NP -> NAC NNS
+NP -> NAC NPR
+NP -> NN PUNCcolon
+NP -> NN PUNCpoint
+NP -> NN QP
+NP -> NN SBAR
+NP -> NNS PUNCcolon
+NP -> NNS S
+NP -> NP
+NP -> NP ADVPTMP
+NP -> NP NP
+NP -> NP NPLOC
+NP -> NP NPTMP
+NP -> NP PP
+NP -> NP PPLOC
+NP -> NP S
+NP -> NP SBARLOC
+NP -> NP SBARPRP
+NP -> NP SBARTMP
+NP -> NPR
+NP -> NPR JJ
+NP -> NPR NP
+NP -> NPR PP
+NP -> NPR PUNCcolon
+NP -> NPR PUNCpoint
+NP -> NPRS
+NP -> NPRS NP
+NP -> NPRS PUNCcolon
+NP -> NPdollar NP
+NP -> NPdollar NPR
+NP -> PRP
+NP -> PRP NP
+NP -> PRPdollar
+NP -> PRPdollar JJ
+NP -> PRPdollar NN
+NP -> PRPdollar NNS
+NP -> PRPdollar NPR
+NP -> PRPdollar QPMONEY
+NP -> QP
+NP -> QP NN
+NP -> QP NP
+NP -> QP NPRS
+NP -> QP RB
+NP -> QPMONEY
+NP -> RB JJ
+NP -> RB NN
+NP -> RB NNS
+NP -> RB NPR
+NP -> RBR
+NP -> S
+NP -> VB NN
+NP -> VBG
+NP -> VBG NNS
+NP -> VBN NN
+NP -> VBN NNS
+NP -> WDT
+ADVPPRD -> JJ
+ADVPPRD -> RB
+ADVPPRD -> RP
+PDT -> 'all'
+PDT -> 'half'
+NPdollar -> NP POS
+CD -> '1,200'
+CD -> '10'
+CD -> '10,'
+CD -> '100,'
+CD -> '102'
+CD -> '103'
+CD -> '106'
+CD -> '107'
+CD -> '109'
+CD -> '10point2'
+CD -> '11'
+CD -> '110'
+CD -> '115'
+CD -> '120,'
+CD -> '125'
+CD -> '12:slash:32'
+CD -> '12point5'
+CD -> '130'
+CD -> '13point50'
+CD -> '13point625'
+CD -> '14'
+CD -> '149'
+CD -> '14point5'
+CD -> '15,'
+CD -> '155'
+CD -> '15point6'
+CD -> '16'
+CD -> '16,'
+CD -> '160'
+CD -> '17'
+CD -> '170'
+CD -> '179'
+CD -> '18'
+CD -> '18,'
+CD -> '180'
+CD -> '1906'
+CD -> '1929'
+CD -> '1962'
+CD -> '1967'
+CD -> '1969'
+CD -> '1970s'
+CD -> '1972'
+CD -> '1973'
+CD -> '1975'
+CD -> '1976'
+CD -> '1978'
+CD -> '198'
+CD -> '1980'
+CD -> '1980s'
+CD -> '1981'
+CD -> '1986'
+CD -> '1989'
+CD -> '1990'
+CD -> '1990s'
+CD -> '1992'
+CD -> '1995'
+CD -> '1996'
+CD -> '1999'
+CD -> '1:slash:2'
+CD -> '1point1'
+CD -> '1point15'
+CD -> '1point2'
+CD -> '1point20'
+CD -> '1point25'
+CD -> '1point26'
+CD -> '1point39'
+CD -> '1point5'
+CD -> '1point50'
+CD -> '1point75'
+CD -> '1point8'
+CD -> '1point875'
+CD -> '2,'
+CD -> '20'
+CD -> '20,'
+CD -> '2001'
+CD -> '2004'
+CD -> '2018'
+CD -> '2019'
+CD -> '21'
+CD -> '22'
+CD -> '225'
+CD -> '22point6'
+CD -> '24'
+CD -> '25'
+CD -> '26'
+CD -> '260'
+CD -> '2638point73'
+CD -> '2659point22'
+CD -> '2683point20'
+CD -> '26point23'
+CD -> '27'
+CD -> '270'
+CD -> '28'
+CD -> '280'
+CD -> '2point2'
+CD -> '2point25'
+CD -> '2point3'
+CD -> '2point4'
+CD -> '2point5'
+CD -> '2point50'
+CD -> '2point58'
+CD -> '2point6'
+CD -> '2point75'
+CD -> '2point8'
+CD -> '2point9'
+CD -> '3'
+CD -> '30,'
+CD -> '35'
+CD -> '350'
+CD -> '350,'
+CD -> '37'
+CD -> '38'
+CD -> '39point55'
+CD -> '3:slash:32'
+CD -> '3:slash:4'
+CD -> '3point2'
+CD -> '3point3'
+CD -> '3point35'
+CD -> '3point4'
+CD -> '3point6'
+CD -> '3point7'
+CD -> '3point9'
+CD -> '4,'
+CD -> '400'
+CD -> '400,'
+CD -> '41'
+CD -> '44'
+CD -> '46'
+CD -> '49'
+CD -> '4point4'
+CD -> '4point5'
+CD -> '4point75'
+CD -> '4point8'
+CD -> '4point875'
+CD -> '5'
+CD -> '50'
+CD -> '51'
+CD -> '52'
+CD -> '53'
+CD -> '54'
+CD -> '550'
+CD -> '56'
+CD -> '57'
+CD -> '58'
+CD -> '59'
+CD -> '5:slash:16'
+CD -> '5:slash:8'
+CD -> '5point2'
+CD -> '5point6'
+CD -> '5point8'
+CD -> '5point9'
+CD -> '6,'
+CD -> '600'
+CD -> '61'
+CD -> '62'
+CD -> '62point5'
+CD -> '63point52'
+CD -> '650'
+CD -> '66'
+CD -> '66point7'
+CD -> '68'
+CD -> '69'
+CD -> '6point2'
+CD -> '6point25'
+CD -> '700,'
+CD -> '71'
+CD -> '74'
+CD -> '75'
+CD -> '750'
+CD -> '76'
+CD -> '78'
+CD -> '79'
+CD -> '7point10'
+CD -> '7point5'
+CD -> '7point6'
+CD -> '7point7'
+CD -> '7point75'
+CD -> '7point93'
+CD -> '7point95'
+CD -> '8'
+CD -> '8,'
+CD -> '800'
+CD -> '85'
+CD -> '88'
+CD -> '89'
+CD -> '8point25'
+CD -> '8point30'
+CD -> '8point32'
+CD -> '8point33'
+CD -> '8point375'
+CD -> '8point5'
+CD -> '8point50'
+CD -> '8point75'
+CD -> '8point8'
+CD -> '9'
+CD -> '92'
+CD -> '96'
+CD -> '97'
+CD -> '98'
+CD -> '9point4'
+CD -> '9point6'
+CD -> '9point7'
+CD -> 'Ten'
+CD -> 'Three'
+CD -> 'billion'
+CD -> 'four'
+CD -> 'hundred'
+CD -> 'nine'
+CD -> 'seven'
+CD -> 'three'
+CD -> 'trillion'
+PUNCcolon -> '-'
+PUNCcolon -> '--'
+PUNCcolon -> ':'
+PUNCcolon -> ';'
+NNPS -> 'Airlines'
+NNPS -> 'Americans'
+NNPS -> 'Appeals'
+NNPS -> 'Appropriations'
+NNPS -> 'Bankers'
+NNPS -> 'CDs'
+NNPS -> 'Containers'
+NNPS -> 'Contras'
+NNPS -> 'Cowboys'
+NNPS -> 'Dealers'
+NNPS -> 'Democrats'
+NNPS -> 'Dynamics'
+NNPS -> 'Facilities'
+NNPS -> 'Giants'
+NNPS -> 'Harbors'
+NNPS -> 'Hills'
+NNPS -> 'Holdings'
+NNPS -> 'Investments'
+NNPS -> 'Investors'
+NNPS -> 'Laboratories'
+NNPS -> 'Lines'
+NNPS -> 'Machines'
+NNPS -> 'Motors'
+NNPS -> 'Netherlands'
+NNPS -> 'Options'
+NNPS -> 'Pictures'
+NNPS -> 'Poles'
+NNPS -> 'Rights'
+NNPS -> 'Rothschilds'
+NNPS -> 'Sciences'
+NNPS -> 'Services'
+NNPS -> 'States'
+NNPS -> 'Statistics'
+NNPS -> 'Systems'
+NNPS -> 'Technologies'
+NNPS -> 'Treasurys'
+NNPS -> 'Utilities'
+NNPS -> 'Workers'
+SBARADV -> RB S
+SBARADV -> SINV
+SBARADV -> WHADVP S
+SBARADV -> X S
+PPTMP -> IN ADJP
+PPTMP -> IN ADVP
+PPTMP -> IN NP
+PPTMP -> IN SBAR
+PPTMP -> PP PP
+SQ -> MD VP
+JJS -> 'Most'
+JJS -> 'biggest'
+JJS -> 'greatest'
+JJS -> 'highest'
+JJS -> 'hottest'
+JJS -> 'least'
+JJS -> 'lowest'
+JJS -> 'worst'
+JJR -> 'better'
+JJR -> 'bigger'
+JJR -> 'broader'
+JJR -> 'cheaper'
+JJR -> 'cleaner'
+JJR -> 'harder'
+JJR -> 'larger'
+JJR -> 'smaller'
+JJR -> 'steeper'
+JJR -> 'tighter'
+JJR -> 'wider'
+JJR -> 'younger'
+WPdollar -> 'whose'
+SINV -> VP NP
+ADJP -> ADJP PRN
+ADJP -> ADJP SBAR
+ADJP -> ADVP JJ
+ADJP -> IN NN
+ADJP -> JJ NP
+ADJP -> JJ PP
+ADJP -> JJ PPTMP
+ADJP -> JJ S
+ADJP -> JJS
+ADJP -> JJS JJ
+ADJP -> NPADV JJR
+ADJP -> NPR JJ
+ADJP -> PUNCdollar JJ
+ADJP -> QP
+ADJP -> QP JJ
+ADJP -> QP JJR
+ADJP -> QP NN
+ADJP -> QPMONEY
+ADJP -> RB
+ADJP -> RB JJR
+ADJP -> RB JJS
+ADJP -> RB VBG
+ADJP -> RB VBN
+ADJP -> RBR
+ADJP -> VBN
+ADJP -> VBN NP
+ADVPLOC -> IN
+ADVPLOC -> IN NP
+ADVPLOC -> RB RB
+SBARNOMPRD -> WHNP S
+DT -> 'All'
+DT -> 'An'
+DT -> 'No'
+DT -> 'Some'
+DT -> 'The'
+DT -> 'These'
+DT -> 'This'
+DT -> 'a'
+DT -> 'an'
+DT -> 'another'
+DT -> 'any'
+DT -> 'both'
+DT -> 'each'
+DT -> 'no'
+DT -> 'the'
+DT -> 'this'
+DT -> 'those'
+ADJPPRD -> ADJP
+ADJPPRD -> ADJP PP
+ADJPPRD -> ADJP SBAR
+ADJPPRD -> ADVP JJ
+ADJPPRD -> JJ
+ADJPPRD -> JJ PPLOC
+ADJPPRD -> JJ S
+ADJPPRD -> JJ SBAR
+ADJPPRD -> JJR
+ADJPPRD -> JJR PP
+ADJPPRD -> NN
+ADJPPRD -> NP JJR
+ADJPPRD -> RB JJ
+ADJPPRD -> RB VBN
+ADJPPRD -> VBG
+ADJPPRD -> VBN
+ADJPPRD -> VBN PP
+ADJPPRD -> VBN SBAR
+ADVPLOCPRD -> RB
+ADVPLOCPRD -> RB PP
+POS -> "'"
+POS -> "'s"
+TO -> 'to'
+LS -> '3'
+SBARLOC -> WHADVP S
+PPPRDLOC -> IN NP
+NPPRD -> ADJP NN
+NPPRD -> DT ADJP
+NPPRD -> DT NNS
+NPPRD -> JJ
+NPPRD -> JJ NN
+NPPRD -> JJ NNS
+NPPRD -> JJR
+NPPRD -> NNS
+NPPRD -> NP ADJP
+NPPRD -> NP ADVP
+NPPRD -> NP NPADV
+NPPRD -> NP PP
+NPPRD -> NP PPLOC
+NPPRD -> NP PRN
+NPPRD -> NP SBARTMP
+NPPRD -> NPR
+NPPRD -> NPRS
+NPPRD -> PRPdollar NN
+NPPRD -> QP NN
+NPPRD -> QPMONEY
+SSBJ -> VP
+NPLOC -> NP PP
+NPLOC -> NPR
+VB -> 'Be'
+VB -> 'absorb'
+VB -> 'accept'
+VB -> 'achieve'
+VB -> 'act'
+VB -> 'add'
+VB -> 'address'
+VB -> 'adopt'
+VB -> 'advise'
+VB -> 'affect'
+VB -> 'agree'
+VB -> 'announce'
+VB -> 'appeal'
+VB -> 'appear'
+VB -> 'apply'
+VB -> 'approve'
+VB -> 'argue'
+VB -> 'ask'
+VB -> 'assume'
+VB -> 'attempt'
+VB -> 'auction'
+VB -> 'bear'
+VB -> 'beat'
+VB -> 'block'
+VB -> 'bolster'
+VB -> 'boost'
+VB -> 'buy'
+VB -> 'care'
+VB -> 'carry'
+VB -> 'cause'
+VB -> 'challenge'
+VB -> 'choose'
+VB -> 'clear'
+VB -> 'close'
+VB -> 'collapse'
+VB -> 'comment'
+VB -> 'compete'
+VB -> 'conduct'
+VB -> 'contribute'
+VB -> 'control'
+VB -> 'convert'
+VB -> 'correct'
+VB -> 'count'
+VB -> 'curtail'
+VB -> 'cut'
+VB -> 'decide'
+VB -> 'defend'
+VB -> 'delay'
+VB -> 'demand'
+VB -> 'deny'
+VB -> 'depend'
+VB -> 'describe'
+VB -> 'design'
+VB -> 'determine'
+VB -> 'develop'
+VB -> 'die'
+VB -> 'discover'
+VB -> 'distribute'
+VB -> 'divest'
+VB -> 'do'
+VB -> 'draw'
+VB -> 'drive'
+VB -> 'drop'
+VB -> 'earn'
+VB -> 'eat'
+VB -> 'elaborate'
+VB -> 'eliminate'
+VB -> 'enhance'
+VB -> 'ensure'
+VB -> 'erode'
+VB -> 'establish'
+VB -> 'examine'
+VB -> 'exchange'
+VB -> 'execute'
+VB -> 'exist'
+VB -> 'expect'
+VB -> 'expire'
+VB -> 'explain'
+VB -> 'express'
+VB -> 'extend'
+VB -> 'face'
+VB -> 'feel'
+VB -> 'fight'
+VB -> 'finish'
+VB -> 'flee'
+VB -> 'float'
+VB -> 'force'
+VB -> 'fund'
+VB -> 'get'
+VB -> 'give'
+VB -> 'go'
+VB -> 'guarantee'
+VB -> 'handle'
+VB -> 'hear'
+VB -> 'help'
+VB -> 'hide'
+VB -> 'hit'
+VB -> 'hurt'
+VB -> 'identify'
+VB -> 'indicate'
+VB -> 'induce'
+VB -> 'insist'
+VB -> 'insure'
+VB -> 'intend'
+VB -> 'intensify'
+VB -> 'intervene'
+VB -> 'invest'
+VB -> 'join'
+VB -> 'keep'
+VB -> 'know'
+VB -> 'last'
+VB -> 'launch'
+VB -> 'lead'
+VB -> 'learn'
+VB -> 'leave'
+VB -> 'lend'
+VB -> 'let'
+VB -> 'lift'
+VB -> 'live'
+VB -> 'look'
+VB -> 'lose'
+VB -> 'lower'
+VB -> 'maintain'
+VB -> 'make'
+VB -> 'manage'
+VB -> 'match'
+VB -> 'maximize'
+VB -> 'measure'
+VB -> 'merge'
+VB -> 'move'
+VB -> 'name'
+VB -> 'need'
+VB -> 'notify'
+VB -> 'obtain'
+VB -> 'occur'
+VB -> 'offset'
+VB -> 'oppose'
+VB -> 'oust'
+VB -> 'overcome'
+VB -> 'override'
+VB -> 'pay'
+VB -> 'permit'
+VB -> 'plan'
+VB -> 'pose'
+VB -> 'post'
+VB -> 'pressure'
+VB -> 'produce'
+VB -> 'profit'
+VB -> 'propose'
+VB -> 'publish'
+VB -> 'purchase'
+VB -> 'push'
+VB -> 'quit'
+VB -> 'realize'
+VB -> 'receive'
+VB -> 'record'
+VB -> 'recover'
+VB -> 'reduce'
+VB -> 'reinforce'
+VB -> 'remain'
+VB -> 'represent'
+VB -> 'resolve'
+VB -> 'retain'
+VB -> 'return'
+VB -> 'revive'
+VB -> 'risk'
+VB -> 'say'
+VB -> 'scuttle'
+VB -> 'seek'
+VB -> 'seem'
+VB -> 'select'
+VB -> 'sell'
+VB -> 'send'
+VB -> 'ship'
+VB -> 'sit'
+VB -> 'solve'
+VB -> 'sort'
+VB -> 'sound'
+VB -> 'spark'
+VB -> 'speak'
+VB -> 'speculate'
+VB -> 'stabilize'
+VB -> 'start'
+VB -> 'stay'
+VB -> 'stem'
+VB -> 'stock'
+VB -> 'strike'
+VB -> 'succeed'
+VB -> 'supply'
+VB -> 'talk'
+VB -> 'think'
+VB -> 'total'
+VB -> 'transform'
+VB -> 'travel'
+VB -> 'treat'
+VB -> 'trust'
+VB -> 'tumble'
+VB -> 'underwrite'
+VB -> 'veto'
+VB -> 'visit'
+VB -> 'wait'
+VB -> 'walk'
+VB -> 'watch'
+VB -> 'wear'
+VB -> 'win'
+VB -> 'withdraw'
+VB -> 'withstand'
+VB -> 'worry'
+VB -> 'write'
+RBS -> 'most'
+RBR -> 'better'
+RBR -> 'earlier'
+RBR -> 'faster'
+RBR -> 'further'
+RBR -> 'higher'
+RBR -> 'later'
+RBR -> 'lower'
+RBR -> 'worse'
+INTJ -> RB
+INTJ -> UH
+INTJ -> UH PUNCpoint
+INTJ -> VB
+VP -> JJ
+VP -> JJ NP
+VP -> NN
+VP -> TO
+VP -> TO VP
+VP -> VB
+VP -> VB ADJPPRD
+VP -> VB NPPRD
+VP -> VB PP
+VP -> VB PPLOCPRD
+VP -> VB PPPRD
+VP -> VB PPTMP
+VP -> VB PRT
+VP -> VB SBARADV
+VP -> VB SPRP
+VP -> VB VP
+VP -> VBD
+VP -> VBD ADJPPRD
+VP -> VBD ADVPLOCPRD
+VP -> VBD ADVPTMP
+VP -> VBD PP
+VP -> VBD PPLOCPRD
+VP -> VBD SBAR
+VP -> VBD SBARADV
+VP -> VBD SBARPRD
+VP -> VBD SPRD
+VP -> VBD SPRP
+VP -> VBG ADJPPRD
+VP -> VBG ADVP
+VP -> VBG ADVPTMP
+VP -> VBG PPLOC
+VP -> VBG PPTMP
+VP -> VBG S
+VP -> VBG SBARTMP
+VP -> VBN ADVPPRD
+VP -> VBN ADVPTMP
+VP -> VBN NP
+VP -> VBN NPTMP
+VP -> VBN PP
+VP -> VBN PPLOCPRD
+VP -> VBN PPTMP
+VP -> VBN PRT
+VP -> VBN S
+VP -> VBN SBARADV
+VP -> VBN SPRD
+VP -> VBN SPRP
+VP -> VBP ADVPLOC
+VP -> VBP ADVPPRD
+VP -> VBP NPTMP
+VP -> VBP PP
+VP -> VBP PPLOC
+VP -> VBP PPPRD
+VP -> VBP RB
+VP -> VBP SBARNOM
+VP -> VBZ
+VP -> VBZ ADJP
+VP -> VBZ ADJPPRD
+VP -> VBZ ADVP
+VP -> VBZ ADVPLOC
+VP -> VBZ ADVPLOCPRD
+VP -> VBZ ADVPTMP
+VP -> VBZ NP
+VP -> VBZ NPPRD
+VP -> VBZ PPLOC
+VP -> VBZ PPPRD
+VP -> VBZ PPTMP
+VP -> VBZ SBARADV
+VP -> VBZ SBARNOM
+VP -> VBZ SBARPRPPRD
+SADV -> ADJPPRD
+SADV -> ADVP VP
+SADV -> ADVPPRD
+SADV -> ADVPTMP VP
+SADV -> NP VP
+SADV -> VP
+IN -> 'After'
+IN -> 'As'
+IN -> 'By'
+IN -> 'During'
+IN -> 'For'
+IN -> 'From'
+IN -> 'In'
+IN -> 'Of'
+IN -> 'Unless'
+IN -> 'While'
+IN -> 'against'
+IN -> 'ago'
+IN -> 'although'
+IN -> 'among'
+IN -> 'around'
+IN -> 'as'
+IN -> 'at'
+IN -> 'because'
+IN -> 'before'
+IN -> 'behind'
+IN -> 'below'
+IN -> 'beneath'
+IN -> 'between'
+IN -> 'beyond'
+IN -> 'by'
+IN -> 'de'
+IN -> 'despite'
+IN -> 'down'
+IN -> 'during'
+IN -> 'if'
+IN -> 'into'
+IN -> 'next'
+IN -> 'of'
+IN -> 'off'
+IN -> 'on'
+IN -> 'onto'
+IN -> 'past'
+IN -> 'per'
+IN -> 'so'
+IN -> 'under'
+IN -> 'up'
+IN -> 'upon'
+IN -> 'via'
+IN -> 'vspoint'
+IN -> 'whether'
+IN -> 'while'
+IN -> 'with'
+IN -> 'without'
+QP -> IN QP
+QP -> JJ QP
+QP -> RB DT
+QP -> RB NN
+QP -> RB QP
+POUND -> '#'
+PPLOC -> IN NP
+PPLOC -> IN PP
+PPLOC -> IN SBARNOM
+PPLOC -> TO NP
+WHADJP -> WRB JJ
+WHNP -> DT
+WHNP -> NP PP
+WHNP -> NP WHPP
+WHNP -> WDT NNS
+WHNP -> WHNP WHPP
+WHNP -> WP
+WHNP -> WPdollar NN
+WHNP -> WRB JJ
+SNOM -> ADVP VP
+SNOM -> ADVPTMP VP
+SNOM -> NPdollar VP
+PRPdollar -> 'My'
+PRPdollar -> 'Their'
+PRPdollar -> 'his'
+PRPdollar -> 'my'
+PRPdollar -> 'their'
+PRPdollar -> 'your'
+NPTMP -> DT NN
+NPTMP -> JJ NN
+NPTMP -> JJ NNS
+NPTMP -> NN
+NPTMP -> NP ADVP
+NPTMP -> NP NPADV
+NPTMP -> NP PP
+NPTMP -> NP SBAR
+NPTMP -> NPR NP
+NPTMP -> QP
+NPTMP -> QP NNS
+NPTMP -> RB NPR
+S0 -> ADVP COMMA
+S1 -> S0 NP
+S2 -> S1 ADVPTMP
+S3 -> S2 VP
+S -> S3 PUNCpoint
+S4 -> ADVP COMMA
+S5 -> S4 NP
+S6 -> S5 VP
+S -> S6 PUNCpoint
+S7 -> ADVP COMMA
+S8 -> S7 NP
+S9 -> S8 VP
+S10 -> S9 PUNCpoint
+S -> S10 PUNCquotequote
+S11 -> ADVP COMMA
+S12 -> S11 PP
+S13 -> S12 COMMA
+S14 -> S13 NP
+S15 -> S14 VP
+S -> S15 PUNCpoint
+S16 -> ADVP COMMA
+S17 -> S16 PPLOC
+S18 -> S17 COMMA
+S19 -> S18 NP
+S20 -> S19 VP
+S -> S20 PUNCpoint
+S21 -> ADVP COMMA
+S22 -> S21 SBARTMP
+S23 -> S22 COMMA
+S24 -> S23 NP
+S25 -> S24 VP
+S -> S25 PUNCpoint
+S26 -> ADVP NP
+S -> S26 VP
+S27 -> ADVP NP
+S28 -> S27 VP
+S -> S28 PUNCpoint
+S29 -> ADVPLOC NP
+S30 -> S29 VP
+S -> S30 PUNCpoint
+S31 -> ADVPTMP COMMA
+S32 -> S31 ADVP
+S33 -> S32 COMMA
+S34 -> S33 NP
+S35 -> S34 VP
+S -> S35 PUNCpoint
+S36 -> ADVPTMP COMMA
+S37 -> S36 NP
+S38 -> S37 ADVP
+S39 -> S38 VP
+S -> S39 PUNCpoint
+S40 -> ADVPTMP COMMA
+S41 -> S40 PPTMP
+S42 -> S41 COMMA
+S43 -> S42 NP
+S44 -> S43 VP
+S -> S44 PUNCpoint
+S45 -> ADVPTMP NP
+S -> S45 VP
+S46 -> ADVPTMP PRN
+S47 -> S46 NP
+S48 -> S47 VP
+S -> S48 PUNCpoint
+S49 -> COMMA PP
+S50 -> S49 COMMA
+S -> S50 VP
+S51 -> INTJ COMMA
+S52 -> S51 NP
+S53 -> S52 VP
+S -> S53 PUNCpoint
+S54 -> NP ADJPPRD
+S -> S54 S
+S55 -> NP ADJPPRD
+S -> S55 SBAR
+S56 -> NP ADVP
+S -> S56 VP
+S57 -> NP ADVP
+S58 -> S57 VP
+S -> S58 PUNCpoint
+S59 -> NP ADVPTMP
+S60 -> S59 VP
+S -> S60 PUNCpoint
+S61 -> NP ADVPTMP
+S62 -> S61 VP
+S63 -> S62 PUNCpoint
+S -> S63 PUNCquotequote
+S64 -> NP COMMA
+S65 -> S64 ADVP
+S66 -> S65 COMMA
+S -> S66 VP
+S67 -> NP COMMA
+S68 -> S67 PP
+S69 -> S68 COMMA
+S70 -> S69 VP
+S -> S70 PUNCpoint
+S71 -> NP COMMA
+S72 -> S71 SBARADV
+S73 -> S72 COMMA
+S74 -> S73 VP
+S -> S74 PUNCpoint
+S75 -> NP COMMA
+S76 -> S75 VP
+S -> S76 PUNCpoint
+S77 -> NP PP
+S78 -> S77 VP
+S -> S78 PUNCpoint
+S79 -> NP PPLOC
+S80 -> S79 VP
+S -> S80 PUNCpoint
+S81 -> NP PPTMP
+S82 -> S81 VP
+S -> S82 PUNCpoint
+S83 -> NP PRN
+S -> S83 VP
+S84 -> NP PRN
+S85 -> S84 VP
+S -> S85 PUNCpoint
+S86 -> NP PRN
+S87 -> S86 VP
+S88 -> S87 PUNCpoint
+S -> S88 PUNCquotequote
+S89 -> NP PUNCbquotebquote
+S -> S89 ADJPPRD
+S90 -> NP PUNCbquotebquote
+S -> S90 VP
+S91 -> NP PUNCbquotebquote
+S92 -> S91 VP
+S -> S92 PUNCpoint
+S93 -> NP VP
+S -> S93 PP
+S94 -> NP VP
+S -> S94 PUNCcolon
+S95 -> NP VP
+S96 -> S95 PUNCcolon
+S -> S96 PUNCpoint
+S97 -> NP VP
+S -> S97 PUNCpoint
+S98 -> NPADV COMMA
+S99 -> S98 NP
+S100 -> S99 VP
+S -> S100 PUNCpoint
+S101 -> NPR VP
+S -> S101 PUNCpoint
+S102 -> NPTMP COMMA
+S103 -> S102 NP
+S -> S103 VP
+S104 -> NPTMP COMMA
+S105 -> S104 NP
+S106 -> S105 VP
+S107 -> S106 PUNCpoint
+S -> S107 PUNCquotequote
+S108 -> NPTMP COMMA
+S109 -> S108 SBARTMP
+S110 -> S109 COMMA
+S111 -> S110 NP
+S112 -> S111 VP
+S -> S112 PUNCpoint
+S113 -> NPTMP NP
+S -> S113 VP
+S114 -> NPTMP NP
+S115 -> S114 VP
+S -> S115 PUNCpoint
+S116 -> PP COMMA
+S117 -> S116 NP
+S118 -> S117 ADVP
+S119 -> S118 VP
+S -> S119 PUNCpoint
+S120 -> PP COMMA
+S121 -> S120 NP
+S122 -> S121 VP
+S -> S122 PUNCpoint
+S123 -> PP COMMA
+S -> S123 VP
+S124 -> PP NP
+S125 -> S124 VP
+S -> S125 PUNCpoint
+S126 -> PP PRN
+S127 -> S126 NP
+S128 -> S127 VP
+S -> S128 PUNCpoint
+S129 -> PPLOC COMMA
+S130 -> S129 ADVP
+S131 -> S130 COMMA
+S132 -> S131 NP
+S133 -> S132 VP
+S -> S133 PUNCpoint
+S134 -> PPLOC COMMA
+S135 -> S134 NP
+S136 -> S135 ADVP
+S137 -> S136 VP
+S -> S137 PUNCpoint
+S138 -> PPLOC COMMA
+S139 -> S138 NP
+S140 -> S139 VP
+S -> S140 PUNCpoint
+S141 -> PPLOC COMMA
+S142 -> S141 NP
+S143 -> S142 VP
+S144 -> S143 PUNCpoint
+S -> S144 PUNCquotequote
+S145 -> PPLOC COMMA
+S146 -> S145 PP
+S147 -> S146 COMMA
+S148 -> S147 NP
+S149 -> S148 VP
+S -> S149 PUNCpoint
+S150 -> PPLOC PRN
+S151 -> S150 NP
+S152 -> S151 VP
+S -> S152 PUNCpoint
+S153 -> PPTMP COMMA
+S154 -> S153 ADVP
+S155 -> S154 COMMA
+S156 -> S155 NP
+S157 -> S156 VP
+S -> S157 PUNCpoint
+S158 -> PPTMP COMMA
+S159 -> S158 NP
+S160 -> S159 ADVP
+S161 -> S160 VP
+S -> S161 PUNCpoint
+S162 -> PPTMP COMMA
+S163 -> S162 NP
+S164 -> S163 VP
+S -> S164 PUNCpoint
+S165 -> PPTMP COMMA
+S166 -> S165 SBARTMP
+S167 -> S166 COMMA
+S168 -> S167 NP
+S169 -> S168 VP
+S -> S169 PUNCpoint
+S170 -> PUNCLRB NP
+S171 -> S170 VP
+S172 -> S171 PUNCpoint
+S -> S172 PUNCRRB
+S173 -> PUNCLRB PPTMP
+S174 -> S173 COMMA
+S175 -> S174 NP
+S176 -> S175 VP
+S177 -> S176 PUNCpoint
+S -> S177 PUNCRRB
+S178 -> PUNCbquotebquote ADVP
+S179 -> S178 COMMA
+S180 -> S179 NP
+S181 -> S180 VP
+S182 -> S181 PUNCpoint
+S -> S182 PUNCquotequote
+S183 -> PUNCbquotebquote ADVP
+S184 -> S183 NP
+S185 -> S184 VP
+S186 -> S185 PUNCpoint
+S -> S186 PUNCquotequote
+S187 -> PUNCbquotebquote NP
+S188 -> S187 COMMA
+S189 -> S188 PUNCquotequote
+S190 -> S189 NP
+S191 -> S190 VP
+S -> S191 PUNCpoint
+S192 -> PUNCbquotebquote NP
+S193 -> S192 PRN
+S194 -> S193 VP
+S195 -> S194 PUNCpoint
+S -> S195 PUNCquotequote
+S196 -> PUNCbquotebquote NP
+S197 -> S196 PUNCquotequote
+S -> S197 VP
+S198 -> PUNCbquotebquote NP
+S -> S198 VP
+S199 -> PUNCbquotebquote NP
+S200 -> S199 VP
+S201 -> S200 PUNCpoint
+S -> S201 PUNCquotequote
+S202 -> PUNCbquotebquote NPR
+S203 -> S202 PUNCquotequote
+S -> S203 VP
+S204 -> PUNCbquotebquote PP
+S205 -> S204 COMMA
+S206 -> S205 NP
+S207 -> S206 VP
+S -> S207 PUNCpoint
+S208 -> PUNCbquotebquote PPTMP
+S209 -> S208 COMMA
+S210 -> S209 NP
+S211 -> S210 VP
+S -> S211 PUNCpoint
+S212 -> PUNCbquotebquote S
+S213 -> S212 COMMA
+S214 -> S213 PUNCquotequote
+S215 -> S214 NP
+S216 -> S215 VP
+S -> S216 PUNCpoint
+S217 -> PUNCbquotebquote S
+S218 -> S217 PUNCcolon
+S219 -> S218 S
+S220 -> S219 PUNCpoint
+S -> S220 PUNCquotequote
+S221 -> PUNCbquotebquote SBARADV
+S222 -> S221 COMMA
+S223 -> S222 NP
+S224 -> S223 VP
+S -> S224 PUNCpoint
+S225 -> PUNCbquotebquote STPC
+S226 -> S225 COMMA
+S227 -> S226 PUNCquotequote
+S228 -> S227 NP
+S229 -> S228 VP
+S -> S229 PUNCpoint
+S230 -> PUNCbquotebquote STPC
+S231 -> S230 COMMA
+S232 -> S231 PUNCquotequote
+S233 -> S232 VP
+S234 -> S233 NP
+S -> S234 PUNCpoint
+S235 -> PUNCcolon NP
+S236 -> S235 VP
+S -> S236 PUNCpoint
+S237 -> PUNCcolon SBARADV
+S238 -> S237 COMMA
+S239 -> S238 NP
+S240 -> S239 VP
+S -> S240 PUNCpoint
+S241 -> S PUNCcolon
+S242 -> S241 S
+S -> S242 PUNCpoint
+S243 -> S PUNCcolon
+S244 -> S243 S
+S245 -> S244 PUNCpoint
+S -> S245 PUNCquotequote
+S246 -> SADV COMMA
+S247 -> S246 NP
+S248 -> S247 ADVP
+S249 -> S248 VP
+S -> S249 PUNCpoint
+S250 -> SADV COMMA
+S251 -> S250 NP
+S252 -> S251 VP
+S253 -> S252 PUNCpoint
+S -> S253 PUNCquotequote
+S254 -> SBARADV COMMA
+S255 -> S254 NP
+S256 -> S255 ADVP
+S257 -> S256 VP
+S -> S257 PUNCpoint
+S258 -> SBARADV COMMA
+S259 -> S258 NP
+S260 -> S259 ADVPTMP
+S261 -> S260 VP
+S -> S261 PUNCpoint
+S262 -> SBARADV COMMA
+S263 -> S262 NP
+S264 -> S263 VP
+S -> S264 PUNCpoint
+S265 -> SBARADV COMMA
+S266 -> S265 NP
+S267 -> S266 VP
+S268 -> S267 PUNCpoint
+S -> S268 PUNCquotequote
+S269 -> SBARADV NP
+S270 -> S269 VP
+S -> S270 PUNCpoint
+S271 -> SBARNOM VP
+S -> S271 PUNCpoint
+S272 -> SBARPRP COMMA
+S273 -> S272 NP
+S274 -> S273 VP
+S -> S274 PUNCpoint
+S275 -> SBARSBJ VP
+S -> S275 PUNCpoint
+S276 -> SBARTMP NP
+S277 -> S276 VP
+S -> S277 PUNCpoint
+S278 -> STPC COMMA
+S279 -> S278 NP
+S -> S279 VP
+S280 -> STPC COMMA
+S281 -> S280 NP
+S282 -> S281 VP
+S -> S282 PUNCpoint
+S283 -> STPC NP
+S284 -> S283 VP
+S -> S284 PUNCpoint
+SBAR285 -> IN IN
+SBAR -> SBAR285 S
+SBAR286 -> IN PUNCbquotebquote
+SBAR -> SBAR286 S
+SBAR287 -> RB IN
+SBAR -> SBAR287 S
+SBAR288 -> SBAR COMMA
+SBAR -> SBAR288 SBAR
+PPPRD289 -> ADVP IN
+PPPRD -> PPPRD289 NP
+PPPRD290 -> RB IN
+PPPRD -> PPPRD290 NP
+NPRS291 -> NNP NNP
+NPRS -> NPRS291 NNPS
+PRN292 -> COMMA ADVP
+PRN -> PRN292 COMMA
+PRN293 -> COMMA NP
+PRN294 -> PRN293 VP
+PRN -> PRN294 COMMA
+PRN295 -> COMMA PP
+PRN -> PRN295 COMMA
+PRN296 -> COMMA PUNCquotequote
+PRN297 -> PRN296 S
+PRN298 -> PRN297 COMMA
+PRN -> PRN298 PUNCbquotebquote
+PRN299 -> COMMA SBAR
+PRN -> PRN299 COMMA
+PRN300 -> COMMA SINV
+PRN -> PRN300 COMMA
+PRN301 -> PUNCLRB ADVP
+PRN -> PRN301 PUNCRRB
+PRN302 -> PUNCLRB NN
+PRN -> PRN302 PUNCRRB
+PRN303 -> PUNCLRB NP
+PRN304 -> PRN303 COMMA
+PRN305 -> PRN304 NP
+PRN306 -> PRN305 COMMA
+PRN307 -> PRN306 NP
+PRN -> PRN307 PUNCRRB
+PRN308 -> PUNCLRB NP
+PRN309 -> PRN308 COMMA
+PRN310 -> PRN309 NPLOC
+PRN -> PRN310 PUNCRRB
+PRN311 -> PUNCLRB NP
+PRN -> PRN311 PUNCRRB
+PRN312 -> PUNCLRB NPR
+PRN -> PRN312 PUNCRRB
+PRN313 -> PUNCLRB S
+PRN -> PRN313 PUNCRRB
+PRN314 -> PUNCLRB VP
+PRN -> PRN314 PUNCRRB
+PRN315 -> PUNCcolon PP
+PRN -> PRN315 PUNCcolon
+PRN316 -> PUNCcolon S
+PRN -> PRN316 PUNCcolon
+PRN317 -> PUNCcolon SBAR
+PRN -> PRN317 PUNCcolon
+NPADV318 -> DT JJ
+NPADV -> NPADV318 NN
+QPMONEY319 -> IN QPMONEY
+QPMONEY -> QPMONEY319 PP
+QPMONEY320 -> JJR IN
+QPMONEY -> QPMONEY320 QPMONEY
+PPLOCPRD321 -> ADVP IN
+PPLOCPRD -> PPLOCPRD321 NP
+NPR322 -> NNP NNP
+NPR323 -> NPR322 NNP
+NPR -> NPR323 NNP
+NPR324 -> NNP NNP
+NPR325 -> NPR324 NNP
+NPR326 -> NPR325 NNP
+NPR -> NPR326 NNP
+NPR327 -> NNP NNP
+NPR328 -> NPR327 NNP
+NPR329 -> NPR328 NNP
+NPR330 -> NPR329 NNP
+NPR -> NPR330 NNP
+NPR331 -> NNP NNP
+NPR332 -> NPR331 NNP
+NPR333 -> NPR332 NNP
+NPR334 -> NPR333 NNP
+NPR335 -> NPR334 NNP
+NPR -> NPR335 NNP
+NPR336 -> NNP NNP
+NPR337 -> NPR336 NNP
+NPR338 -> NPR337 NNPS
+NPR -> NPR338 NNP
+NPR339 -> NNP NNP
+NPR340 -> NPR339 NNPS
+NPR -> NPR340 NNP
+NPR341 -> NNPS NNP
+NPR -> NPR341 NNP
+NPR342 -> NNPS NNP
+NPR343 -> NPR342 NNP
+NPR -> NPR343 NNP
+PP344 -> ADVP IN
+PP -> PP344 SNOM
+PP345 -> IN NP
+PP -> PP345 NPTMP
+PP346 -> IN PUNCbquotebquote
+PP -> PP346 NP
+PP347 -> IN PUNCbquotebquote
+PP348 -> PP347 NP
+PP -> PP348 PUNCquotequote
+PP349 -> IN PUNCquotequote
+PP -> PP349 NP
+PP350 -> NP IN
+PP -> PP350 NP
+PP351 -> NPADV IN
+PP -> PP351 NP
+PP352 -> RB IN
+PP -> PP352 NP
+PP353 -> RB IN
+PP -> PP353 PP
+PP354 -> RB IN
+PP -> PP354 SNOM
+PP355 -> TO NP
+PP -> PP355 PPTMP
+PP356 -> TO PUNCbquotebquote
+PP -> PP356 NP
+SBARTMP357 -> ADVP IN
+SBARTMP -> SBARTMP357 S
+SBARTMP358 -> NP IN
+SBARTMP -> SBARTMP358 S
+SBARTMP359 -> NPADV IN
+SBARTMP -> SBARTMP359 S
+NACTMP360 -> NPR COMMA
+NACTMP361 -> NACTMP360 NPR
+NACTMP362 -> NACTMP361 QP
+NACTMP363 -> NACTMP362 COMMA
+NACTMP364 -> NACTMP363 QP
+NACTMP -> NACTMP364 COMMA
+ADVP365 -> IN NP
+ADVP -> ADVP365 PP
+ADVP366 -> QP TO
+ADVP -> ADVP366 QP
+ADVP367 -> RB NP
+ADVP -> ADVP367 PP
+SBARQ368 -> PUNCbquotebquote WHADVP
+SBARQ369 -> SBARQ368 SQ
+SBARQ -> SBARQ369 PUNCpoint
+SBARQ370 -> RB WHNP
+SBARQ371 -> SBARQ370 SQ
+SBARQ -> SBARQ371 PUNCpoint
+STPC372 -> ADVP NP
+STPC -> STPC372 VP
+STPC373 -> ADVPTMP NP
+STPC -> STPC373 VP
+STPC374 -> NP ADVPTMP
+STPC -> STPC374 VP
+STPC375 -> NP PUNCbquotebquote
+STPC -> STPC375 VP
+STPC376 -> NP VP
+STPC -> STPC376 COMMA
+STPC377 -> NP VP
+STPC378 -> STPC377 COMMA
+STPC -> STPC378 PUNCquotequote
+STPC379 -> PP COMMA
+STPC380 -> STPC379 NP
+STPC -> STPC380 VP
+STPC381 -> SBARADV COMMA
+STPC382 -> STPC381 NP
+STPC -> STPC382 VP
+ADVPTMP383 -> RB RB
+ADVPTMP -> ADVPTMP383 PP
+NP384 -> ADJP ADJP
+NP385 -> NP384 JJ
+NP386 -> NP385 JJ
+NP387 -> NP386 NN
+NP -> NP387 NNS
+NP388 -> ADJP DT
+NP -> NP388 NN
+NP389 -> ADJP JJ
+NP -> NP389 NN
+NP390 -> ADJP NN
+NP -> NP390 NN
+NP391 -> DT ADJP
+NP392 -> NP391 ADJP
+NP -> NP392 NN
+NP393 -> DT ADJP
+NP394 -> NP393 JJ
+NP -> NP394 NN
+NP395 -> DT ADJP
+NP396 -> NP395 JJ
+NP397 -> NP396 NN
+NP -> NP397 NN
+NP398 -> DT ADJP
+NP399 -> NP398 JJ
+NP -> NP399 NNS
+NP400 -> DT ADJP
+NP -> NP400 NNS
+NP401 -> DT ADJP
+NP402 -> NP401 NNS
+NP -> NP402 NN
+NP403 -> DT ADJP
+NP -> NP403 NPR
+NP404 -> DT ADJP
+NP405 -> NP404 NPR
+NP -> NP405 NP
+NP406 -> DT ADVP
+NP -> NP406 NN
+NP407 -> DT DT
+NP408 -> NP407 JJ
+NP -> NP408 NNS
+NP409 -> DT JJ
+NP410 -> NP409 ADJP
+NP411 -> NP410 JJ
+NP -> NP411 NN
+NP412 -> DT JJ
+NP413 -> NP412 ADJP
+NP -> NP413 NN
+NP414 -> DT JJ
+NP415 -> NP414 COMMA
+NP416 -> NP415 JJ
+NP -> NP416 NN
+NP417 -> DT JJ
+NP418 -> NP417 COMMA
+NP419 -> NP418 JJ
+NP -> NP419 NNS
+NP420 -> DT JJ
+NP421 -> NP420 COMMA
+NP422 -> NP421 JJ
+NP423 -> NP422 NPR
+NP -> NP423 NP
+NP424 -> DT JJ
+NP -> NP424 JJ
+NP425 -> DT JJ
+NP426 -> NP425 JJ
+NP427 -> NP426 JJ
+NP -> NP427 NN
+NP428 -> DT JJ
+NP429 -> NP428 JJ
+NP -> NP429 NPR
+NP430 -> DT JJ
+NP431 -> NP430 JJ
+NP432 -> NP431 NPR
+NP -> NP432 NP
+NP433 -> DT JJ
+NP434 -> NP433 NN
+NP -> NP434 NN
+NP435 -> DT JJ
+NP436 -> NP435 NN
+NP437 -> NP436 NN
+NP -> NP437 NNS
+NP438 -> DT JJ
+NP439 -> NP438 NN
+NP440 -> NP439 NNS
+NP -> NP440 NN
+NP441 -> DT JJ
+NP442 -> NP441 NN
+NP -> NP442 NPR
+NP443 -> DT JJ
+NP444 -> NP443 NNS
+NP -> NP444 NN
+NP445 -> DT JJ
+NP446 -> NP445 NNS
+NP447 -> NP446 NN
+NP -> NP447 NN
+NP448 -> DT JJ
+NP449 -> NP448 NNS
+NP -> NP449 NNS
+NP450 -> DT JJ
+NP451 -> NP450 NPR
+NP452 -> NP451 JJ
+NP -> NP452 NN
+NP453 -> DT JJ
+NP454 -> NP453 QP
+NP455 -> NP454 JJ
+NP -> NP455 NNS
+NP456 -> DT JJ
+NP457 -> NP456 QP
+NP -> NP457 NN
+NP458 -> DT JJ
+NP459 -> NP458 VBN
+NP -> NP459 NN
+NP460 -> DT JJR
+NP461 -> NP460 NN
+NP -> NP461 NN
+NP462 -> DT JJS
+NP463 -> NP462 JJ
+NP -> NP463 NN
+NP464 -> DT JJS
+NP -> NP464 NN
+NP465 -> DT NAC
+NP -> NP465 NN
+NP466 -> DT NAC
+NP -> NP466 NPR
+NP467 -> DT NACLOC
+NP468 -> NP467 JJ
+NP -> NP468 NN
+NP469 -> DT NACLOC
+NP470 -> NP469 NN
+NP -> NP470 NN
+NP471 -> DT NACTMP
+NP -> NP471 NN
+NP472 -> DT NN
+NP473 -> NP472 NN
+NP -> NP473 NPR
+NP474 -> DT NN
+NP -> NP474 NNS
+NP475 -> DT NN
+NP476 -> NP475 QP
+NP -> NP476 NN
+NP477 -> DT NN
+NP -> NP477 SBAR
+NP478 -> DT NNS
+NP -> NP478 NNS
+NP479 -> DT NNS
+NP -> NP479 SBAR
+NP480 -> DT NPR
+NP481 -> NP480 JJ
+NP -> NP481 NN
+NP482 -> DT NPR
+NP483 -> NP482 JJ
+NP484 -> NP483 NN
+NP485 -> NP484 NN
+NP -> NP485 NN
+NP486 -> DT NPR
+NP487 -> NP486 JJ
+NP -> NP487 NNS
+NP488 -> DT NPR
+NP -> NP488 NP
+NP489 -> DT NPR
+NP490 -> NP489 QP
+NP -> NP490 NN
+NP491 -> DT NPR
+NP492 -> NP491 QP
+NP -> NP492 NPR
+NP493 -> DT NPR
+NP494 -> NP493 VBG
+NP -> NP494 NN
+NP495 -> DT NPdollar
+NP -> NP495 NN
+NP496 -> DT PUNCbquotebquote
+NP497 -> NP496 JJ
+NP -> NP497 NN
+NP498 -> DT PUNCbquotebquote
+NP499 -> NP498 JJ
+NP500 -> NP499 NN
+NP -> NP500 PUNCquotequote
+NP501 -> DT PUNCbquotebquote
+NP502 -> NP501 NN
+NP503 -> NP502 NN
+NP -> NP503 PUNCquotequote
+NP504 -> DT PUNCbquotebquote
+NP505 -> NP504 NN
+NP -> NP505 PUNCquotequote
+NP506 -> DT QP
+NP507 -> NP506 JJ
+NP -> NP507 NN
+NP508 -> DT QP
+NP509 -> NP508 JJ
+NP -> NP509 NNS
+NP510 -> DT QP
+NP511 -> NP510 NN
+NP -> NP511 NNS
+NP512 -> DT QP
+NP -> NP512 NPR
+NP513 -> DT QP
+NP -> NP513 NPRS
+NP514 -> DT RB
+NP515 -> NP514 JJ
+NP -> NP515 NN
+NP516 -> DT RB
+NP517 -> NP516 JJ
+NP518 -> NP517 NN
+NP -> NP518 NN
+NP519 -> DT RBS
+NP520 -> NP519 JJ
+NP -> NP520 NNS
+NP521 -> DT VBG
+NP -> NP521 NN
+NP522 -> DT VBG
+NP -> NP522 NNS
+NP523 -> DT VBG
+NP -> NP523 NPR
+NP524 -> DT VBN
+NP525 -> NP524 JJ
+NP -> NP525 NN
+NP526 -> DT VBN
+NP -> NP526 NNS
+NP527 -> DT VBN
+NP -> NP527 NPR
+NP528 -> DT VBN
+NP529 -> NP528 NPR
+NP -> NP529 NP
+NP530 -> DT VBN
+NP -> NP530 QP
+NP531 -> DT VBN
+NP532 -> NP531 QP
+NP -> NP532 NN
+NP533 -> DT VBN
+NP -> NP533 QPMONEY
+NP534 -> JJ COMMA
+NP535 -> NP534 JJ
+NP -> NP535 NN
+NP536 -> JJ DT
+NP537 -> NP536 JJ
+NP -> NP537 NN
+NP538 -> JJ DT
+NP -> NP538 NN
+NP539 -> JJ JJ
+NP540 -> NP539 JJ
+NP -> NP540 NN
+NP541 -> JJ JJ
+NP542 -> NP541 JJ
+NP -> NP542 NNS
+NP543 -> JJ JJ
+NP544 -> NP543 NN
+NP -> NP544 NNS
+NP545 -> JJ JJ
+NP -> NP545 NNS
+NP546 -> JJ NN
+NP547 -> NP546 NN
+NP -> NP547 NNS
+NP548 -> JJ NN
+NP549 -> NP548 NN
+NP -> NP549 NPR
+NP550 -> JJ NN
+NP -> NP550 NPR
+NP551 -> JJ NN
+NP -> NP551 SBAR
+NP552 -> JJ NNS
+NP -> NP552 NN
+NP553 -> JJ NNS
+NP -> NP553 NNS
+NP554 -> JJ NNS
+NP -> NP554 SBAR
+NP555 -> JJ NPR
+NP -> NP555 NP
+NP556 -> JJ VBG
+NP -> NP556 NNS
+NP557 -> JJ VBN
+NP -> NP557 NNS
+NP558 -> JJR JJ
+NP -> NP558 NNS
+NP559 -> JJS NN
+NP -> NP559 NNS
+NP560 -> NN JJ
+NP -> NP560 NN
+NP561 -> NN JJ
+NP -> NP561 NNS
+NP562 -> NN NN
+NP -> NP562 NN
+NP563 -> NN NN
+NP564 -> NP563 NN
+NP -> NP564 NNS
+NP565 -> NN NN
+NP -> NP565 NNS
+NP566 -> NN NNS
+NP -> NP566 NN
+NP567 -> NN NNS
+NP -> NP567 PUNCcolon
+NP568 -> NN VBN
+NP -> NP568 NNS
+NP569 -> NNS QP
+NP -> NP569 PUNCpoint
+NP570 -> NP ADJP
+NP571 -> NP570 COMMA
+NP -> NP571 PP
+NP572 -> NP ADJP
+NP573 -> NP572 COMMA
+NP -> NP573 VP
+NP574 -> NP ADVPTMP
+NP -> NP574 PP
+NP575 -> NP COMMA
+NP576 -> NP575 ADJP
+NP -> NP576 COMMA
+NP577 -> NP COMMA
+NP578 -> NP577 ADJP
+NP579 -> NP578 COMMA
+NP -> NP579 S
+NP580 -> NP COMMA
+NP -> NP580 ADVP
+NP581 -> NP COMMA
+NP582 -> NP581 ADVP
+NP -> NP582 COMMA
+NP583 -> NP COMMA
+NP584 -> NP583 ADVP
+NP -> NP584 NP
+NP585 -> NP COMMA
+NP -> NP585 ADVPLOC
+NP586 -> NP COMMA
+NP587 -> NP586 ADVPTMP
+NP -> NP587 NP
+NP588 -> NP COMMA
+NP -> NP588 NP
+NP589 -> NP COMMA
+NP590 -> NP589 NP
+NP -> NP590 COMMA
+NP591 -> NP COMMA
+NP592 -> NP591 NP
+NP593 -> NP592 COMMA
+NP -> NP593 NP
+NP594 -> NP COMMA
+NP595 -> NP594 NP
+NP596 -> NP595 COMMA
+NP -> NP596 PUNCquotequote
+NP597 -> NP COMMA
+NP598 -> NP597 NP
+NP -> NP598 PUNCpoint
+NP599 -> NP COMMA
+NP600 -> NP599 NP
+NP -> NP600 SBAR
+NP601 -> NP COMMA
+NP -> NP601 NPLOC
+NP602 -> NP COMMA
+NP603 -> NP602 NPLOC
+NP -> NP603 SBAR
+NP604 -> NP COMMA
+NP605 -> NP604 PP
+NP -> NP605 COMMA
+NP606 -> NP COMMA
+NP607 -> NP606 PP
+NP -> NP607 PUNCpoint
+NP608 -> NP COMMA
+NP -> NP608 PPLOC
+NP609 -> NP COMMA
+NP610 -> NP609 PPLOC
+NP -> NP610 COMMA
+NP611 -> NP COMMA
+NP612 -> NP611 PUNCbquotebquote
+NP -> NP612 S
+NP613 -> NP COMMA
+NP614 -> NP613 PUNCquotequote
+NP -> NP614 SBAR
+NP615 -> NP COMMA
+NP -> NP615 RRC
+NP616 -> NP COMMA
+NP -> NP616 SBAR
+NP617 -> NP COMMA
+NP618 -> NP617 SBAR
+NP -> NP618 COMMA
+NP619 -> NP COMMA
+NP -> NP619 VP
+NP620 -> NP COMMA
+NP621 -> NP620 VP
+NP622 -> NP621 COMMA
+NP -> NP622 SBAR
+NP623 -> NP NP
+NP624 -> NP623 COMMA
+NP -> NP624 ADVP
+NP625 -> NP NP
+NP -> NP625 PUNCpoint
+NP626 -> NP NPLOC
+NP -> NP626 PUNCpoint
+NP627 -> NP NPTMP
+NP628 -> NP627 PP
+NP -> NP628 PP
+NP629 -> NP NPTMP
+NP -> NP629 SBAR
+NP630 -> NP PP
+NP -> NP630 ADJP
+NP631 -> NP PP
+NP -> NP631 ADVP
+NP632 -> NP PP
+NP633 -> NP632 COMMA
+NP -> NP633 ADJP
+NP634 -> NP PP
+NP635 -> NP634 COMMA
+NP -> NP635 ADVP
+NP636 -> NP PP
+NP637 -> NP636 COMMA
+NP -> NP637 NP
+NP638 -> NP PP
+NP639 -> NP638 COMMA
+NP -> NP639 PPLOC
+NP640 -> NP PP
+NP641 -> NP640 COMMA
+NP -> NP641 SBAR
+NP642 -> NP PP
+NP643 -> NP642 COMMA
+NP -> NP643 VP
+NP644 -> NP PP
+NP645 -> NP644 COMMA
+NP646 -> NP645 VP
+NP -> NP646 COMMA
+NP647 -> NP PP
+NP -> NP647 NPADV
+NP648 -> NP PP
+NP -> NP648 PP
+NP649 -> NP PP
+NP650 -> NP649 PP
+NP -> NP650 PP
+NP651 -> NP PP
+NP652 -> NP651 PPLOC
+NP -> NP652 PUNCpoint
+NP653 -> NP PP
+NP654 -> NP653 PPTMP
+NP -> NP654 PP
+NP655 -> NP PP
+NP656 -> NP655 PPTMP
+NP -> NP656 PPTMP
+NP657 -> NP PP
+NP -> NP657 PRN
+NP658 -> NP PP
+NP -> NP658 PUNCquotequote
+NP659 -> NP PP
+NP -> NP659 S
+NP660 -> NP PP
+NP -> NP660 SBAR
+NP661 -> NP PP
+NP -> NP661 VP
+NP662 -> NP PPLOC
+NP663 -> NP662 COMMA
+NP -> NP663 SBAR
+NP664 -> NP PPLOC
+NP665 -> NP664 PP
+NP -> NP665 PP
+NP666 -> NP PPLOC
+NP -> NP666 PPLOC
+NP667 -> NP PPLOC
+NP -> NP667 SBAR
+NP668 -> NP PPLOC
+NP -> NP668 VP
+NP669 -> NP PPTMP
+NP -> NP669 PP
+NP670 -> NP PPTMP
+NP -> NP670 SBAR
+NP671 -> NP PRN
+NP672 -> NP671 COMMA
+NP -> NP672 SBAR
+NP673 -> NP PRN
+NP -> NP673 PUNCcolon
+NP674 -> NP PRN
+NP -> NP674 VP
+NP675 -> NP PUNCLRB
+NP676 -> NP675 PP
+NP -> NP676 PUNCRRB
+NP677 -> NP PUNCbquotebquote
+NP -> NP677 NP
+NP678 -> NP PUNCbquotebquote
+NP679 -> NP678 NPR
+NP -> NP679 PUNCquotequote
+NP680 -> NP PUNCbquotebquote
+NP -> NP680 SBAR
+NP681 -> NP PUNCcolon
+NP682 -> NP681 NP
+NP683 -> NP682 PUNCcolon
+NP -> NP683 NP
+NP684 -> NP PUNCcolon
+NP685 -> NP684 NP
+NP686 -> NP685 PUNCcolon
+NP687 -> NP686 NP
+NP688 -> NP687 PUNCcolon
+NP689 -> NP688 NP
+NP690 -> NP689 PUNCcolon
+NP -> NP690 NP
+NP691 -> NP PUNCcolon
+NP692 -> NP691 NP
+NP693 -> NP692 PUNCcolon
+NP694 -> NP693 NP
+NP695 -> NP694 PUNCcolon
+NP696 -> NP695 NP
+NP697 -> NP696 PUNCcolon
+NP698 -> NP697 NP
+NP699 -> NP698 PUNCcolon
+NP -> NP699 NP
+NP700 -> NP PUNCcolon
+NP701 -> NP700 NP
+NP702 -> NP701 PUNCcolon
+NP703 -> NP702 NP
+NP704 -> NP703 PUNCcolon
+NP705 -> NP704 NP
+NP706 -> NP705 PUNCcolon
+NP707 -> NP706 NP
+NP708 -> NP707 PUNCcolon
+NP709 -> NP708 NP
+NP710 -> NP709 PUNCcolon
+NP -> NP710 NP
+NP711 -> NP PUNCcolon
+NP712 -> NP711 NP
+NP713 -> NP712 PUNCcolon
+NP714 -> NP713 NP
+NP -> NP714 PUNCpoint
+NP715 -> NP PUNCcolon
+NP716 -> NP715 NP
+NP -> NP716 PUNCpoint
+NP717 -> NP PUNCcolon
+NP718 -> NP717 RB
+NP719 -> NP718 NP
+NP -> NP719 PUNCpoint
+NP720 -> NP PUNCcolon
+NP -> NP720 S
+NP721 -> NP PUNCcolon
+NP -> NP721 SBAR
+NP722 -> NP PUNCquotequote
+NP -> NP722 SBAR
+NP723 -> NP QP
+NP -> NP723 PUNCpoint
+NP724 -> NP SBAR
+NP -> NP724 SBAR
+NP725 -> NP VP
+NP -> NP725 PUNCcolon
+NP726 -> NPR ADJP
+NP -> NP726 NNS
+NP727 -> NPR FW
+NP -> NP727 NPR
+NP728 -> NPR JJ
+NP -> NP728 NN
+NP729 -> NPR JJ
+NP730 -> NP729 NN
+NP731 -> NP730 NN
+NP -> NP731 NPR
+NP732 -> NPR JJ
+NP -> NP732 NNS
+NP733 -> NPR PUNCpoint
+NP -> NP733 NPR
+NP734 -> NPR PUNCquotequote
+NP -> NP734 NPR
+NP735 -> NPR QP
+NP736 -> NP735 COMMA
+NP -> NP736 QP
+NP737 -> NPRS NP
+NP -> NP737 NPR
+NP738 -> NPdollar ADJP
+NP739 -> NP738 JJ
+NP -> NP739 NN
+NP740 -> NPdollar ADJP
+NP741 -> NP740 NN
+NP -> NP741 NN
+NP742 -> NPdollar ADJP
+NP -> NP742 NNS
+NP743 -> NPdollar JJ
+NP744 -> NP743 JJ
+NP -> NP744 NN
+NP745 -> NPdollar JJ
+NP746 -> NP745 JJ
+NP747 -> NP746 NN
+NP -> NP747 NN
+NP748 -> NPdollar JJ
+NP749 -> NP748 NN
+NP -> NP749 NN
+NP750 -> NPdollar JJ
+NP751 -> NP750 NN
+NP -> NP751 NNS
+NP752 -> NPdollar JJ
+NP -> NP752 NNS
+NP753 -> NPdollar JJ
+NP754 -> NP753 NNS
+NP -> NP754 NN
+NP755 -> NPdollar JJ
+NP -> NP755 NPR
+NP756 -> NPdollar JJ
+NP757 -> NP756 NPR
+NP -> NP757 NP
+NP758 -> NPdollar JJ
+NP759 -> NP758 QP
+NP -> NP759 NNS
+NP760 -> NPdollar JJR
+NP -> NP760 NN
+NP761 -> NPdollar JJS
+NP762 -> NP761 NN
+NP -> NP762 NNS
+NP763 -> NPdollar NN
+NP764 -> NP763 JJ
+NP -> NP764 NN
+NP765 -> NPdollar NN
+NP766 -> NP765 NN
+NP -> NP766 NNS
+NP767 -> NPdollar NN
+NP -> NP767 NNS
+NP768 -> NPdollar NN
+NP769 -> NP768 NNS
+NP -> NP769 NN
+NP770 -> NPdollar NN
+NP -> NP770 NPR
+NP771 -> NPdollar NN
+NP -> NP771 SBAR
+NP772 -> NPdollar NNS
+NP -> NP772 NN
+NP773 -> NPdollar NNS
+NP -> NP773 NNS
+NP774 -> NPdollar NNS
+NP -> NP774 SBAR
+NP775 -> NPdollar NPR
+NP -> NP775 NP
+NP776 -> NPdollar NPRS
+NP -> NP776 NP
+NP777 -> NPdollar PUNCbquotebquote
+NP778 -> NP777 NX
+NP -> NP778 PUNCquotequote
+NP779 -> NPdollar QP
+NP -> NP779 NN
+NP780 -> NPdollar QP
+NP781 -> NP780 NN
+NP -> NP781 NNS
+NP782 -> NPdollar QP
+NP -> NP782 NNS
+NP783 -> NPdollar VBN
+NP -> NP783 NN
+NP784 -> PDT DT
+NP785 -> NP784 JJ
+NP -> NP785 NN
+NP786 -> PDT DT
+NP787 -> NP786 JJ
+NP -> NP787 NNS
+NP788 -> PDT DT
+NP -> NP788 NN
+NP789 -> PDT DT
+NP790 -> NP789 NN
+NP -> NP790 NNS
+NP791 -> PDT DT
+NP -> NP791 NNS
+NP792 -> PRPdollar ADJP
+NP -> NP792 NN
+NP793 -> PRPdollar ADJP
+NP794 -> NP793 NN
+NP -> NP794 NN
+NP795 -> PRPdollar JJ
+NP796 -> NP795 JJ
+NP -> NP796 NN
+NP797 -> PRPdollar JJ
+NP798 -> NP797 JJ
+NP -> NP798 NNS
+NP799 -> PRPdollar NN
+NP -> NP799 NN
+NP800 -> PRPdollar NN
+NP801 -> NP800 NN
+NP -> NP801 NN
+NP802 -> PRPdollar NN
+NP -> NP802 S
+NP803 -> PRPdollar NN
+NP -> NP803 SBAR
+NP804 -> PRPdollar NNS
+NP -> NP804 NNS
+NP805 -> PRPdollar NPR
+NP -> NP805 NP
+NP806 -> PRPdollar NPR
+NP807 -> NP806 QP
+NP -> NP807 NN
+NP808 -> PRPdollar QP
+NP809 -> NP808 JJ
+NP -> NP809 NNS
+NP810 -> PRPdollar QP
+NP811 -> NP810 NN
+NP -> NP811 NNS
+NP812 -> PRPdollar VBG
+NP -> NP812 NN
+NP813 -> PRPdollar VBG
+NP -> NP813 NNS
+NP814 -> PUNCbquotebquote JJ
+NP815 -> NP814 PUNCquotequote
+NP -> NP815 NNS
+NP816 -> PUNCbquotebquote NPR
+NP817 -> NP816 PUNCquotequote
+NP -> NP817 PRN
+NP818 -> PUNCcolon NN
+NP819 -> NP818 NN
+NP820 -> NP819 NN
+NP -> NP820 PUNCpoint
+NP821 -> QP JJ
+NP822 -> NP821 JJ
+NP -> NP822 NNS
+NP823 -> QP JJ
+NP -> NP823 NN
+NP824 -> QP JJ
+NP825 -> NP824 NN
+NP -> NP825 NN
+NP826 -> QP JJ
+NP -> NP826 NNS
+NP827 -> QP JJR
+NP -> NP827 NNS
+NP828 -> QP NN
+NP -> NP828 NN
+NP829 -> QP NN
+NP830 -> NP829 NN
+NP -> NP830 NNS
+NP831 -> QP NN
+NP -> NP831 NNS
+NP832 -> QP NNS
+NP -> NP832 NNS
+NP833 -> QP RB
+NP -> NP833 PUNCpoint
+NP834 -> RB DT
+NP835 -> NP834 ADJP
+NP -> NP835 NN
+NP836 -> RB DT
+NP837 -> NP836 JJ
+NP -> NP837 NN
+NP838 -> RB DT
+NP -> NP838 NN
+NP839 -> RB DT
+NP -> NP839 NPR
+NP840 -> RB JJ
+NP -> NP840 NN
+NP841 -> RB NN
+NP -> NP841 NNS
+NP842 -> RB QP
+NP -> NP842 NNS
+NP843 -> SBARNOM PUNCcolon
+NP -> NP843 NP
+NP844 -> VBG JJ
+NP -> NP844 NNS
+NP845 -> VBG NN
+NP -> NP845 NN
+NP846 -> VBG NN
+NP -> NP846 NNS
+NP847 -> VBN JJ
+NP -> NP847 NN
+NP848 -> VBN JJ
+NP -> NP848 NNS
+ADVPPRD849 -> RB NP
+ADVPPRD -> ADVPPRD849 PP
+SBARADV850 -> IN COMMA
+SBARADV -> SBARADV850 S
+PPTMP851 -> ADVP IN
+PPTMP -> PPTMP851 SNOM
+PPTMP852 -> NP IN
+PPTMP -> PPTMP852 NP
+PPTMP853 -> RB IN
+PPTMP -> PPTMP853 NP
+SQ854 -> MD NP
+SQ -> SQ854 VP
+SQ855 -> VBP NP
+SQ -> SQ855 VP
+SQ856 -> VBP NP
+SQ857 -> SQ856 VP
+SQ -> SQ857 PUNCpoint
+SINV858 -> ADJPPRD VP
+SINV859 -> SINV858 NP
+SINV -> SINV859 PUNCpoint
+SINV860 -> ADVP VP
+SINV861 -> SINV860 VP
+SINV862 -> SINV861 NP
+SINV -> SINV862 PUNCpoint
+SINV863 -> ADVPLOCPRD VP
+SINV864 -> SINV863 NP
+SINV -> SINV864 PUNCcolon
+SINV865 -> ADVPLOCPRD VP
+SINV866 -> SINV865 NP
+SINV -> SINV866 PUNCpoint
+SINV867 -> PPLOC VP
+SINV868 -> SINV867 NP
+SINV -> SINV868 PUNCpoint
+SINV869 -> PPLOCPRD VP
+SINV870 -> SINV869 NP
+SINV -> SINV870 PUNCpoint
+SINV871 -> PPPRD VP
+SINV872 -> SINV871 NP
+SINV -> SINV872 PUNCpoint
+SINV873 -> PUNCbquotebquote S
+SINV874 -> SINV873 COMMA
+SINV875 -> SINV874 PUNCquotequote
+SINV876 -> SINV875 VP
+SINV877 -> SINV876 NP
+SINV -> SINV877 PUNCpoint
+SINV878 -> PUNCbquotebquote STPC
+SINV879 -> SINV878 COMMA
+SINV880 -> SINV879 PUNCquotequote
+SINV881 -> SINV880 VP
+SINV882 -> SINV881 NP
+SINV883 -> SINV882 COMMA
+SINV884 -> SINV883 SADV
+SINV -> SINV884 PUNCpoint
+SINV885 -> PUNCbquotebquote STPC
+SINV886 -> SINV885 COMMA
+SINV887 -> SINV886 PUNCquotequote
+SINV888 -> SINV887 VP
+SINV889 -> SINV888 NP
+SINV -> SINV889 PUNCpoint
+SINV890 -> STPC VP
+SINV891 -> SINV890 NP
+SINV -> SINV891 PUNCpoint
+ADJP892 -> JJ COMMA
+ADJP -> ADJP892 JJ
+ADJP893 -> QP JJ
+ADJP -> ADJP893 NN
+ADJP894 -> RB RB
+ADJP -> ADJP894 JJ
+ADJP895 -> RBR JJ
+ADJP -> ADJP895 PP
+ADJPPRD896 -> ADJP COMMA
+ADJPPRD -> ADJPPRD896 ADJP
+ADJPPRD897 -> JJ NPTMP
+ADJPPRD -> ADJPPRD897 PP
+ADJPPRD898 -> JJ RB
+ADJPPRD -> ADJPPRD898 S
+ADJPPRD899 -> PUNCbquotebquote JJ
+ADJPPRD900 -> ADJPPRD899 PUNCquotequote
+ADJPPRD -> ADJPPRD900 PP
+ADJPPRD901 -> RB RB
+ADJPPRD -> ADJPPRD901 JJ
+ADJPPRD902 -> RB RBR
+ADJPPRD -> ADJPPRD902 JJ
+ADJPPRD903 -> RBR JJ
+ADJPPRD -> ADJPPRD903 S
+NACLOC904 -> NPR COMMA
+NACLOC -> NACLOC904 NPR
+NPPRD905 -> DT ADJP
+NPPRD -> NPPRD905 NN
+NPPRD906 -> DT JJ
+NPPRD907 -> NPPRD906 NN
+NPPRD -> NPPRD907 NN
+NPPRD908 -> DT JJ
+NPPRD909 -> NPPRD908 NPR
+NPPRD -> NPPRD909 NP
+NPPRD910 -> DT JJ
+NPPRD -> NPPRD910 QP
+NPPRD911 -> DT NN
+NPPRD912 -> NPPRD911 NN
+NPPRD -> NPPRD912 NN
+NPPRD913 -> DT PUNCbquotebquote
+NPPRD914 -> NPPRD913 JJ
+NPPRD915 -> NPPRD914 NN
+NPPRD -> NPPRD915 PUNCquotequote
+NPPRD916 -> DT PUNCbquotebquote
+NPPRD917 -> NPPRD916 JJ
+NPPRD918 -> NPPRD917 PUNCquotequote
+NPPRD -> NPPRD918 NN
+NPPRD919 -> DT VBG
+NPPRD -> NPPRD919 NN
+NPPRD920 -> JJ NN
+NPPRD -> NPPRD920 NNS
+NPPRD921 -> NP COMMA
+NPPRD -> NPPRD921 ADVP
+NPPRD922 -> NP COMMA
+NPPRD -> NPPRD922 NP
+NPPRD923 -> NP PP
+NPPRD924 -> NPPRD923 COMMA
+NPPRD -> NPPRD924 SBAR
+NPPRD925 -> NP PP
+NPPRD -> NPPRD925 PP
+NPPRD926 -> NP PP
+NPPRD -> NPPRD926 PPTMP
+NPPRD927 -> NP PP
+NPPRD -> NPPRD927 S
+NPPRD928 -> NP PP
+NPPRD -> NPPRD928 SBAR
+NPPRD929 -> NP PPLOC
+NPPRD -> NPPRD929 SBAR
+NPPRD930 -> NPdollar JJ
+NPPRD -> NPPRD930 NN
+NPPRD931 -> NPdollar JJS
+NPPRD932 -> NPPRD931 NN
+NPPRD -> NPPRD932 NN
+NPPRD933 -> QP JJ
+NPPRD -> NPPRD933 NNS
+NPPRD934 -> RB DT
+NPPRD935 -> NPPRD934 JJ
+NPPRD -> NPPRD935 NN
+NPPRD936 -> RB DT
+NPPRD -> NPPRD936 NN
+NPLOC937 -> NP COMMA
+NPLOC938 -> NPLOC937 NP
+NPLOC -> NPLOC938 COMMA
+NPLOC939 -> NP COMMA
+NPLOC940 -> NPLOC939 NP
+NPLOC -> NPLOC940 PUNCpoint
+VP941 -> ADVP VB
+VP942 -> VP941 NP
+VP -> VP942 PP
+VP943 -> ADVP VB
+VP -> VP943 S
+VP944 -> ADVP VBD
+VP945 -> VP944 NP
+VP -> VP945 PP
+VP946 -> ADVP VBD
+VP -> VP946 S
+VP947 -> ADVP VBG
+VP -> VP947 PP
+VP948 -> ADVP VBG
+VP -> VP948 S
+VP949 -> ADVP VBP
+VP -> VP949 SBAR
+VP950 -> ADVPTMP VBG
+VP -> VP950 NP
+VP951 -> ADVPTMP VBG
+VP -> VP951 VP
+VP952 -> MD PUNCbquotebquote
+VP -> VP952 VP
+VP953 -> MD RB
+VP954 -> VP953 ADVPTMP
+VP -> VP954 VP
+VP955 -> MD RB
+VP -> VP955 VP
+VP956 -> PUNCbquotebquote VB
+VP957 -> VP956 PUNCquotequote
+VP -> VP957 NP
+VP958 -> VB ADJPPRD
+VP -> VP958 ADVP
+VP959 -> VB ADJPPRD
+VP -> VP959 NPTMP
+VP960 -> VB ADJPPRD
+VP -> VP960 PP
+VP961 -> VB ADJPPRD
+VP -> VP961 PPLOC
+VP962 -> VB ADJPPRD
+VP -> VP962 S
+VP963 -> VB ADJPPRD
+VP -> VP963 SBAR
+VP964 -> VB ADJPPRD
+VP -> VP964 SBARADV
+VP965 -> VB ADJPPRD
+VP -> VP965 SBARPRP
+VP966 -> VB ADVP
+VP -> VP966 NP
+VP967 -> VB ADVP
+VP -> VP967 PP
+VP968 -> VB ADVP
+VP -> VP968 PPTMP
+VP969 -> VB ADVPTMP
+VP -> VP969 PP
+VP970 -> VB NP
+VP -> VP970 ADVP
+VP971 -> VB NP
+VP972 -> VP971 ADVP
+VP -> VP972 PP
+VP973 -> VB NP
+VP -> VP973 ADVPLOC
+VP974 -> VB NP
+VP975 -> VP974 COMMA
+VP -> VP975 ADVP
+VP976 -> VB NP
+VP977 -> VP976 COMMA
+VP -> VP977 SBARADV
+VP978 -> VB NP
+VP979 -> VP978 NP
+VP -> VP979 PP
+VP980 -> VB NP
+VP981 -> VP980 NP
+VP -> VP981 PPTMP
+VP982 -> VB NP
+VP -> VP982 NPTMP
+VP983 -> VB NP
+VP984 -> VP983 PP
+VP985 -> VP984 COMMA
+VP -> VP985 SADV
+VP986 -> VB NP
+VP987 -> VP986 PP
+VP988 -> VP987 COMMA
+VP -> VP988 SBARADV
+VP989 -> VB NP
+VP990 -> VP989 PP
+VP -> VP990 NPTMP
+VP991 -> VB NP
+VP992 -> VP991 PP
+VP -> VP992 PPLOC
+VP993 -> VB NP
+VP994 -> VP993 PP
+VP -> VP994 SBARPRP
+VP995 -> VB NP
+VP996 -> VP995 PP
+VP -> VP996 SPRP
+VP997 -> VB NP
+VP -> VP997 PPLOC
+VP998 -> VB NP
+VP999 -> VP998 PPLOC
+VP -> VP999 PPTMP
+VP1000 -> VB NP
+VP -> VP1000 PPTMP
+VP1001 -> VB NP
+VP1002 -> VP1001 PPTMP
+VP -> VP1002 PP
+VP1003 -> VB NP
+VP -> VP1003 PRT
+VP1004 -> VB NP
+VP -> VP1004 SBARPRP
+VP1005 -> VB NP
+VP -> VP1005 SBARTMP
+VP1006 -> VB NP
+VP -> VP1006 VP
+VP1007 -> VB NPPRD
+VP -> VP1007 NPTMP
+VP1008 -> VB NPPRD
+VP -> VP1008 PP
+VP1009 -> VB NPPRD
+VP -> VP1009 PPLOC
+VP1010 -> VB NPPRD
+VP -> VP1010 PPTMP
+VP1011 -> VB NPTMP
+VP -> VP1011 NP
+VP1012 -> VB PP
+VP1013 -> VP1012 COMMA
+VP -> VP1013 ADVP
+VP1014 -> VB PP
+VP -> VP1014 SBAR
+VP1015 -> VB PP
+VP -> VP1015 SBARPRP
+VP1016 -> VB PP
+VP -> VP1016 SBARTMP
+VP1017 -> VB PPLOC
+VP -> VP1017 SBARTMP
+VP1018 -> VB PPTMP
+VP -> VP1018 PP
+VP1019 -> VB PRT
+VP1020 -> VP1019 NP
+VP -> VP1020 PP
+VP1021 -> VB PRT
+VP1022 -> VP1021 NP
+VP -> VP1022 PPTMP
+VP1023 -> VB PRT
+VP1024 -> VP1023 NP
+VP -> VP1024 SPRP
+VP1025 -> VB PRT
+VP -> VP1025 PP
+VP1026 -> VB PUNCbquotebquote
+VP -> VP1026 ADJPPRD
+VP1027 -> VB PUNCbquotebquote
+VP -> VP1027 NP
+VP1028 -> VB PUNCquotequote
+VP -> VP1028 NP
+VP1029 -> VB RB
+VP -> VP1029 VP
+VP1030 -> VB S
+VP1031 -> VP1030 COMMA
+VP -> VP1031 SBARADV
+VP1032 -> VB S
+VP -> VP1032 SBARPRP
+VP1033 -> VB S
+VP -> VP1033 SBARTMP
+VP1034 -> VBD ADJPPRD
+VP1035 -> VP1034 COMMA
+VP -> VP1035 SADV
+VP1036 -> VBD ADJPPRD
+VP -> VP1036 PPLOC
+VP1037 -> VBD ADJPPRD
+VP -> VP1037 PPTMP
+VP1038 -> VBD ADJPPRD
+VP -> VP1038 SBARADV
+VP1039 -> VBD ADVP
+VP -> VP1039 NPTMP
+VP1040 -> VBD ADVP
+VP -> VP1040 PP
+VP1041 -> VBD ADVP
+VP1042 -> VP1041 PP
+VP1043 -> VP1042 COMMA
+VP -> VP1043 SADV
+VP1044 -> VBD ADVP
+VP1045 -> VP1044 PP
+VP -> VP1045 PP
+VP1046 -> VBD ADVP
+VP -> VP1046 PPTMP
+VP1047 -> VBD ADVP
+VP -> VP1047 SBAR
+VP1048 -> VBD ADVP
+VP -> VP1048 VP
+VP1049 -> VBD ADVPTMP
+VP -> VP1049 ADJPPRD
+VP1050 -> VBD ADVPTMP
+VP -> VP1050 NPPRD
+VP1051 -> VBD ADVPTMP
+VP -> VP1051 VP
+VP1052 -> VBD COMMA
+VP1053 -> VP1052 PUNCbquotebquote
+VP -> VP1053 S
+VP1054 -> VBD COMMA
+VP -> VP1054 S
+VP1055 -> VBD COMMA
+VP -> VP1055 SADV
+VP1056 -> VBD NP
+VP -> VP1056 ADVP
+VP1057 -> VBD NP
+VP1058 -> VP1057 ADVP
+VP -> VP1058 PP
+VP1059 -> VBD NP
+VP1060 -> VP1059 ADVPTMP
+VP -> VP1060 PP
+VP1061 -> VBD NP
+VP1062 -> VP1061 COMMA
+VP -> VP1062 ADVP
+VP1063 -> VBD NP
+VP1064 -> VP1063 COMMA
+VP -> VP1064 PP
+VP1065 -> VBD NP
+VP1066 -> VP1065 COMMA
+VP1067 -> VP1066 PP
+VP1068 -> VP1067 COMMA
+VP -> VP1068 PP
+VP1069 -> VBD NP
+VP1070 -> VP1069 COMMA
+VP -> VP1070 SADV
+VP1071 -> VBD NP
+VP1072 -> VP1071 COMMA
+VP -> VP1072 SBARADV
+VP1073 -> VBD NP
+VP -> VP1073 NP
+VP1074 -> VBD NP
+VP1075 -> VP1074 NP
+VP -> VP1075 PPTMP
+VP1076 -> VBD NP
+VP1077 -> VP1076 NPTMP
+VP1078 -> VP1077 COMMA
+VP -> VP1078 PP
+VP1079 -> VBD NP
+VP1080 -> VP1079 NPTMP
+VP -> VP1080 PPLOC
+VP1081 -> VBD NP
+VP1082 -> VP1081 NPTMP
+VP -> VP1082 SBAR
+VP1083 -> VBD NP
+VP1084 -> VP1083 NPTMP
+VP -> VP1084 SBARTMP
+VP1085 -> VBD NP
+VP -> VP1085 PP
+VP1086 -> VBD NP
+VP1087 -> VP1086 PP
+VP1088 -> VP1087 COMMA
+VP -> VP1088 NP
+VP1089 -> VBD NP
+VP1090 -> VP1089 PP
+VP1091 -> VP1090 COMMA
+VP -> VP1091 PP
+VP1092 -> VBD NP
+VP1093 -> VP1092 PP
+VP1094 -> VP1093 COMMA
+VP -> VP1094 SBARADV
+VP1095 -> VBD NP
+VP1096 -> VP1095 PP
+VP -> VP1096 NPTMP
+VP1097 -> VBD NP
+VP1098 -> VP1097 PP
+VP -> VP1098 PP
+VP1099 -> VBD NP
+VP1100 -> VP1099 PP
+VP1101 -> VP1100 PP
+VP1102 -> VP1101 COMMA
+VP -> VP1102 SADV
+VP1103 -> VBD NP
+VP1104 -> VP1103 PP
+VP -> VP1104 PPLOC
+VP1105 -> VBD NP
+VP1106 -> VP1105 PP
+VP -> VP1106 PPTMP
+VP1107 -> VBD NP
+VP1108 -> VP1107 PP
+VP -> VP1108 S
+VP1109 -> VBD NP
+VP1110 -> VP1109 PP
+VP -> VP1110 SADV
+VP1111 -> VBD NP
+VP1112 -> VP1111 PP
+VP -> VP1112 SBARADV
+VP1113 -> VBD NP
+VP1114 -> VP1113 PPLOC
+VP1115 -> VP1114 COMMA
+VP -> VP1115 PP
+VP1116 -> VBD NP
+VP1117 -> VP1116 PPLOC
+VP -> VP1117 NPTMP
+VP1118 -> VBD NP
+VP1119 -> VP1118 PPLOC
+VP -> VP1119 PPTMP
+VP1120 -> VBD NP
+VP1121 -> VP1120 PPTMP
+VP1122 -> VP1121 COMMA
+VP -> VP1122 PP
+VP1123 -> VBD NP
+VP1124 -> VP1123 PPTMP
+VP1125 -> VP1124 COMMA
+VP -> VP1125 SADV
+VP1126 -> VBD NP
+VP1127 -> VP1126 PPTMP
+VP -> VP1127 PPTMP
+VP1128 -> VBD NP
+VP1129 -> VP1128 PPTMP
+VP -> VP1129 SBAR
+VP1130 -> VBD NP
+VP -> VP1130 S
+VP1131 -> VBD NP
+VP -> VP1131 SADV
+VP1132 -> VBD NP
+VP -> VP1132 SBARPRP
+VP1133 -> VBD NP
+VP -> VP1133 SBARTMP
+VP1134 -> VBD NP
+VP -> VP1134 SPRP
+VP1135 -> VBD NPADV
+VP -> VP1135 PP
+VP1136 -> VBD NPADV
+VP1137 -> VP1136 PP
+VP -> VP1137 PP
+VP1138 -> VBD NPPRD
+VP1139 -> VP1138 COMMA
+VP -> VP1139 ADVP
+VP1140 -> VBD NPPRD
+VP1141 -> VP1140 COMMA
+VP -> VP1141 PP
+VP1142 -> VBD NPPRD
+VP1143 -> VP1142 COMMA
+VP -> VP1143 SBARADV
+VP1144 -> VBD NPPRD
+VP -> VP1144 PP
+VP1145 -> VBD NPPRD
+VP -> VP1145 PPLOC
+VP1146 -> VBD NPTMP
+VP1147 -> VP1146 PP
+VP1148 -> VP1147 COMMA
+VP -> VP1148 ADVP
+VP1149 -> VBD NPTMP
+VP -> VP1149 S
+VP1150 -> VBD PP
+VP -> VP1150 ADVPTMP
+VP1151 -> VBD PP
+VP1152 -> VP1151 COMMA
+VP -> VP1152 ADVP
+VP1153 -> VBD PP
+VP1154 -> VP1153 COMMA
+VP1155 -> VP1154 ADVP
+VP1156 -> VP1155 COMMA
+VP -> VP1156 PPLOC
+VP1157 -> VBD PP
+VP1158 -> VP1157 COMMA
+VP -> VP1158 SBARADV
+VP1159 -> VBD PP
+VP -> VP1159 NP
+VP1160 -> VBD PP
+VP1161 -> VP1160 NPTMP
+VP -> VP1161 PP
+VP1162 -> VBD PP
+VP -> VP1162 PP
+VP1163 -> VBD PP
+VP1164 -> VP1163 PP
+VP1165 -> VP1164 COMMA
+VP -> VP1165 ADVP
+VP1166 -> VBD PP
+VP1167 -> VP1166 PP
+VP1168 -> VP1167 COMMA
+VP -> VP1168 PP
+VP1169 -> VBD PP
+VP1170 -> VP1169 PP
+VP -> VP1170 PPTMP
+VP1171 -> VBD PP
+VP -> VP1171 PPLOC
+VP1172 -> VBD PP
+VP -> VP1172 PPTMP
+VP1173 -> VBD PP
+VP1174 -> VP1173 PPTMP
+VP -> VP1174 PP
+VP1175 -> VBD PP
+VP -> VP1175 SBARPRP
+VP1176 -> VBD PP
+VP -> VP1176 SBARTMP
+VP1177 -> VBD PPLOC
+VP1178 -> VP1177 COMMA
+VP -> VP1178 ADVP
+VP1179 -> VBD PPLOC
+VP -> VP1179 PPTMP
+VP1180 -> VBD PPLOC
+VP -> VP1180 SPRP
+VP1181 -> VBD PPLOCPRD
+VP -> VP1181 SBARTMP
+VP1182 -> VBD PPTMP
+VP -> VP1182 PP
+VP1183 -> VBD PPTMP
+VP -> VP1183 SBAR
+VP1184 -> VBD PRT
+VP1185 -> VP1184 NP
+VP -> VP1185 PPTMP
+VP1186 -> VBD PRT
+VP -> VP1186 S
+VP1187 -> VBD PUNCbquotebquote
+VP -> VP1187 S
+VP1188 -> VBD PUNCcolon
+VP1189 -> VP1188 PUNCbquotebquote
+VP -> VP1189 S
+VP1190 -> VBD RB
+VP -> VP1190 ADJPPRD
+VP1191 -> VBD RB
+VP1192 -> VP1191 ADVP
+VP -> VP1192 VP
+VP1193 -> VBD S
+VP1194 -> VP1193 COMMA
+VP -> VP1194 SBARADV
+VP1195 -> VBD S
+VP -> VP1195 NPTMP
+VP1196 -> VBD S
+VP -> VP1196 PPLOC
+VP1197 -> VBD SBAR
+VP1198 -> VP1197 COMMA
+VP -> VP1198 SADV
+VP1199 -> VBG ADVP
+VP -> VP1199 PPTMP
+VP1200 -> VBG COMMA
+VP1201 -> VP1200 PUNCbquotebquote
+VP -> VP1201 S
+VP1202 -> VBG NP
+VP1203 -> VP1202 COMMA
+VP -> VP1203 PP
+VP1204 -> VBG NP
+VP -> VP1204 NP
+VP1205 -> VBG NP
+VP -> VP1205 PPLOC
+VP1206 -> VBG NP
+VP1207 -> VP1206 PPTMP
+VP -> VP1207 PP
+VP1208 -> VBG NP
+VP -> VP1208 PRT
+VP1209 -> VBG NP
+VP -> VP1209 S
+VP1210 -> VBG NP
+VP -> VP1210 SBAR
+VP1211 -> VBG NP
+VP -> VP1211 SBARADV
+VP1212 -> VBG NP
+VP -> VP1212 SPRP
+VP1213 -> VBG PP
+VP -> VP1213 ADVPTMP
+VP1214 -> VBG PP
+VP1215 -> VP1214 COMMA
+VP -> VP1215 SADV
+VP1216 -> VBG PP
+VP -> VP1216 NPTMP
+VP1217 -> VBG PP
+VP -> VP1217 SBAR
+VP1218 -> VBG PP
+VP -> VP1218 SPRP
+VP1219 -> VBG PPTMP
+VP -> VP1219 SBAR
+VP1220 -> VBG PRT
+VP -> VP1220 PP
+VP1221 -> VBG PUNCbquotebquote
+VP -> VP1221 NP
+VP1222 -> VBG PUNCcolon
+VP1223 -> VP1222 PUNCbquotebquote
+VP -> VP1223 S
+VP1224 -> VBG S
+VP -> VP1224 PPTMP
+VP1225 -> VBN ADJPPRD
+VP1226 -> VP1225 COMMA
+VP -> VP1226 SADV
+VP1227 -> VBN ADJPPRD
+VP -> VP1227 SBARTMP
+VP1228 -> VBN ADVP
+VP -> VP1228 NPTMP
+VP1229 -> VBN ADVP
+VP -> VP1229 PPLOC
+VP1230 -> VBN ADVP
+VP -> VP1230 PPTMP
+VP1231 -> VBN ADVP
+VP -> VP1231 VP
+VP1232 -> VBN COMMA
+VP -> VP1232 PP
+VP1233 -> VBN COMMA
+VP -> VP1233 SBARADV
+VP1234 -> VBN NP
+VP -> VP1234 ADVP
+VP1235 -> VBN NP
+VP -> VP1235 ADVPTMP
+VP1236 -> VBN NP
+VP1237 -> VP1236 COMMA
+VP -> VP1237 PP
+VP1238 -> VBN NP
+VP -> VP1238 NPTMP
+VP1239 -> VBN NP
+VP1240 -> VP1239 PP
+VP -> VP1240 PPTMP
+VP1241 -> VBN NP
+VP -> VP1241 PPLOC
+VP1242 -> VBN NP
+VP -> VP1242 PPTMP
+VP1243 -> VBN NP
+VP1244 -> VP1243 PPTMP
+VP1245 -> VP1244 COMMA
+VP -> VP1245 PP
+VP1246 -> VBN NP
+VP -> VP1246 S
+VP1247 -> VBN NP
+VP -> VP1247 SBARADV
+VP1248 -> VBN NP
+VP -> VP1248 SPRP
+VP1249 -> VBN NPPRD
+VP -> VP1249 PP
+VP1250 -> VBN PP
+VP -> VP1250 ADVPTMP
+VP1251 -> VBN PP
+VP -> VP1251 NPTMP
+VP1252 -> VBN PP
+VP -> VP1252 PP
+VP1253 -> VBN PP
+VP1254 -> VP1253 PP
+VP -> VP1254 PP
+VP1255 -> VBN PP
+VP -> VP1255 PPLOC
+VP1256 -> VBN PP
+VP -> VP1256 PPTMP
+VP1257 -> VBN PP
+VP1258 -> VP1257 PPTMP
+VP -> VP1258 PP
+VP1259 -> VBN PP
+VP -> VP1259 S
+VP1260 -> VBN PPLOC
+VP1261 -> VP1260 COMMA
+VP -> VP1261 SADV
+VP1262 -> VBN PPLOC
+VP -> VP1262 NPTMP
+VP1263 -> VBN PPLOC
+VP -> VP1263 PP
+VP1264 -> VBN PPLOC
+VP -> VP1264 PPLOC
+VP1265 -> VBN PPLOC
+VP -> VP1265 PPTMP
+VP1266 -> VBN PPLOCPRD
+VP -> VP1266 PPTMP
+VP1267 -> VBN PPTMP
+VP -> VP1267 PPLOC
+VP1268 -> VBN PPTMP
+VP -> VP1268 S
+VP1269 -> VBN PPTMP
+VP -> VP1269 SPRP
+VP1270 -> VBN PRT
+VP -> VP1270 PPTMP
+VP1271 -> VBN S
+VP1272 -> VP1271 COMMA
+VP -> VP1272 PP
+VP1273 -> VBN S
+VP1274 -> VP1273 COMMA
+VP -> VP1274 SADV
+VP1275 -> VBN S
+VP -> VP1275 PPLOC
+VP1276 -> VBN S
+VP -> VP1276 SBARADV
+VP1277 -> VBN S
+VP -> VP1277 SBARTMP
+VP1278 -> VBP ADJPPRD
+VP -> VP1278 SBARADV
+VP1279 -> VBP ADVP
+VP -> VP1279 NP
+VP1280 -> VBP ADVP
+VP -> VP1280 NPPRD
+VP1281 -> VBP ADVP
+VP -> VP1281 VP
+VP1282 -> VBP ADVPTMP
+VP -> VP1282 ADJPPRD
+VP1283 -> VBP ADVPTMP
+VP -> VP1283 VP
+VP1284 -> VBP DT
+VP -> VP1284 VP
+VP1285 -> VBP NP
+VP -> VP1285 ADVPTMP
+VP1286 -> VBP NP
+VP1287 -> VP1286 COMMA
+VP -> VP1287 SADV
+VP1288 -> VBP NP
+VP -> VP1288 NP
+VP1289 -> VBP NP
+VP -> VP1289 NPTMP
+VP1290 -> VBP NP
+VP -> VP1290 PP
+VP1291 -> VBP NP
+VP1292 -> VP1291 PP
+VP -> VP1292 PP
+VP1293 -> VBP NP
+VP -> VP1293 PPLOC
+VP1294 -> VBP NP
+VP -> VP1294 S
+VP1295 -> VBP NP
+VP -> VP1295 SPRP
+VP1296 -> VBP PRT
+VP -> VP1296 NP
+VP1297 -> VBP PRT
+VP -> VP1297 PP
+VP1298 -> VBP RB
+VP -> VP1298 ADJPPRD
+VP1299 -> VBP RB
+VP1300 -> VP1299 ADVP
+VP -> VP1300 VP
+VP1301 -> VBP RB
+VP1302 -> VP1301 ADVPTMP
+VP -> VP1302 VP
+VP1303 -> VBP RB
+VP -> VP1303 NPPRD
+VP1304 -> VBZ ADJPPRD
+VP -> VP1304 PP
+VP1305 -> VBZ ADJPPRD
+VP -> VP1305 SBAR
+VP1306 -> VBZ ADJPPRD
+VP -> VP1306 SBARPRP
+VP1307 -> VBZ ADVP
+VP -> VP1307 NP
+VP1308 -> VBZ ADVP
+VP -> VP1308 NPPRD
+VP1309 -> VBZ ADVP
+VP -> VP1309 PPPRD
+VP1310 -> VBZ ADVP
+VP -> VP1310 VP
+VP1311 -> VBZ ADVPTMP
+VP -> VP1311 S
+VP1312 -> VBZ COMMA
+VP -> VP1312 SADV
+VP1313 -> VBZ NP
+VP -> VP1313 ADVP
+VP1314 -> VBZ NP
+VP -> VP1314 ADVPTMP
+VP1315 -> VBZ NP
+VP1316 -> VP1315 COMMA
+VP -> VP1316 PP
+VP1317 -> VBZ NP
+VP -> VP1317 SBAR
+VP1318 -> VBZ NP
+VP -> VP1318 SBARADV
+VP1319 -> VBZ NP
+VP -> VP1319 SBARPRP
+VP1320 -> VBZ NPPRD
+VP1321 -> VP1320 COMMA
+VP -> VP1321 PP
+VP1322 -> VBZ NPPRD
+VP -> VP1322 PP
+VP1323 -> VBZ NPPRD
+VP -> VP1323 PPTMP
+VP1324 -> VBZ NPPRD
+VP -> VP1324 S
+VP1325 -> VBZ NPPRD
+VP -> VP1325 SBARADV
+VP1326 -> VBZ NPPRD
+VP -> VP1326 SBARTMP
+VP1327 -> VBZ PP
+VP -> VP1327 PPLOC
+VP1328 -> VBZ PRT
+VP -> VP1328 NP
+VP1329 -> VBZ PRT
+VP -> VP1329 SBAR
+VP1330 -> VBZ PUNCbquotebquote
+VP -> VP1330 ADJPPRD
+VP1331 -> VBZ PUNCbquotebquote
+VP -> VP1331 NP
+VP1332 -> VBZ PUNCbquotebquote
+VP -> VP1332 NPPRD
+VP1333 -> VBZ PUNCbquotebquote
+VP -> VP1333 VP
+VP1334 -> VBZ RB
+VP1335 -> VP1334 ADVPTMP
+VP -> VP1335 VP
+VP1336 -> VBZ RB
+VP -> VP1336 NPPRD
+VP1337 -> VBZ RB
+VP -> VP1337 PPPRD
+VP1338 -> VBZ RB
+VP -> VP1338 VP
+VP1339 -> VBZ S
+VP1340 -> VP1339 COMMA
+VP -> VP1340 SBARADV
+VP1341 -> VBZ S
+VP -> VP1341 PP
+VP1342 -> VP COMMA
+VP -> VP1342 NP
+VP1343 -> VP COMMA
+VP -> VP1343 NPADV
+VP1344 -> VP COMMA
+VP1345 -> VP1344 RB
+VP -> VP1345 VP
+VP1346 -> VP COMMA
+VP -> VP1346 SBARADV
+VP1347 -> VP COMMA
+VP -> VP1347 VP
+QP1348 -> IN TO
+QP -> QP1348 QP
+QP1349 -> JJR IN
+QP -> QP1349 NN
+QP1350 -> QP NN
+QP -> QP1350 PP
+QP1351 -> RB JJR
+QP1352 -> QP1351 IN
+QP -> QP1352 QP
+QP1353 -> RB RB
+QP1354 -> QP1353 IN
+QP -> QP1354 QP
+QP1355 -> RB RB
+QP -> QP1355 QP
+QP1356 -> RBR IN
+QP -> QP1356 QP
+PPLOC1357 -> ADVP IN
+PPLOC -> PPLOC1357 NP
+PPLOC1358 -> IN NP
+PPLOC -> PPLOC1358 PUNCcolon
+PPLOC1359 -> NPADV IN
+PPLOC -> PPLOC1359 NP
+SBARPRP1360 -> IN IN
+SBARPRP -> SBARPRP1360 S
+SBARPRP1361 -> IN NN
+SBARPRP -> SBARPRP1361 S
+WHNP1362 -> WPdollar JJ
+WHNP -> WHNP1362 NN
+NPTMP1363 -> ADVP DT
+NPTMP -> NPTMP1363 NN
+NPTMP1364 -> DT NN
+NPTMP -> NPTMP1364 NN
+NPTMP1365 -> JJ NPR
+NPTMP -> NPTMP1365 QP
+NPTMP1366 -> NP COMMA
+NPTMP -> NPTMP1366 SBAR
+NPTMP1367 -> NPR QP
+NPTMP1368 -> NPTMP1367 COMMA
+NPTMP -> NPTMP1368 QP
+NPTMP1369 -> RB JJ
+NPTMP -> NPTMP1369 NN
+NPTMP1370 -> RBR DT
+NPTMP -> NPTMP1370 NN
