@@ -28,11 +28,12 @@ int main(int argc, char** argv)
 	char name[50] = "grammar.txt";
 
 	int iterations = 3;
+	//char* grammarFiles[5] = { "example1.bcfg", "g1_001.bcfg", "grammar5.txt", "grammar7.txt", "grammar7.txt" };
 	char* grammarFiles[3] = { "grammar5.txt", "grammar7.txt", "grammar7.txt" };
 	string inputStrings[3] = { "cababcabdcffabeedcababcabfffabeeecffabeeebdabfabebeb", "eeababkabdknteeababkabdtoc", "fdablsmteeababkabdtrfdablsmteeababkabdtrfdablsmabjrimabjrhmteeababkabdtreeababkabdhmabjreababhmabjreabab" };
 
-	int cpuVersion = 1;
-	int algorithmChoice = 33;
+	int cpuVersion = 0;
+
 
 	for (int x = 0; x < iterations; x++) {
 
@@ -42,7 +43,34 @@ int main(int argc, char** argv)
 		//readGrammar(argv[1], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		readGrammar(grammarFiles[x], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		
+		// WSJ one
+		/*readGrammarExtended(grammarFiles[0], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
+		for (int i = 0; i < nonTermsCount; i++) {
+		for (int j = 0; j < nonTermsCount; j++) {
+		cout << rulesNonTermsArray[i][j] << " | ";
+		}
+		cout << endl;
+		}
 
+		for (int i = 0; i < termsCount; i++) {
+		cout << termsArray[i] << " | ";
+		}
+		cout << endl;
+
+		for (int i = 0; i < termsCount; i++) {
+
+		cout << rulesTermsArray[i] << " | ";
+		}
+		cout << endl;
+
+		for (int i = 0; i < nonTermsCount; i++) {
+
+		cout << nonTermsArray[i] << " | ";
+		}
+		cout << endl;
+
+
+		getchar();*/
 		
 
 		/*ALGORITHM START*/
@@ -322,7 +350,6 @@ int main(int argc, char** argv)
 		CYKData cykData(cykArray, inputStringLength, d_rulesNonTermsArray, nonTermsCount);
 
 
-
 		int blockNumber = 16;
 		int* h_array_in;
 		int* array_in;
@@ -334,6 +361,8 @@ int main(int argc, char** argv)
 		int** devicePtr;
 		int** hostPtr;
 
+		int algorithmChoice = 33; // TODO REPLACE IT
+// ----------------------
 		if (algorithmChoice >= 20 && algorithmChoice <= 29) {
 			h_array_in = (int*)malloc(sizeof(int) * blockNumber);
 			for (int i = 0; i < blockNumber; i++) { h_array_in[i] = 0; }
@@ -422,7 +451,7 @@ int main(int argc, char** argv)
 
 		}
 		cudaEventRecord(cudaStartTime, defStream); //start counting time
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 		if (algorithmChoice == 10) {
 			// TODO pamiętaj o wejściowej liczbie wątków
 			// no restrictions
@@ -475,7 +504,7 @@ int main(int argc, char** argv)
 		else if (algorithmChoice == 22) {
 
 			//TODO to samo co wyzej
-			dim3 dimBlock(32, 32, 1);
+			dim3 dimBlock(16, 16, 1);
 			int blockNumber = 8;
 
 			cykAlgorithmCooperative<2> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
@@ -487,7 +516,7 @@ int main(int argc, char** argv)
 			// x - m
 			// y - k
 			dim3 dimBlock(threadsNumber, 16, 1);
-			int blockNumber = 16;
+			int blockNumber = 8;
 
 			cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
 
@@ -498,14 +527,14 @@ int main(int argc, char** argv)
 			// x - m
 			// y - k
 			dim3 dimBlock(16, 16, 1);
-			int blockNumber = 16;
+			int blockNumber = 8;
 
 			cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
 
 		}
 		else if (algorithmChoice == 30) {
 
-			blockNumber = 16;
+			blockNumber = 4;
 			dim3 dimBlock5(onlyRulesCount, 1, 1); // every rule  = thread, blocks j loop
 			cykAlgorithmRules<0> << <blockNumber, dimBlock5, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount, 0);
 

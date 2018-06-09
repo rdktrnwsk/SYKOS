@@ -13,6 +13,10 @@
 #include <time.h>
 #include <assert.h>
 #include <ctime>
+#include <iostream>
+#include <sstream>
+#include <iterator>
+#include <numeric>
 using namespace std;
 
 #endif
