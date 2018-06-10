@@ -98,4 +98,9 @@ template // same as 3 but with  GPU synchronization
 __global__ void cykAlgorithmRules<6>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount, int additionalVariable);
 
 
+template // same as 3 but with  GPU synchronization
+__global__ void cykAlgorithmRules<7>(DeviceCYKData data, curandState* randGlobal, volatile int* arrayIn, volatile int* arrayOut, int** rulesArray, int rulesCount, int additionalVariable);
+
+
+
 #endif

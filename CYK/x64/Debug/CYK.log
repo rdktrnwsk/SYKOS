@@ -29,6 +29,7 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(87): warning : function "cykAlgorithm
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(90): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=4]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(94): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=5]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(98): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=6]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(102): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=7]" cannot be instantiated -- no template definition was supplied
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(32): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(32): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(32): warning : conversion from a string literal to "char *" is deprecated
@@ -57,6 +58,7 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(87): warning : function "cykAlgorithm
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(90): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=4]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(94): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=5]" cannot be instantiated -- no template definition was supplied
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(98): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=6]" cannot be instantiated -- no template definition was supplied
+c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(102): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=7]" cannot be instantiated -- no template definition was supplied
   main.cu
 c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(82): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
