@@ -361,7 +361,7 @@ int main(int argc, char** argv)
 		int** devicePtr;
 		int** hostPtr;
 
-		int algorithmChoice = 33; // TODO REPLACE IT
+		int algorithmChoice = 36; // TODO REPLACE IT
 // ----------------------
 		if (algorithmChoice >= 20 && algorithmChoice <= 29) {
 			h_array_in = (int*)malloc(sizeof(int) * blockNumber);
@@ -452,6 +452,7 @@ int main(int argc, char** argv)
 		}
 		cudaEventRecord(cudaStartTime, defStream); //start counting time
 /////////////////////////////////////////////////////////////////////////////////////////////////
+		algorithmChoice = 29;
 		if (algorithmChoice == 10) {
 			// TODO pamiętaj o wejściowej liczbie wątków
 			// no restrictions
@@ -483,13 +484,33 @@ int main(int argc, char** argv)
 			dim3 dimBlock(tDimX, tDimY, 1); //j - cells, k -> split points
 			cykAlgorithm<5> << <1, dimBlock, 0, culturalData.getStream() >> >(cykData, randState);
 		}
+		else if (algorithmChoice == 101) {
+			blockNumber = 16;
+			dim3 dimBlock5(onlyRulesCount, 1, 1);
+
+			//with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+
+				cykAlgorithmRules<2> << <inputStringLength - i, dimBlock5, 0 >> >(cykData, randState, array_in, array_out, d_onlyRulesArray, onlyRulesCount, i);
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+		}
 		else if (algorithmChoice == 20) {
 
 			// TODO values -> now word cant be larger than 32 letters!!!! (bcs m is up to 32)
 			dim3 dimBlock(32, 32, 1);
 			int blockNumber = 8; // TODO and number of blocks with connection to number of threads
 
-			cykAlgorithmCooperative<0> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+			cykAlgorithmCooperative<0> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, 0);
 
 		}
 		else if (algorithmChoice == 21) {
@@ -498,7 +519,7 @@ int main(int argc, char** argv)
 			dim3 dimBlock(32, 32, 1);
 			int blockNumber = 8;
 
-			cykAlgorithmCooperative<1> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+			cykAlgorithmCooperative<1> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, 0);
 
 		}
 		else if (algorithmChoice == 22) {
@@ -507,7 +528,7 @@ int main(int argc, char** argv)
 			dim3 dimBlock(16, 16, 1);
 			int blockNumber = 8;
 
-			cykAlgorithmCooperative<2> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+			cykAlgorithmCooperative<2> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, 0);
 
 		}
 		else if (algorithmChoice == 23) {
@@ -518,7 +539,7 @@ int main(int argc, char** argv)
 			dim3 dimBlock(threadsNumber, 16, 1);
 			int blockNumber = 8;
 
-			cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+			cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, 0);
 
 		}
 		else if (algorithmChoice == 24) {
@@ -529,9 +550,124 @@ int main(int argc, char** argv)
 			dim3 dimBlock(16, 16, 1);
 			int blockNumber = 8;
 
-			cykAlgorithmCooperative<3> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out);
+			cykAlgorithmCooperative<4> << <blockNumber, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, 0);
+
+		} else if (algorithmChoice == 25) {
+
+			
+
+			dim3 dimBlock(32, 32, 1);
+
+			//with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+				cykAlgorithmCooperative<5> <<<1, dimBlock, 0, culturalData.getStream() >>>(cykData, randState, array_in, array_out, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
 
 		}
+		else if (algorithmChoice == 26) {
+
+			dim3 dimBlock(32, 1, 1);
+
+			//with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+				cykAlgorithmCooperative<6> <<<inputStringLength - i, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+		}
+		else if (algorithmChoice == 27) {
+
+			dim3 dimBlock(32, 32, 1);
+
+			//with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+				cykAlgorithmCooperative<7> << <inputStringLength - i, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+		}
+		else if (algorithmChoice == 28) {
+
+			dim3 dimBlock(128, 1, 1);
+
+			//with local synchronisation
+
+			for (int i = 1; i < inputStringLength; i++) {
+
+				dim3 dimGrid(inputStringLength - i, 32, 1);
+
+				cykAlgorithmCooperative<8> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+		}
+		else if (algorithmChoice == 29) {
+
+			dim3 dimBlock(16, 2, 1);
+
+			//with local synchronisation
+
+			for (int i = 1; i < inputStringLength; i++) {
+
+				dim3 dimGrid(inputStringLength - i, 32, 1);
+
+				cykAlgorithmCooperative<9> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+		}
+
 		else if (algorithmChoice == 30) {
 
 			blockNumber = 4;
@@ -589,6 +725,56 @@ int main(int argc, char** argv)
 			}
 
 			
+		} else if (algorithmChoice == 34) {
+			//blockNumber = nonTermsWithRulesCount;
+			dim3 dimBlock(32, 4, 1); //TODO change number of threads, number of rules -> x
+
+									 //with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+				dim3 dimGrid(inputStringLength - i, nonTermsWithRulesCount, 1); // y - left symbol, x - j loop
+				cykAlgorithmRules<4> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+
+		} else if (algorithmChoice == 35) {
+			//blockNumber = nonTermsWithRulesCount;
+			dim3 dimBlock(32, 1, 1); //TODO change number of threads, number of rules -> x
+
+									  //with local synchronisation
+			for (int i = 1; i < inputStringLength; i++) {
+				dim3 dimGrid(inputStringLength - i, nonTermsWithRulesCount, 8); // y - left symbol, x - j loop
+				cykAlgorithmRules<5> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, i);
+
+				//cudaDeviceSynchronize();
+				cudaError_t cudaState;
+				if (i < inputStringLength - 1) {
+					cudaState = cudaDeviceSynchronize();
+
+					if (cudaState != cudaSuccess) {
+						fprintf(stderr, "\ncudaGetLastError: %s\n", cudaGetErrorString(cudaState));
+						cudaGetLastError();
+					}
+				}
+			}
+
+
+		} else if (algorithmChoice == 36) {
+			dim3 dimBlock(32, 1, 1); //TODO change number of threads, number of rules -> x
+			dim3 dimGrid(4, nonTermsWithRulesCount, 1); // y - left symbol, x - j loop
+			cykAlgorithmRules<6> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, 0);
+			//dim3 dimGrid(inputStringLength, nonTermsWithRulesCount, 1); 
+
 		}
 		else {
 
@@ -621,7 +807,7 @@ int main(int argc, char** argv)
 		}
 
 
-
+		
 
 
 		cudaError_t cudaState;
@@ -646,10 +832,10 @@ int main(int argc, char** argv)
 		cudaFree(randState);
 
 		if (algorithmChoice >= 20 && algorithmChoice <= 29) {
+			cudaFree(h_array_in);
+			cudaFree(h_array_out);
 			cudaFree(array_out);
 			cudaFree(array_in);
-			free(h_array_in);
-			free(h_array_out);
 		}
 		if (algorithmChoice >= 30 && algorithmChoice <= 39) {
 			for (int i = 0; i < nonTermsWithRulesCount; i++) {
