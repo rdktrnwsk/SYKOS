@@ -18,4 +18,6 @@ int countWordsInString(string const& str);
 
 string getWordBetweenSymbols(string text, string symbol);
 
+int saveData(string fileName, string separator, float time, int option, int value);
+
 #endif

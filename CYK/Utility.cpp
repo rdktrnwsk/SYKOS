@@ -431,3 +431,19 @@ string getWordBetweenSymbols(string text, string symbol) {
 	return word;
 }
 
+
+int saveData(string fileName, string separator, float time, int option, int value) {
+	fstream score;
+	score.open(fileName, ios::out | ios::app);
+	if (score.good()) {
+		score.setf(ios::showpoint);
+
+		score << option << separator << value << separator << time << endl;
+
+		score.close();
+		return 0;
+	}
+
+	score.close();
+	return -3;
+}
