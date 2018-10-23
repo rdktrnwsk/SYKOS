@@ -1912,19 +1912,8 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 	} if (action == 2) { //////////////////////////////////////////////////////////////// only threads
 
-
 			int i = additionalVariable;
 
-			//float iter = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
-			////iter = 2.0f;
-
-			////for (int r = 0; r < (int)iter; r++) {
-
-
-			//int temp_bidx = bidx;// +(r * gridDim.x);
-
-			//if (temp_bidx < inputStringLength - i) {
-			//	int j = temp_bidx; //J
 			float iterJ = ceilf((float)(inputStringLength - i) / (float)gridDim.x);
 
 			for (int jd = 0; jd < (int)iterJ; jd++) {
@@ -1947,12 +1936,6 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 
 							for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 
-														  //TODO correct split points!
-								//int first = cykArray[k][j];
-								//int second = cykArray[i - k - 1][j + k + 1];
-
-								////decode nonterminals (find out if bits are on a given positions)
-								//int base = 1;
 								int rule1 = rulesArray[0][p];
 								int rule2 = rulesArray[1][p];
 
@@ -1962,22 +1945,13 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 								int offset2 = (int)(rule2 / 32);
 								int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
 
-								int base = 1;
-
-								/*int bitMaskFirst = base << rulesArray[0][p];
-								int bitMaskSecond = base << rulesArray[1][p];*/
-								
+								int base = 1;	
 
 								int bitMaskFirst = (base << (rule1 - (offset * 32)));
 								int bitMaskSecond = (base << (rule2 - (offset2 * 32)));
 
 
 								if (first & bitMaskFirst && second & bitMaskSecond) {
-
-									//int shiftValue = rulesArray[2][p];
-									//int bitValue = base << shiftValue;
-									////TODO - tutaj może być problem
-									//atomicOr(&cykArray[i][j], bitValue);
 
 									int shiftValue = rulesArray[2][p];
 									int offset = (int)(shiftValue / 32);

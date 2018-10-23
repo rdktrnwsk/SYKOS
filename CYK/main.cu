@@ -34,39 +34,38 @@ int main(int argc, char** argv)
 	char* grammarFiles[3] = { "grammar5.txt", "grammar7.txt", "grammar7.txt" };
 	//string inputStrings[3] = { "cababcabdcffabeedcababcabfffabeeaaaaaaaaaaaaaaaaaaaa", "eeababkabdknteeababkabdtoc", "fdablsmteeababkabdtrfdablsmteeababkabdtrfdablsmabjrimabjrhmteeababkabdtreeababkabdhmabjreababhmabjreabab" };
 
-	const int testStringNumbers = 3;
+	const int testStringNumbers = 2;
 	string inputStrings[] = {
 		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 	};
 
 	int cpuVersion = 0;
-	int algorithmChoice = 32; // TODO REPLACE IT
-
-	int inputStringNumber = strtol(argv[3], NULL, 10);
-	string grammarFile = argv[1];
-	algorithmChoice = strtol(argv[2], NULL, 10);
+	int algorithmChoice = 28; // TODO REPLACE IT
+	string grammarFile = "grammar5.txt";//argv[1];
+	//int inputStringNumber = strtol(argv[3], NULL, 10);
+	algorithmChoice = 29;//strtol(argv[2], NULL, 10);
 	bool saveToFile = true;
 	bool ifCPU = false;
 
 	fileName = grammarFile + "_" + argv[2] + "_" + argv[3];
 
 
-	for (int x = 0; x < 1; x++) {
+	for (int x = 0; x < 7; x++) {
 
 		//string inputString = inputStrings[x];
-		
-		string inputString = inputStrings[inputStringNumber];
+		cout << endl << endl;
+		string inputString = inputStrings[x];//inputStrings[inputStringNumber];
 		//cout << "Grammar: " << grammarFiles[x] << endl << "Input string: " << inputString << endl;
-		cout << "Grammar: " << grammarFile << endl << "Input string: " << inputString << endl;
+		cout << "Grammar: " << grammarFile << endl << "Input string: " << x << endl;
 
-		readGrammar(argv[1], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
+		readGrammar("grammar5.txt", termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		//readGrammar(grammarFiles[x], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		
 		// WSJ one
@@ -232,7 +231,7 @@ int main(int argc, char** argv)
 							int first = cykArray[k][j + offset];
 							int bitMaskFirst = (base << (m - (offset * 32)));
 
-							if (first & bitMaskFirst) {
+							if (true) {
 
 								//all possibilities connected with rules
 								for (int n = 0; n < nonTermsCount; n++) {
@@ -241,7 +240,7 @@ int main(int argc, char** argv)
 									int second = cykArray[i - k - 1][(((j / cellWidth) + k + 1) * cellWidth) + offset2];
 									int bitMaskSecond = (base << (n - (offset2 * 32)));
 
-									if (second & bitMaskSecond) {
+									if (first & bitMaskFirst && second & bitMaskSecond) {
 
 										//rule exists
 										if (rulesNonTermsArray[m][n] != -1) {
@@ -338,7 +337,7 @@ int main(int argc, char** argv)
 		/******************************************************************CUDA PART*********************************************************************/
 
 		// variables
-		int deviceNumber = 1;
+		int deviceNumber = 0;
 
 		//select device number
 		cudaSetDevice(deviceNumber);
@@ -586,7 +585,7 @@ int main(int argc, char** argv)
 
 			
 
-			dim3 dimBlock(32, 32, 1);
+			dim3 dimBlock(128, 4, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -607,7 +606,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 26) {
 
-			dim3 dimBlock(32, 1, 1);
+			dim3 dimBlock(64, 1, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -628,7 +627,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 27) {
 
-			dim3 dimBlock(32, 32, 1);
+			dim3 dimBlock(8, 8, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -649,13 +648,13 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 28) {
 
-			dim3 dimBlock(128, 1, 1);
+			dim3 dimBlock(8, 1, 1);
 
 			//with local synchronisation
 
 			for (int i = 1; i < inputStringLength; i++) {
 
-				dim3 dimGrid(inputStringLength - i, 32, 1);
+				dim3 dimGrid(inputStringLength - i, 64, 1);
 
 				cykAlgorithmCooperative<8> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
 
@@ -674,13 +673,13 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 29) {
 
-			dim3 dimBlock(16, 2, 1);
+			dim3 dimBlock(32, 2, 1);
 
 			//with local synchronisation
 
 			for (int i = 1; i < inputStringLength; i++) {
 
-				dim3 dimGrid(inputStringLength - i, 32, 1);
+				dim3 dimGrid(inputStringLength - i, 8, 1);
 
 				cykAlgorithmCooperative<9> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, i);
 
@@ -745,7 +744,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 33) {
 			//blockNumber = nonTermsWithRulesCount;
-			dim3 dimBlock(64, 1, 1); //TODO change number of threads, number of rules -> x
+			dim3 dimBlock(128, 1, 1); //TODO change number of threads, number of rules -> x
 			
 														//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -767,7 +766,7 @@ int main(int argc, char** argv)
 			
 		} else if (algorithmChoice == 34) {
 			//blockNumber = nonTermsWithRulesCount;
-			dim3 dimBlock(32, 4, 1); //TODO change number of threads, number of rules -> x
+			dim3 dimBlock(8, 8, 1); //TODO change number of threads, number of rules -> x
 
 									 //with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -793,7 +792,7 @@ int main(int argc, char** argv)
 
 									  //with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
-				dim3 dimGrid(inputStringLength - i, nonTermsWithRulesCount, 8); // y - left symbol, x - j loop
+				dim3 dimGrid(inputStringLength - i, nonTermsWithRulesCount, 2); // y - left symbol, x - j loop
 				cykAlgorithmRules<5> << <dimGrid, dimBlock, 0, culturalData.getStream() >> >(cykData, randState, array_in, array_out, devicePtr, nonTermsWithRulesCount, i);
 
 				//cudaDeviceSynchronize();
@@ -810,7 +809,7 @@ int main(int argc, char** argv)
 
 
 		} else if (algorithmChoice == 36) {
-			dim3 dimBlock5(32, 32, 1);
+			dim3 dimBlock5(32, 2, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -828,7 +827,7 @@ int main(int argc, char** argv)
 			}
 		}
 		else if (algorithmChoice == 37) {
-			dim3 dimBlock5(1, 32, 1);
+			dim3 dimBlock5(1, 16, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -930,7 +929,7 @@ int main(int argc, char** argv)
 
 	
 
-	//getchar();
+	getchar();
 	return 0;
 
 }

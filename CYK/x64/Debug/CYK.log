@@ -4,6 +4,7 @@
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(68): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(28): warning : variable "name" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(32): warning : variable "iterations" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : variable "grammarFiles" was declared but never referenced
@@ -36,6 +37,7 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(102): warning : function "cykAlgorith
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : conversion from a string literal to "char *" is deprecated
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(68): warning : conversion from a string literal to "char *" is deprecated
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(28): warning : variable "name" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(32): warning : variable "iterations" was declared but never referenced
 C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(34): warning : variable "grammarFiles" was declared but never referenced
@@ -67,9 +69,9 @@ c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(98): warning : function "cykAlgorithm
 c:\users\prc\desktop\cyk\sykos\cyk\CYK.cuh(102): warning : function "cykAlgorithmRules<action>(DeviceCYKData, curandState *, volatile int *, volatile int *, int **, int, int) [with action=7]" cannot be instantiated -- no template definition was supplied
   main.cu
 c:\users\prc\desktop\cyk\sykos\cyk\Base.h(198): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(108): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(110): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(367): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(107): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(109): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:/Users/Prc/Desktop/CYK/SYKOS/CYK/main.cu(366): warning C4244: 'argument': conversion from 'time_t' to 'int', possible loss of data
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.exe
   CYK.vcxproj -> C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\CYK.pdb (Full PDB)
   copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\bin\cudart*.dll" "C:\Users\Prc\Desktop\CYK\SYKOS\x64\Debug\"

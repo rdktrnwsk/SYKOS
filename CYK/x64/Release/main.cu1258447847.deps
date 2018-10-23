@@ -649,6 +649,9 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\math.h
 D:\Programy\Visual Studio\VC\include\iostream
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h
 D:\Programy\Visual Studio\VC\include\ctime
+D:\Programy\Visual Studio\VC\include\sstream
+D:\Programy\Visual Studio\VC\include\iterator
+D:\Programy\Visual Studio\VC\include\numeric
 c:\users\prc\desktop\cyk\sykos\cyk\Ogolne.cuh
 c:\users\prc\desktop\cyk\sykos\cyk\Base.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.1\include\cuda_runtime.h
