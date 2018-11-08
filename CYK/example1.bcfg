@@ -10,4 +10,3 @@ N -> 'box'
 N -> 'floor'
 V -> 'opened'
 P -> 'on'
-G -> C

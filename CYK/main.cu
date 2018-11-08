@@ -24,6 +24,7 @@ int main(int argc, char** argv)
 	int rulesNonTermsCount;
 	int** onlyRulesArray = NULL;
 	int onlyRulesCount;
+	vector<string> termsArrayNew; //nonterms 
 
 	char name[50] = "grammar.txt";
 
@@ -34,10 +35,11 @@ int main(int argc, char** argv)
 	char* grammarFiles[3] = { "grammar5.txt", "grammar7.txt", "grammar7.txt" };
 	//string inputStrings[3] = { "cababcabdcffabeedcababcabfffabeeaaaaaaaaaaaaaaaaaaaa", "eeababkabdknteeababkabdtoc", "fdablsmteeababkabdtrfdablsmteeababkabdtrfdablsmabjrimabjrhmteeababkabdtreeababkabdhmabjreababhmabjreabab" };
 
+
 	const int testStringNumbers = 2;
 	string inputStrings[] = {
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"John to to to to to to to saw happy",
+		"the kids opened the box",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -50,24 +52,58 @@ int main(int argc, char** argv)
 	int algorithmChoice = 28; // TODO REPLACE IT
 	string grammarFile = "grammar5.txt";//argv[1];
 	//int inputStringNumber = strtol(argv[3], NULL, 10);
-	algorithmChoice = 29;//strtol(argv[2], NULL, 10);
+	algorithmChoice = strtol(argv[2], NULL, 10);
 	bool saveToFile = true;
 	bool ifCPU = false;
 
 	fileName = grammarFile + "_" + argv[2] + "_" + argv[3];
 
 
-	for (int x = 0; x < 7; x++) {
+	for (int x = 0; x < testStringNumbers; x++) {
 
 		//string inputString = inputStrings[x];
 		cout << endl << endl;
 		string inputString = inputStrings[x];//inputStrings[inputStringNumber];
-		//cout << "Grammar: " << grammarFiles[x] << endl << "Input string: " << inputString << endl;
-		cout << "Grammar: " << grammarFile << endl << "Input string: " << x << endl;
 
-		readGrammar("grammar5.txt", termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
+		int sizeTest = countWordsInString(inputString);
+		string* inputStringArray = new string[sizeTest];
+		string word = "";
+		int iteer = 0;
+		for (auto x : inputString) {
+
+			//just skip to the last word
+			if (x == ' ') {
+
+				inputStringArray[iteer] = word;
+				iteer++;
+				word = "";
+			}
+			else {
+				word = word + x;
+			}
+			inputStringArray[iteer] = word;
+		}
+		
+		//cout << "Grammar: " << grammarFiles[x] << endl << "Input string: " << inputString << endl;
+		cout << "Grammar: " << grammarFile << endl << "Input string number: " << x << endl;
+		
+		readGrammarNew("example2.txt", termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount, termsArrayNew);
 		//readGrammar(grammarFiles[x], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		
+		cout << "read" << endl;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < nonTermsCount; j++) {
+				cout << onlyRulesArray[i][j] << " | ";
+			}
+			cout << endl;
+		}
+		/*for (int j = 0; j < termsCount; j++) {
+			cout << rulesTermsArray[j] << " | ";
+		}
+		cout << endl;*/
+
+
+		//getchar();
 		// WSJ one
 		/*readGrammarExtended(grammarFiles[0], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		for (int i = 0; i < nonTermsCount; i++) {
@@ -104,7 +140,8 @@ int main(int argc, char** argv)
 
 		// create CYK array of input string length
 
-		int inputStringLength = inputString.length();
+		// int inputStringLength = inputString.length(); //TODO old
+		int inputStringLength = countWordsInString(inputString);
 
 		int cellWidth = ceil(((float)nonTermsCount / 32.0f));
 		//cellWidth = 1;
@@ -125,12 +162,43 @@ int main(int argc, char** argv)
 
 			// find character (terminal index)
 			int terminalIndex = -1;
-			for (int j = 0; j < termsCount; j++) {
+			/*for (int j = 0; j < termsCount; j++) {
 				if (inputString[i / cellWidth] == termsArray[j]) {
 					terminalIndex = j;
 					break;
 				}
-			}
+			}*/
+
+			/*for (int i = 0; i < inputStringLength; i++) {
+				cout << inputStringArray[i] << "OOOOOK" << endl;
+			}*/
+
+			
+			//new way to find terminal index
+			string wordTest = inputStringArray[i / cellWidth];
+			terminalIndex = distance(termsArrayNew.begin(), find(termsArrayNew.begin(), termsArrayNew.end(), wordTest));
+			//terminalIndex = 22;
+			/*string word = "";
+			for (auto x : inputString) {
+				if (x == ' ') {
+					if (word.find("->") != std::string::npos) {
+					}
+					else {
+						terminalIndex = distance(termsArrayNew.begin(), find(termsArrayNew.begin(), termsArrayNew.end(), word));
+					}
+					word = "";
+				}
+				else {
+					word = word + x;
+				}
+
+				if (terminalIndex == -1) {
+					terminalIndex = distance(termsArrayNew.begin(), find(termsArrayNew.begin(), termsArrayNew.end(), word));
+				}
+
+			}*/
+
+			
 
 			// TODO find out, if there is a possibility that one term is connected with many nonterms
 			//for (int j = 0; j < rulesTermsCount; j++) {
@@ -190,16 +258,23 @@ int main(int argc, char** argv)
 
 		// code input string to number
 		int* inputNumber = new int[inputStringLength];
+
+
 		for (int i = 0; i < inputStringLength; i++) {
 
-			for (int j = 0; j < termsCount; j++) {
+			string wordTest = inputStringArray[i];
+			inputNumber[i] = distance(termsArrayNew.begin(), find(termsArrayNew.begin(), termsArrayNew.end(), wordTest));
+
+			/*for (int j = 0; j < termsCount; j++) {
 				if (inputString[i] == termsArray[j]) {
 					inputNumber[i] = j;
 					break;
 				}
-			}
+			}*/
 		}
 
+
+		
 		// print coded input string
 		//for (int i = 0; i < inputStringLength; i++) {
 
@@ -405,17 +480,20 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice >= 30 && algorithmChoice <= 39) {
 
+			
 			createCuda2DArrayInt(h_onlyRulesArray, d_onlyRulesArray, onlyRulesArray, 3, onlyRulesCount); // standard array (3 rows)
-
+			
 			// fancy array (every row each possible symbol (existing), first cell symbol index, second cell number of rules [ech 2 cell pair])
-			int* nonTermsWithRules = new int[nonTermsCount];
+			int* nonTermsWithRules = new int[nonTermsCount]; 
 			for (int i = 0; i < nonTermsCount; i++) {
 				nonTermsWithRules[i] = 0;
 			}
+
 			for (int i = 0; i < onlyRulesCount; i++) {
 				//cout << onlyRulesCount << " : " << i << ": " << onlyRulesArray[2][i] << endl;
 				nonTermsWithRules[onlyRulesArray[2][i]]++;
 			}
+
 			// to create array (row) of proper size
 			nonTermsWithRulesCount = 0;
 			for (int i = 0; i < nonTermsCount; i++) {
@@ -481,10 +559,11 @@ int main(int argc, char** argv)
 		}
 		cudaEventRecord(cudaStartTime, defStream); //start counting time
 /////////////////////////////////////////////////////////////////////////////////////////////////
-
+		cout << endl  << algorithmChoice << " is a number of the chosen ALGORITHM!" << endl;
 		if (algorithmChoice == 10) {
 			// TODO pamiętaj o wejściowej liczbie wątków
 			// no restrictions
+			
 			cykAlgorithm<0> << <1, 1, 0, culturalData.getStream() >> >(cykData, randState);
 		}
 		else if (algorithmChoice == 11) {

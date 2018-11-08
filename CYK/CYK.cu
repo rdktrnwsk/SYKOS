@@ -498,7 +498,7 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 		 
 	 //if (idx < inputStringLength && idy < inputStringLength) {
 	 if (true) {
-	 
+		
 	 int base = 1;
 	 for (int i = 1; i < inputStringLength; i++) { // for every row (starting from second one) (word length of 2, 3, 4 etc.) (1)
 
@@ -547,6 +547,9 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 										 int bitValue = base << (shiftValue - (offset * 32));
 
 										 //cykArray[i][j + offset] |= bitValue;
+
+										printf("\n\n Wartosc m: %d, n: %d. Wartosc shift: %d. Wartosc bitowa: %d. \n\n", m, n, shiftValue, bitValue);
+
 
 										 atomicOr(&cykArray[i][j + offset], bitValue);
 									 }
@@ -615,6 +618,8 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 											//rule exists
 											if (rulesNonTermsArray[m][n] != -1) {
 
+												
+
 												int shiftValue = rulesNonTermsArray[m][n];
 												//int bitValue = base << shiftValue;
 
@@ -623,7 +628,7 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 												int bitValue = base << (shiftValue - (offset * 32));
 
 												//cykArray[i][j + offset] |= bitValue;
-
+												
 												atomicOr(&cykArray[i][j + offset], bitValue);
 											}
 
@@ -660,12 +665,12 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 			printf("\n");
 		}*/
 
-		/*for (int j = 1; j < inputStringLength; j++) {
+		for (int j = 1; j < inputStringLength; j++) {
 			for (int i = 0; i < inputStringLength - j; i++) {
 				printf("%d | ", cykArray[j][i]);
 			}
 			printf("\n");
-		}*/
+		}
 
 		int* result = data.getResult();
 		//printf("RESUUUULt: %d | ", result[0]);
@@ -1794,12 +1799,12 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 		//	printf("\n");
 		//}
 
-		//for (int j = 1; j < inputStringLength; j++) {
-		//	for (int i = 0; i < inputStringLength - j; i++) {
-		//		printf("%d | ", cykArray[j][i]);
-		//	}
-		//	printf("\n");
-		//}
+		/*for (int j = 1; j < inputStringLength; j++) {
+			for (int i = 0; i < inputStringLength - j; i++) {
+				printf("%d | ", cykArray[j][i]);
+			}
+			printf("\n");
+		}*/
 
 		//int* result = data.getResult();
 		//printf("RESUUUULt: %d | ", result[0]);
@@ -2407,6 +2412,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 	__syncthreads();
 	//&& rulesCount == inputStringLength
 	if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0 ) {
+		printf("ooook");
 		if (action != 2 || additionalVariable == inputStringLength -1) {
 			//for (int i = 0; i < nonTermsCount; i++) {
 			//	for (int j = 0; j < nonTermsCount; j++) {
@@ -2419,17 +2425,17 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 			//	printf("\n");
 			//}
 
-			//for (int j = 1; j < inputStringLength; j++) {
-			//	for (int i = 0; i < inputStringLength - j; i++) {
-			//		for (int c = 0; c < cellWidth; c++) {
-			//			//cout << cykArray[j][i + c] << " - ";
+			for (int j = 1; j < inputStringLength; j++) {
+				for (int i = 0; i < inputStringLength - j; i++) {
+					for (int c = 0; c < cellWidth; c++) {
+						//cout << cykArray[j][i + c] << " - ";
 
-			//			printf("%d -  ", cykArray[j][i + c]);
-			//		}
-			//		printf(" | ");
-			//	}
-			//	printf("\n");
-			//}
+						printf("%d -  ", cykArray[j][i + c]);
+					}
+					printf(" | ");
+				}
+				printf("\n");
+			}
 
 			//int* result = data.getResult();
 			//printf("RESUUUULt: %d | ", result[0]);

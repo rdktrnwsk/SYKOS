@@ -1,0 +1,13 @@
+hehe
+S -> NP VP
+PP -> P NP
+NP -> Det N
+NP -> NP PP
+VP -> V NP
+VP -> VP PP
+Det -> 'the'
+N -> 'kids'
+N -> 'box'
+N -> 'floor'
+V -> 'opened'
+P -> 'on'

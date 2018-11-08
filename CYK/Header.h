@@ -17,6 +17,10 @@
 #include <sstream>
 #include <iterator>
 #include <numeric>
+#include <vector>
+#include <string>
+#include <algorithm>
+
 using namespace std;
 
 #endif
