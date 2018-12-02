@@ -268,11 +268,11 @@ int readGrammarNew(char fileName[50], char*& termsArray, int& terms, char*& nont
 
 		nonterms = words.size();   //zapisana liczba terminali i nieterminali
 		terms = wordsTerms.size();
-		cout << "------------------------" << endl;
+		/*cout << "------------------------" << endl;
 		for (string word : wordsTerms) {
 			cout << word << " | ";
 		}
-		cout << endl << "------------------------" << endl;
+		cout << endl << "------------------------" << endl;*/
 		
 		file.clear();
 		file.seekg(0, ios::beg); // clear eof flag and go to the beginning of the file
@@ -419,14 +419,14 @@ int readGrammarNew(char fileName[50], char*& termsArray, int& terms, char*& nont
 			
 		}
 
-		cout << "-----------------------------------" << endl;
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < rulesTerms; j++) {
+		/*cout << "-----------------------------------" << endl;
+		for (int i = 0; i < 1; i++) {
+			for (int j = 0; j < terms; j++) {
 				cout << rulesArrayTerms[j] << " | ";
 			}
 			cout << endl;
 		}
-		cout << endl << "-----------------------------------" << endl;
+		cout << endl << "-----------------------------------" << endl;*/
 
 		/*cout << "read here";
 		getchar();*/
@@ -438,6 +438,10 @@ int readGrammarNew(char fileName[50], char*& termsArray, int& terms, char*& nont
 		}
 		cout << endl;
 		cout << endl << "-----------------------------------" << endl;*/
+
+		cout <<  "Rules count: " << rulesNonterms << endl;
+		cout <<  "Terms: " << terms << endl;
+		cout <<  "NonTerms: " << nonterms << endl;
 
 		file.close();
 		return 0;

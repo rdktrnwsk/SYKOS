@@ -548,7 +548,7 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 
 										 //cykArray[i][j + offset] |= bitValue;
 
-										printf("\n\n Wartosc m: %d, n: %d. Wartosc shift: %d. Wartosc bitowa: %d. \n\n", m, n, shiftValue, bitValue);
+										//printf("\n\n Wartosc m: %d, n: %d. Wartosc shift: %d. Wartosc bitowa: %d. \n\n", m, n, shiftValue, bitValue);
 
 
 										 atomicOr(&cykArray[i][j + offset], bitValue);
@@ -665,12 +665,12 @@ __global__ void cykAlgorithm(DeviceCYKData data, curandState * randGlobal) {
 			printf("\n");
 		}*/
 
-		for (int j = 1; j < inputStringLength; j++) {
+		/*for (int j = 1; j < inputStringLength; j++) {
 			for (int i = 0; i < inputStringLength - j; i++) {
 				printf("%d | ", cykArray[j][i]);
 			}
 			printf("\n");
-		}
+		}*/
 
 		int* result = data.getResult();
 		//printf("RESUUUULt: %d | ", result[0]);
@@ -1788,16 +1788,16 @@ __global__ void cykAlgorithmCooperative(DeviceCYKData data, curandState * randGl
 
 	if (threadIdx.x == 0 && threadIdx.y == 0 && bidx == 0) {
 		
-		//for (int i = 0; i < nonTermsCount; i++) {
-		//	for (int j = 0; j < nonTermsCount; j++) {
-		//		//cout << rulesNonTermsArray[i][j] << " | ";
+		/*for (int i = 0; i < nonTermsCount; i++) {
+			for (int j = 0; j < nonTermsCount; j++) {
+				cout << rulesNonTermsArray[i][j] << " | ";
 
-		//		printf("%d | ", rulesNonTermsArray[i][j]);
-		//	}
-		//	//cout << endl;
+				printf("%d | ", rulesNonTermsArray[i][j]);
+			}
+			cout << endl;
 
-		//	printf("\n");
-		//}
+			printf("\n");
+		}*/
 
 		/*for (int j = 1; j < inputStringLength; j++) {
 			for (int i = 0; i < inputStringLength - j; i++) {
@@ -2143,7 +2143,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 						int p = temp_idx;
 
 						float iterK = ceilf((float)(i) / (float)(blockDim.y));
-
+						
 						//for (int k = 0; k < i; k++) { // for each neighbour (split points number of a word) 2| 1_2 - 2_1| 3_1 - 2_2 - 1_3| 4_1 - 3_2 - 2_3 - 1_4 (3)
 						for (int kd = 0; kd < (int)iterK; kd++) {
 
@@ -2174,7 +2174,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 									int bitValue = base << (shiftValue - (offset * 32));
 
 									atomicOr(&cykArray[i][j + offset], bitValue);
-
+									
 								}
 							} //kd if
 
@@ -2412,7 +2412,7 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 	__syncthreads();
 	//&& rulesCount == inputStringLength
 	if (threadIdx.x == 0 && threadIdx.y == 0 && blockIdx.y == 0 && blockIdx.x == 0 ) {
-		printf("ooook");
+		//printf("ooook");
 		if (action != 2 || additionalVariable == inputStringLength -1) {
 			//for (int i = 0; i < nonTermsCount; i++) {
 			//	for (int j = 0; j < nonTermsCount; j++) {
@@ -2425,17 +2425,19 @@ __global__ void cykAlgorithmRules(DeviceCYKData data, curandState * randGlobal, 
 			//	printf("\n");
 			//}
 
-			for (int j = 1; j < inputStringLength; j++) {
-				for (int i = 0; i < inputStringLength - j; i++) {
-					for (int c = 0; c < cellWidth; c++) {
-						//cout << cykArray[j][i + c] << " - ";
+			//for (int j = 1; j < inputStringLength; j++) {
+			//	for (int i = 0; i < inputStringLength - j; i++) {
+			//		for (int c = 0; c < cellWidth; c++) {
+			//			//cout << cykArray[j][i + c] << " - ";
 
-						printf("%d -  ", cykArray[j][i + c]);
-					}
-					printf(" | ");
-				}
-				printf("\n");
-			}
+			//			printf("%d -  ", cykArray[j][i + c]);
+			//		}
+			//		printf(" | ");
+			//	}
+			//	printf("\n");
+			//}
+
+		
 
 			//int* result = data.getResult();
 			//printf("RESUUUULt: %d | ", result[0]);

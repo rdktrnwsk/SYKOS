@@ -13,6 +13,6 @@ pause
 
 :program7
 	
-	start /w CYK.exe example1.txt 30 1
+	start /w CYK.exe example1.txt 31 1
 	echo a
 Exit /B

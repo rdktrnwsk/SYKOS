@@ -38,8 +38,13 @@ int main(int argc, char** argv)
 
 	const int testStringNumbers = 2;
 	string inputStrings[] = {
-		"John to to to to to to to saw happy",
-		"the kids opened the box",
+		"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		//"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		//"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		//"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		//"John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John John",
+		//"the kids opened the box",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 		//"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -87,16 +92,16 @@ int main(int argc, char** argv)
 		//cout << "Grammar: " << grammarFiles[x] << endl << "Input string: " << inputString << endl;
 		cout << "Grammar: " << grammarFile << endl << "Input string number: " << x << endl;
 		
-		readGrammarNew("example2.txt", termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount, termsArrayNew);
+		readGrammarNew("example20.txt", termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount, termsArrayNew);
 		//readGrammar(grammarFiles[x], termsArray, termsCount, nonTermsArray, nonTermsCount, rulesTermsArray, rulesTermsCount, rulesNonTermsArray, rulesNonTermsCount, onlyRulesArray, onlyRulesCount);
 		
 		cout << "read" << endl;
-		for (int i = 0; i < 3; i++) {
+		/*for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < nonTermsCount; j++) {
 				cout << onlyRulesArray[i][j] << " | ";
 			}
 			cout << endl;
-		}
+		}*/
 		/*for (int j = 0; j < termsCount; j++) {
 			cout << rulesTermsArray[j] << " | ";
 		}
@@ -664,7 +669,7 @@ int main(int argc, char** argv)
 
 			
 
-			dim3 dimBlock(128, 4, 1);
+			dim3 dimBlock(32, 16, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -685,7 +690,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 26) {
 
-			dim3 dimBlock(64, 1, 1);
+			dim3 dimBlock(128, 1, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -727,7 +732,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 28) {
 
-			dim3 dimBlock(8, 1, 1);
+			dim3 dimBlock(32, 16, 1);
 
 			//with local synchronisation
 
@@ -785,7 +790,7 @@ int main(int argc, char** argv)
 		}
 		else if (algorithmChoice == 31) { //remember 32!!!!!!!
 
-			dim3 dimBlock5(onlyRulesCount, 1, 1);
+			dim3 dimBlock5(1023, 1, 1);
 
 			//with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
@@ -845,7 +850,7 @@ int main(int argc, char** argv)
 			
 		} else if (algorithmChoice == 34) {
 			//blockNumber = nonTermsWithRulesCount;
-			dim3 dimBlock(8, 8, 1); //TODO change number of threads, number of rules -> x
+			dim3 dimBlock(8, 4, 1); //TODO change number of threads, number of rules -> x
 
 									 //with local synchronisation
 			for (int i = 1; i < inputStringLength; i++) {
